@@ -1,0 +1,11 @@
+<template>
+  <div class="pui-chkbox ui-widget">
+    <div class="ui-helper-hidden-accessible">
+      <input type="checkbox" name.bind="name" value.bind="value" checked.bind="checked"/>
+    </div>
+    <div class="pui-chkbox-box ui-widget ui-corner-all ui-state-default ${hover ? 'ui-state-hover':''} ${checked ? 'ui-state-active':''}" click.delegate="onClick()"
+    mouseover.delegate="hover=true" mouseout.delegate="hover=false">
+    <span class="pui-chkbox-icon pui-c ${checked ? 'fa fa-fw fa-check':''}"></span>
+  </div>
+</div>
+</template>

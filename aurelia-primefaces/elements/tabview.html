@@ -1,0 +1,12 @@
+<template>
+  <div>
+    <ul>
+      <li repeat.for="tab of tabPanels">
+        <a href="#">${tab.header}</a><span if.bind="tab.closable" class="fa fa-close"></span>
+      </li>
+    </ul>
+    <div>
+      <content></content>
+    </div>
+  </div>
+</template>

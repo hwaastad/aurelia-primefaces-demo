@@ -1,0 +1,85 @@
+<template>
+  <div mdl="layout" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <main class="mdl-layout__content">
+      <div class="mdl-layout__tab-panel is-active" id="overview">
+        <h3 class="first">Panel</h3>
+        <p-panel header="Godfather I" toggleable.bind="true" closable.bind="true">
+          The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+          His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+          Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
+          kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+        </p-panel>
+        <h3 class="first">TabView ${activeTabIndex}</h3>
+
+        <p-tabview>
+          <p-tabpanel header="Header 1">
+            Content-1
+          </p-tabpanel>
+          <p-tabpanel header="Header 2">
+            Content 2
+          </p-tabpanel>
+        </p-tabview>
+
+
+        <h3 class="first">Inputtext</h3>
+        <input id="in" type="text" size="30" p-inputtext value.bind="text" /> &nbsp; ${text}
+        <input id="in" type="text" size="30" p-inputtext disabled.bind="disabled" />
+        <button type="text" click.delegate="toggleDisabled()" p-button>Toggle</button>
+        <h3 class="first">Rating</h3>
+        <h3 class="first">Basic ${value1.value}</h3>
+        <p-rating ref="value1"></p-rating>
+        <br />
+        <h3>Callback ${val2}</h3>
+        <p-rating value.two-way="val2" onRate.call="handleRate($event)" onCancel.call="handleCancel($event)"></p-rating> <span if.bind="msg" style="margin-left:10px">${msg}</span>
+        <br />
+        <h3>No Cancel ${value3.value}</h3>
+        <p-rating ref="value3" cancel.bind="false"></p-rating>
+        <br />
+        <h3>Disabled ${val4}</h3>
+        <p-rating value.two-way="val4" disabled.bind="true" stars.bind="10"></p-rating>
+        <br />
+        <h3 class="first">Button</h3>
+        <button mdl="button" p-button >
+          <i class="material-icons">add</i>
+        </button>
+        <h3 class="first">Checkbox</h3>
+        <div class="pui-grid pui-grid-responsive" style="width:250px;margin-bottom:10px">
+          <div class="pui-grid-row">
+            <div class="pui-grid-col-1"><p-checkbox name="group1" value="New York" model.bind="selectedCities"></p-checkbox></div>
+            <div class="pui-grid-col-11"><label class="ui-widget">New York</label></div>
+          </div>
+          <div class="pui-grid-row">
+            <div class="pui-grid-col-1"><p-checkbox name="group1" value="San Francisco" model.bind="selectedCities"></p-checkbox></div>
+            <div class="pui-grid-col-11"><label class="ui-widget">San Francisco</label></div>
+          </div>
+          <div class="pui-grid-row">
+            <div class="pui-grid-col-1"><p-checkbox name="group1" value="Los Angeles" model.bind="selectedCities"></p-checkbox></div>
+            <div class="pui-grid-col-11"><label class="ui-widget">Los Angeles</label></div>
+          </div>
+        </div>
+        Selected Cities: <span repeat.for="city of selectedCities">${city} &nbsp;&nbsp;</span>
+
+        <h3>Checkbox Preselection</h3>
+        <div class="pui-grid pui-grid-responsive" style="width:250px;margin-bottom:10px">
+          <div class="pui-grid-row">
+            <div class="pui-grid-col-1"><p-checkbox name="group2" value="Technology" model.bind="selectedCategories"></p-checkbox></div>
+            <div class="pui-grid-col-11"><label class="ui-widget">Technology</label></div>
+          </div>
+          <div class="pui-grid-row">
+            <div class="pui-grid-col-1"><p-checkbox name="group2" value="Finance" model.bind="selectedCategories"></p-checkbox></div>
+            <div class="pui-grid-col-11"><label class="ui-widget">Finance</label></div>
+          </div>
+          <div class="pui-grid-row">
+            <div class="pui-grid-col-1"><p-checkbox name="group2" value="Sports" model.bind="selectedCategories"></p-checkbox></div>
+            <div class="pui-grid-col-11"><label class="ui-widget">Sports</label></div>
+          </div>
+          <div class="pui-grid-row">
+            <div class="pui-grid-col-1"><p-checkbox name="group2" value="Entertainment" model.bind="selectedCategories"></p-checkbox></div>
+            <div class="pui-grid-col-11"><label class="ui-widget">Entertainment</label></div>
+          </div>
+        </div>
+        Selected Categories: <span repeat.for="cat of selectedCategories">${cat} &nbsp;&nbsp;</span>
+      </div>
+    </main>
+  </div>
+</template>
