@@ -1,11 +1,7 @@
-import {inject, customElement,bindable,noView} from 'aurelia-framework';
-/*import 'jquery-ui';
-import 'primeui';
-import 'primeui/primeui-min.css!';*/
+import {inject, customElement,bindable} from 'aurelia-framework';
 
 @customElement('p-rating')
 @inject(Element)
-@noView()
 export class RatingComponent {
   @bindable value: number;
   @bindable disabled: boolean;
@@ -24,12 +20,10 @@ export class RatingComponent {
   }
 
   attached(){
-    //console.dir(this);
-    //console.log('constructing with initial value: ' +this.value);
     if(!this.stars){
       this.stars=5;
     }
-    $(this.element).puirating({
+    $(this.element.children[0]).puirating({
       value: this.value,
       stars: this.stars,
       cancel: this.cancel,
@@ -58,7 +52,7 @@ export class RatingComponent {
 
   detached(){
     console.log("detached rating");
-    $(this.element).puirating('destroy');
+    $(this.element.children[0]).puirating('destroy');
     this.initialized=false;
   }
 }

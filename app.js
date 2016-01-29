@@ -12,7 +12,7 @@ export class App {
   text: string;
   disabled:boolean = true;
 
-  activeTabIndex: number = 2;
+  activeTabIndex: number = 1;
 
   bind(){
   }
