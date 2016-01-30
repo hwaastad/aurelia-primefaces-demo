@@ -9,4 +9,5 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/accordion');
   frameworkConfig.globalResources('./elements/accordiontab');
   frameworkConfig.globalResources('./elements/datatable');
+  frameworkConfig.globalResources('./elements/growl');
 }

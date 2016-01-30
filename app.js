@@ -36,6 +36,10 @@ export class App {
   bind(){
   }
 
+  sendAlert(growl){
+    $('#'+growl).puigrowl('show', [{severity: 'error', summary: 'Message Summary', detail: 'Message Detail'}]);
+  }
+
   handleRate(event) {
     this.msg = "You have rated " + event.value;
     this.val4=event.value;
