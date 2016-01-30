@@ -28,7 +28,6 @@ export class PanelComponent {
   attached(){
     console.log('panel attached');
     console.log('closable: ' + this.closable + ' toggleable: ' + this.toggleable);
-  //  console.dir(this.element.children[0]);
     $(this.element.children[0]).puipanel({
       title: this.header,
       toggleable: this.toggleable,
@@ -37,12 +36,12 @@ export class PanelComponent {
       collapsed: this.collapsed,
       closable:this.closable,
       closeDuration: this.closeduration,
-    /*beforeCollapse: this.onbeforecollapse ? (event: Event) => { this.onbeforecollapse(event); } : null,
+      beforeCollapse: this.onbeforecollapse ? (event: Event) => { this.onbeforecollapse(event); } : null,
       afterCollapse: this.onaftercollapse ? (event: Event) => { this.onaftercollapse(event); } : null,
       beforeExpand: this.onbeforeexpand ? (event: Event) => { this.onbeforeexpand(event); } : null,
       afterExpand: this.onafterexpand ? (event: Event) => { this.onafterexpand(event); } : null,
       beforeClose: this.onbeforeclose ? (event: Event) => { this.onbeforeclose(event); } : null,
-      afterClose: this.onafterclose ? (event: Event) => { this.onafterclose(event); } : null,*/
+      afterClose: this.onafterclose ? (event: Event) => { this.onafterclose(event); } : null,
       enhanced: true
     });
     this.initialized = true;

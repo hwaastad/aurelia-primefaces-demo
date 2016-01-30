@@ -20,7 +20,6 @@ export class AccordionComponent {
 
   addTab(tab: AccordionTabComponent) {
     console.log('Adding accordionTab:');
-    console.dir(tab);
     this.tabPanels.push(tab);
   }
 

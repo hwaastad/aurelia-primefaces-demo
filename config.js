@@ -23,7 +23,7 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "css": "github:systemjs/plugin-css@0.1.20",
     "fontawesome": "bower:fontawesome@4.5.0",
-    "jquery": "npm:jquery@2.2.0",
+    "jquery": "bower:jquery@1.11.0",
     "jquery-ui": "github:components/jqueryui@1.11.4",
     "jqueryui": "bower:jqueryui@1.11.4",
     "primeui": "bower:primeui@3.0.0",

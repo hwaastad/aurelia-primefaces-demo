@@ -30,4 +30,12 @@ export class App {
   toggleDisabled() {
     this.disabled = !this.disabled;
   }
+
+  closePanel(){
+    console.log('closing panel');
+  }
+
+  collapsePanel(){
+    console.log('collapsing panel');
+  }
 }
