@@ -2,6 +2,11 @@
   <div mdl="layout" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <main class="mdl-layout__content">
       <div class="mdl-layout__tab-panel is-active" id="overview">
+        <h3 class="first">Datatable</h3>
+        <p-datatable columns.bind="columns" datasource.bind="datasource" caption="Table Header">
+        </p-datatable>
+
+
         <h3 class="first">Panel</h3>
         <p-panel header="Godfather I" toggleable.bind="true" closable.bind="true" onbeforeclose.call="closePanel()" onbeforecollapse.call="collapsePanel()">
           The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
