@@ -11,13 +11,15 @@ export class CheckboxComponent {
   @bindable name: String;
   @bindable disabled: Boolean;
   @bindable model: any;
+  @bindable onChange;
+  @bindable modelChange;
   @bindable checked;
   @bindable hover;
 
   hover: boolean;
 
   attached(element) {
-  //  console.log('contructing......'+this.value);
+    //  console.log('contructing......'+this.value);
     var index = this.findValueIndex(this.value);
     if(index >= 0) {
       this.checked=true;
@@ -28,6 +30,11 @@ export class CheckboxComponent {
   bind(){
 
   }
+  
+  isChecked(value) {
+    return this.findValueIndex(value) !== -1;
+  }
+
   onClick() {
     this.checked = !this.checked;
 

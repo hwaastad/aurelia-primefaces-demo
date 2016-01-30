@@ -1,10 +1,4 @@
 import {inject, customElement,bindable} from 'aurelia-framework';
-/*import 'jquery-ui';
-import 'primeui';
-import 'jquery-ui/themes/base/jquery-ui.css!';
-import 'primeui/primeui.css!';*/
-
-//import {TabPanelComponent} from './tabpanel';
 
 @customElement('p-tabview')
 @inject(Element)
@@ -22,20 +16,20 @@ export class TabViewComponent {
   initialized: boolean;
 
   constructor(element){
-    console.log('constructing tabview....');
+    //console.log('constructing tabview....');
     this.element=element;
     this.tabPanels = [];
     this.initialized = false;
   }
 
-  async attached(){
-    console.log('attaching tabview....');
-    $(this.element).puitabview({
+  attached(){
+    //console.log('attaching tabview....');
+    $(this.element.children[0]).puitabview({
       activeIndex: this.activeIndex,
       orientation: this.orientation,
       effect: this.effect ? {name: this.effect, duration: this.effectDuration} : null,
       change:(event: Event, ui: any) => {
-        this.activeIndexChange(ui.index);
+      //  this.activeIndexChange(ui.index);
         if (this.onchange) {
           this.onchange({originalEvent: event, index: ui.index});
         }
@@ -48,7 +42,7 @@ export class TabViewComponent {
   }
 
   detached(){
-    $(this.element).puitabview('destroy');
+    $(this.element.children[0]).puitabview('destroy');
     this.initialized = false;
   }
 
