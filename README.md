@@ -6,6 +6,7 @@ Goal is to build a primeui library when primeng is released.
 
 PS, still very much WIP so things WILL break :-)
 
+    npm install
     jspm install -y
 
 
