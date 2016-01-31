@@ -7,38 +7,49 @@ export class TabViewComponent {
   @bindable orientation: string;
   @bindable effect: string;
   @bindable effectDuration: any='fast';
-  @bindable onchange;
-  @bindable onclose;
+  @bindable onChange;
+  @bindable onClose;
   @bindable activeIndexChange;
 
   tabPanels: TabPanelComponent[];
 
   initialized: boolean;
 
+  stopNgOnChangesPropagation: boolean;
+
   constructor(element){
-    //console.log('constructing tabview....');
     this.element=element;
     this.tabPanels = [];
     this.initialized = false;
   }
 
   attached(){
-    //console.log('attaching tabview....');
     $(this.element.children[0]).puitabview({
       activeIndex: this.activeIndex,
       orientation: this.orientation,
       effect: this.effect ? {name: this.effect, duration: this.effectDuration} : null,
       change:(event: Event, ui: any) => {
-      //  this.activeIndexChange(ui.index);
-        if (this.onchange) {
-          this.onchange({originalEvent: event, index: ui.index});
+        this.stopNgOnChangesPropagation = true;
+        if (this.onChange) {
+          this.onChange({originalEvent: event, index: ui.index});
         }
       },
-      close: this.onclose ? (event: Event, ui: any) => {
-        this.onclose({originalEvent: event, index: ui.index})
+      close: this.onClose ? (event: Event, ui: any) => {
+        this.onClose({originalEvent: event, index: ui.index});
       }: null
     });
     this.initialized = true;
+  }
+
+  activeIndexChanged(newValue,oldValue){
+    if (this.stopNgOnChangesPropagation) {
+      this.stopNgOnChangesPropagation = false;
+      return;
+    } else {
+      if(this.initialized){
+        $(this.element.children[0]).puitabview('option', 'activeIndex', newValue);
+      }
+    }
   }
 
   detached(){

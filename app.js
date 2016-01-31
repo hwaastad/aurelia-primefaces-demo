@@ -7,7 +7,7 @@ export class App {
     this.mobilemenuactive=!this.mobilemenuactive;
     e.preventDefault();
   }
-  
+
   configureRouter(config, router) {
     config.title = 'Aurelia';
     config.map([
@@ -20,7 +20,8 @@ export class App {
       { route: 'accordion',         name: 'accordion',        moduleId: 'pages/components/accordion',        nav: true, title: 'Accordion' },
       { route: 'panel',         name: 'panel',        moduleId: 'pages/components/panel',        nav: true, title: 'Panel' },
       { route: 'growl',         name: 'growl',        moduleId: 'pages/components/growl',        nav: true, title: 'Growl' },
-      { route: 'datatable',         name: 'datatable',        moduleId: 'pages/components/datatable',        nav: true, title: 'Datatable' }
+      { route: 'datatable',         name: 'datatable',        moduleId: 'pages/components/datatable',        nav: true, title: 'Datatable' },
+      { route: 'tabview',         name: 'tabview',        moduleId: 'pages/components/tabview',        nav: true, title: 'Tabview' }
     ]);
 
     this.router = router;
