@@ -7,14 +7,14 @@
         </span>
         <span id="menu_input" ref="inputmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="inputmenutitle.id == activemenuid" click.delegate="activemenuid = inputmenutitle.id"><img src="resources/images/mono/input.svg" /><img class="hiddenIcons" src="resources/images/mono/inputBlue.svg" /><span class="MainLinkText">Input</span></span>
         <div class="SubMenuLinkContainer ${(inputmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(inputmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-          <a class="SubMenuLink" [routerLink]="['CheckboxDemo']" click.delegate="mobilemenuactive = false">&#9679; Checkbox</a>
+          <a class="SubMenuLink" href="#checkbox" click.call="mobilemenuactive = false">&#9679; Checkbox</a>
           <a class="SubMenuLink" href="#inputtext" click.call="mobilemenuactive = false">&#9679; InputText</a>
-          <a class="SubMenuLink" [routerLink]="['InputTextareaDemo']" click.delegate="mobilemenuactive = false">&#9679; InputTextArea</a>
+          <a class="SubMenuLink" [routerLink]="['InputTextareaDemo']" click.call="mobilemenuactive = false">&#9679; InputTextArea</a>
           <a class="SubMenuLink" href="#password" click.call="mobilemenuactive = false">&#9679; Password</a>
-          <a class="SubMenuLink" [routerLink]="['RadioButtonDemo']" click.delegate="mobilemenuactive = false">&#9679; RadioButton</a>
-          <a class="SubMenuLink" [routerLink]="['RatingDemo']" click.delegate="mobilemenuactive = false">&#9679; Rating</a>
-          <a class="SubMenuLink" [routerLink]="['SpinnerDemo']" click.delegate="mobilemenuactive = false">&#9679; Spinner</a>
-          <a class="SubMenuLink" [routerLink]="['ToggleButtonDemo']" click.delegate="mobilemenuactive = false">&#9679; ToggleButton</a>
+          <a class="SubMenuLink" [routerLink]="['RadioButtonDemo']" click.call="mobilemenuactive = false">&#9679; RadioButton</a>
+          <a class="SubMenuLink" href="#rating" click.call="mobilemenuactive = false">&#9679; Rating</a>
+          <a class="SubMenuLink" [routerLink]="['SpinnerDemo']" click.call="mobilemenuactive = false">&#9679; Spinner</a>
+          <a class="SubMenuLink" [routerLink]="['ToggleButtonDemo']" click.call="mobilemenuactive = false">&#9679; ToggleButton</a>
         </div>
 
         <span id="button_menutitle" ref="buttonmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="buttonmenutitle.id == activemenuid" click.delegate="activemenuid = buttonmenutitle.id"><img src="resources/images/mono/button.svg" /><img class="hiddenIcons" src="resources/images/mono/buttonBlue.svg" /><span class="MainLinkText">Button</span></span>
@@ -22,17 +22,27 @@
           <a href="#button" class="SubMenuLink" click.call="mobilemenuactive = false">&#9679; Button</a>
         </div>
 
+        <span id="menu_data" ref="datamenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="datamenutitle.id == activemenuid" click.delegate="activemenuid = datamenutitle.id"><img src="resources/images/mono/data.svg" /><img class="hiddenIcons" src="resources/images/mono/dataBlue.svg" /><span class="MainLinkText">Data</span></span>
+        <div class="SubMenuLinkContainer ${(datamenutitle.id == activemenuid) ? 'submenushow' : ''} ${(datamenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+          <a class="SubMenuLink" href="#datatable" click.call="mobilemenuactive = false">&#9679; Datatable</a>
+        </div>
+
         <span id="menu_panel" ref="panelmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="panelmenutitle.id == activemenuid" click.trigger="activemenuid = panelmenutitle.id"><img src="resources/images/mono/panel.svg" /><img class="hiddenIcons" src="resources/images/mono/panelBlue.svg" /><span class="MainLinkText">Panel</span></span>
         <div class="SubMenuLinkContainer ${(panelmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(panelmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-          <a class="SubMenuLink" [routerLink]="['AccordionDemo']" click.delegate="mobilemenuactive = false">&#9679; Accordion</a>
-          <a class="SubMenuLink" [routerLink]="['FieldsetDemo']" click.delegate="mobilemenuactive = false">&#9679; Fieldset</a>
-          <a class="SubMenuLink" [routerLink]="['PanelDemo']" click.delegate="mobilemenuactive = false">&#9679; Panel</a>
-          <a class="SubMenuLink" [routerLink]="['GridDemo']" click.delegate="mobilemenuactive = false">&#9679; Grid</a>
-          <a class="SubMenuLink" [routerLink]="['TabViewDemo']" click.delegate="mobilemenuactive = false">&#9679; TabView</a>
+          <a class="SubMenuLink" href="#accordion" click.call="mobilemenuactive = false">&#9679; Accordion</a>
+          <a class="SubMenuLink" [routerLink]="['FieldsetDemo']" click.call="mobilemenuactive = false">&#9679; Fieldset</a>
+          <a class="SubMenuLink" href="#panel" click.call="mobilemenuactive = false">&#9679; Panel</a>
+          <a class="SubMenuLink" [routerLink]="['GridDemo']" click.call="mobilemenuactive = false">&#9679; Grid</a>
+          <a class="SubMenuLink" [routerLink]="['TabViewDemo']" click.call="mobilemenuactive = false">&#9679; TabView</a>
         </div>
         <span id="menu_overlay" ref="overlaymenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="overlaymenutitle.id == activemenuid" click.delegate="activemenuid = overlaymenutitle.id"><img src="resources/images/mono/overlay.svg" /><img class="hiddenIcons" src="resources/images/mono/overlayBlue.svg" /><span class="MainLinkText">Overlay</span></span>
         <div class="SubMenuLinkContainer ${(overlaymenutitle.id == activemenuid) ? 'submenushow' : ''} ${(overlaymenutitle.id != activemenuidd) ? 'submenuhide': ''}">
           <a class="SubMenuLink" [routerLink]="['DialogDemo']" click.delegate="mobilemenuactive = false">&#9679; Dialog</a>
+        </div>
+
+        <span id="menu_messages" ref="messagesmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="messagesmenutitle.id == activemenuid" click.delegate="activemenuid = messagesmenutitle.id"><img src="resources/images/mono/message.svg" /><img class="hiddenIcons" src="resources/images/mono/messageBlue.svg" /><span class="MainLinkText">Messages</span></span>
+        <div class="SubMenuLinkContainer ${(messagesmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(messagesmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+          <a class="SubMenuLink" href="#growl" click.call="mobilemenuactive = false">&#9679; Growl</a>
         </div>
 
         <span id="menu_multimedia" ref="multimediamenutitle" class="MenuSideMainLink bordersOfMenuSide MenuSideMainLinkDark" [class.MenuSideMainLinkDark]="multimediamenutitle.id == activemenuid" click.delegate="activemenuid = multimediamenutitle.id"><img src="resources/images/mono/multimedia.svg">
@@ -71,103 +81,16 @@
       </div>
     </div>
   </div>
-  <!--  <div mdl="layout" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <main class="mdl-layout__content">
-  <div class="mdl-layout__tab-panel is-active" id="overview">
-  <h3 class="first">Growl</h3>
-  <p-growl id="growl" life="3000"></p-growl>
-  <button mdl="button" p-button click.delegate="sendAlert('growl')">
-  <i class="material-icons">Error</i>
-</button>
+<!--
 <h3 class="first">Datatable</h3>
 <p-datatable columns.bind="columns" datasource.bind="datasource" caption="Table Header">
 </p-datatable>
-<h3 class="first">Panel</h3>
-<p-panel header="Godfather I" toggleable.bind="true" closable.bind="true" onbeforeclose.call="closePanel()" onbeforecollapse.call="collapsePanel()">
-The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
-His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
-kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
-</p-panel>
-<h3>Accordion</h3>
-<p-accordion>
-<p-accordiontab header="Acc 1">
-The story begins as Don Vito Corleone, the head of a New York Mafia family, overseeshis daughter's wedding. His beloved son ichael has just come home from the war, but does not intend to become part of his father's business. T hrough Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
-</p-accordiontab>
-<p-accordiontab id="wer" header="Acc II">
-Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy, killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows.
-</p-accordiontab>
-</p-accordion>
-<h3 class="first">TabView ${activeTabIndex}</h3>
-<p-tabview>
-<p-tabpanel header="Header 1">
-Content-1
-</p-tabpanel>
-<p-tabpanel header="Header 2">
-Content 2
-</p-tabpanel>
-</p-tabview>
 
-<h3 class="first">Inputtext</h3>
-<input id="in" type="text" size="30" p-inputtext value.bind="text" /> &nbsp; ${text}
-<input id="in" type="text" size="30" p-inputtext disabled.bind="disabled" />
-<button type="text" click.delegate="toggleDisabled()" p-button>Toggle</button>
-<h3 class="first">Rating</h3>
-<h3 class="first">Basic ${value1.value}</h3>
-<p-rating ref="value1"></p-rating>
-<br />
-<h3>Callback ${val2}</h3>
-<p-rating value.two-way="val2" onRate.call="handleRate($event)" onCancel.call="handleCancel($event)"></p-rating> <span if.bind="msg" style="margin-left:10px">${msg}</span>
-<br />
-<h3>No Cancel ${value3.value}</h3>
-<p-rating ref="value3" cancel.bind="false"></p-rating>
-<br />
-<h3>Disabled ${val4}</h3>
-<p-rating value.two-way="val4" disabled.bind="true" stars.bind="10"></p-rating>
-<br />
 <h3 class="first">Button</h3>
 <button mdl="button" p-button >
 <i class="material-icons">add</i>
 </button>
 
-<!--  <h3 class="first">Checkbox</h3>
-<div class="pui-grid pui-grid-responsive" style="width:250px;margin-bottom:10px">
-<div class="pui-grid-row">
-<div class="pui-grid-col-1"><p-checkbox name="group1" value="New York" model.bind="selectedCities"></p-checkbox></div>
-<div class="pui-grid-col-11"><label class="ui-widget">New York</label></div>
-</div>
-<div class="pui-grid-row">
-<div class="pui-grid-col-1"><p-checkbox name="group1" value="San Francisco" model.bind="selectedCities"></p-checkbox></div>
-<div class="pui-grid-col-11"><label class="ui-widget">San Francisco</label></div>
-</div>
-<div class="pui-grid-row">
-<div class="pui-grid-col-1"><p-checkbox name="group1" value="Los Angeles" model.bind="selectedCities"></p-checkbox></div>
-<div class="pui-grid-col-11"><label class="ui-widget">Los Angeles</label></div>
-</div>
-</div>
-Selected Cities: <span repeat.for="city of selectedCities">${city} &nbsp;&nbsp;</span>-->
-
-<!--  <h3>Checkbox Preselection</h3>
-<div class="pui-grid pui-grid-responsive" style="width:250px;margin-bottom:10px">
-<div class="pui-grid-row">
-<div class="pui-grid-col-1"><p-checkbox name="group2" value="Technology" model.bind="selectedCategories"></p-checkbox></div>
-<div class="pui-grid-col-11"><label class="ui-widget">Technology</label></div>
-</div>
-<div class="pui-grid-row">
-<div class="pui-grid-col-1"><p-checkbox name="group2" value="Finance" model.bind="selectedCategories"></p-checkbox></div>
-<div class="pui-grid-col-11"><label class="ui-widget">Finance</label></div>
-</div>
-<div class="pui-grid-row">
-<div class="pui-grid-col-1"><p-checkbox name="group2" value="Sports" model.bind="selectedCategories"></p-checkbox></div>
-<div class="pui-grid-col-11"><label class="ui-widget">Sports</label></div>
-</div>
-<div class="pui-grid-row">
-<div class="pui-grid-col-1"><p-checkbox name="group2" value="Entertainment" model.bind="selectedCategories"></p-checkbox></div>
-<div class="pui-grid-col-11"><label class="ui-widget">Entertainment</label></div>
-</div>
-</div>
-Selected Categories: <span repeat.for="cat of selectedCategories">${cat} &nbsp;&nbsp;</span>-->
-<!--</div>
 </main>
 </div>-->
 </template>

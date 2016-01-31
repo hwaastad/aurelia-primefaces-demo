@@ -7,7 +7,7 @@ export class PanelComponent {
   @bindable header: String;
   @bindable toggleable: Boolean;
   @bindable toggleduration: any;
-  @bindable toggleorientation: any;
+  @bindable toggleorientation: any = undefined;
   @bindable closable: Boolean;
   @bindable closeduration: any;
   @bindable collapsed: boolean;

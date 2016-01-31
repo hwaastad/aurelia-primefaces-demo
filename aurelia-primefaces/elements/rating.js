@@ -6,7 +6,7 @@ export class RatingComponent {
   @bindable value: number;
   @bindable disabled: boolean;
   @bindable readonly: boolean;
-  @bindable stars: number;
+  @bindable stars: number = undefined;
   @bindable cancel: boolean=true;
   @bindable onrate;
   @bindable oncancel;
@@ -20,9 +20,6 @@ export class RatingComponent {
   }
 
   attached(){
-    if(!this.stars){
-      this.stars=5;
-    }
     $(this.element.children[0]).puirating({
       value: this.value,
       stars: this.stars,
@@ -52,7 +49,9 @@ export class RatingComponent {
 
   detached(){
     console.log("detached rating");
-    $(this.element.children[0]).puirating('destroy');
+    if(this.initialized){
+      //$(this.element.children[0]).puirating('destroy');
+    }
     this.initialized=false;
   }
 }

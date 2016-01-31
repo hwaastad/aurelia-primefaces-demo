@@ -3,18 +3,18 @@ import {inject, customAttribute,bindable} from 'aurelia-framework';
 @customAttribute('p-password')
 @inject(Element)
 export class PasswordAttribute {
-  @bindable promptLabel:string;
-  @bindable weakLabel: string;
-  @bindable goodLabel: string;
-  @bindable strongLabel: string;
-  @bindable inline: boolean;
-  @bindable disabled: boolean;
+  @bindable promptLabel:string = undefined;
+  @bindable weakLabel: string = undefined;
+  @bindable goodLabel: string = undefined;
+  @bindable strongLabel: string = undefined;
+  @bindable inline: boolean = undefined;
+  @bindable disabled: boolean = undefined;
 
   constructor(element){
     this.element=element;
   }
 
-  bind(){
+  attached(){
     $(this.element).puipassword({
       promptLabel: this.promptLabel,
       weakLabel: this.weakLabel,

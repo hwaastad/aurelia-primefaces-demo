@@ -4,7 +4,7 @@ import {inject, customAttribute,bindable} from 'aurelia-framework';
 @inject(Element)
 export class ButtonDirective {
   @bindable icon: String;
-  @bindable iconPos;
+  @bindable iconPos = undefined;
   @bindable disabled: Boolean;
 
   initialized: Boolean;

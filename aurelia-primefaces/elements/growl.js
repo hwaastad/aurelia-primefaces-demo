@@ -13,6 +13,7 @@ export class GrowlComponent {
   }
 
   attached(){
+    console.log('attching growl...');
     $(this.element).puigrowl({
       sticky: this.sticky,
       life: this.life
