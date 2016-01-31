@@ -2,6 +2,7 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/panel');
   frameworkConfig.globalResources('./elements/checkbox');
   frameworkConfig.globalResources('./attributes/button');
+  frameworkConfig.globalResources('./attributes/password');
   frameworkConfig.globalResources('./elements/rating');
   frameworkConfig.globalResources('./attributes/inputtext');
   frameworkConfig.globalResources('./elements/tabpanel');

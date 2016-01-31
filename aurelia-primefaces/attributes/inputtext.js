@@ -1,7 +1,4 @@
 import {inject, customAttribute,bindable} from 'aurelia-framework';
-/*import 'jquery-ui';
-import 'primeui';
-import 'primeui/primeui-min.css!';*/
 
 @customAttribute('p-inputtext')
 @inject(Element)
@@ -13,6 +10,7 @@ export class InputTextAttribute {
   }
 
   attached(){
+    console.log('attaching text, disabled: ' + this.disabled)
     $(this.element).puiinputtext({
       disabled: this.disabled
     });

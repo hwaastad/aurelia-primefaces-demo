@@ -1,13 +1,10 @@
 import {inject, customAttribute,bindable} from 'aurelia-framework';
-/*import 'jquery-ui';
-import 'primeui';
-import 'primeui/primeui-min.css!';*/
 
 @customAttribute('p-button')
 @inject(Element)
 export class ButtonDirective {
   @bindable icon: String;
-  @bindable iconPos: String;
+  @bindable iconPos;
   @bindable disabled: Boolean;
 
   initialized: Boolean;
@@ -17,9 +14,8 @@ export class ButtonDirective {
     this.initialized=false;
   }
 
-  bind(){
-    console.log('binding primebutton');
-    var ss = this.dest;
+  attached(){
+    console.log('attaching primebutton, position: ' + this.iconPos);
     $(this.element).puibutton({
       icon: this.icon,
       iconPos:this.iconPos,
