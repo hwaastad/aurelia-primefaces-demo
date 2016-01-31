@@ -1,10 +1,12 @@
 # aurelia-primefaces-demo
-Demo Project for primfaces components in aurelia
+Demo Project for primefaces components in aurelia
 
-I will incorporate similar intergration being used by primefaces in their primeng project
+I will incorporate similar integration being used by primefaces in their primeng project
+Goal is to build a primeui library when primeng is released.
 
 PS, still very much WIP so things WILL break :-)
 
-jspm install -y
+    jspm install -y
 
-gulp serve
+
+    gulp serve
