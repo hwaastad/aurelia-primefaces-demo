@@ -38,7 +38,7 @@
         </div>
         <span id="menu_overlay" ref="overlaymenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="overlaymenutitle.id == activemenuid" click.delegate="activemenuid = overlaymenutitle.id"><img src="resources/images/mono/overlay.svg" /><img class="hiddenIcons" src="resources/images/mono/overlayBlue.svg" /><span class="MainLinkText">Overlay</span></span>
         <div class="SubMenuLinkContainer ${(overlaymenutitle.id == activemenuid) ? 'submenushow' : ''} ${(overlaymenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-          <a class="SubMenuLink" [routerLink]="['DialogDemo']" click.delegate="mobilemenuactive = false">&#9679; Dialog</a>
+          <a class="SubMenuLink" href="#dialog" click.call="mobilemenuactive = false">&#9679; Dialog</a>
         </div>
 
         <span id="menu_messages" ref="messagesmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="messagesmenutitle.id == activemenuid" click.delegate="activemenuid = messagesmenutitle.id"><img src="resources/images/mono/message.svg" /><img class="hiddenIcons" src="resources/images/mono/messageBlue.svg" /><span class="MainLinkText">Messages</span></span>

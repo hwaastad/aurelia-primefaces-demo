@@ -24,7 +24,8 @@ export class App {
       { route: 'tabview',         name: 'tabview',        moduleId: 'pages/components/tabview',        nav: true, title: 'Tabview' },
       { route: 'inputtextarea',         name: 'inputtextarea',        moduleId: 'pages/components/inputtextarea',        nav: true, title: 'InputTextArea' },
       { route: 'messages',         name: 'messages',        moduleId: 'pages/components/messages',        nav: true, title: 'Messages' },
-      { route: 'listbox',         name: 'listbox',        moduleId: 'pages/components/listbox',        nav: true, title: 'ListBox' }
+      { route: 'listbox',         name: 'listbox',        moduleId: 'pages/components/listbox',        nav: true, title: 'ListBox' },
+      { route: 'dialog',         name: 'dialog',        moduleId: 'pages/components/dialog',        nav: true, title: 'Dialog' }
     ]);
 
     this.router = router;
