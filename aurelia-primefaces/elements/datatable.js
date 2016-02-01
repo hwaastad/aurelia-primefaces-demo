@@ -8,6 +8,7 @@ export class DataTableComponent {
   @bindable datasource;
   @bindable caption;
   @bindable paginator;
+  @bindable lazy;
 
 
   constructor(element){
@@ -16,10 +17,11 @@ export class DataTableComponent {
   }
 
   attached(){
-    console.log('attaching datatable');
+    console.log('attaching datatable ' + this.paginator);
     $(this.element).puidatatable({
       caption: this.caption,
       paginator: this.paginator,
+      lazy: this.lazy,
       columns: this.columns,
       datasource:this.datasource
     });
