@@ -1,4 +1,15 @@
+import {inject} from "aurelia-framework";
+import {CustomerData} from './model/CustomerData';
+
+@inject(CustomerData)
 export class DemoDataTable {
+  mydatasource=[];
+  mycolumns=[
+    {field: 'id', headerText: 'Id'},
+    {field: 'firstName', headerText: 'FirstName'},
+    {field: 'lastName', headerText: 'LastName'}
+  ];
+
   columns= [
     {field: 'vin', headerText: 'Vin'},
     {field: 'brand', headerText: 'Brand'},
@@ -18,4 +29,20 @@ export class DemoDataTable {
     {'brand': 'Ford', 'year': 2000, 'color': 'Black', 'vin': 'h54hw5'},
     {'brand': 'Fiat', 'year': 2013, 'color': 'Red', 'vin': '245t2s'}
   ];
-}
+
+  constructor(customerData){
+    this.customerData=customerData;
+  }
+
+  activate(){
+    console.log('activating...');
+    return this.getAllCustomers();
+  }
+
+  getAllCustomers(){
+    return this.customerData.getAll().then(
+      data =>{
+        this.mydatasource=data;
+      });
+    }
+  }

@@ -1,4 +1,9 @@
 <template>
+  <div id="datatable-submenu" class="ContentSideSections SubSubMenu clearfix">
+    <ul>
+      <li><a href="#datatable">&bull; DataSource</a></li>
+    </ul>
+  </div>
   <div class="ContentSideSections">
     <div class="Content100 overHidden TextShadow">
       <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">DataTable</span>
@@ -12,7 +17,10 @@
   </div>
 
   <div class="ContentSideSections Implementation">
-    <p-datatable columns.bind="columns" datasource.bind="datasource" caption="Table Header">
+    <p-datatable columns.bind="columns" datasource.bind="datasource" caption="Local DataSource">
+    </p-datatable>
+    <br/>
+    <p-datatable columns.bind="mycolumns" datasource.bind="mydatasource" caption="Remote Restful DataSource - Eager">
     </p-datatable>
   </div>
 
