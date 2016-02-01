@@ -10,6 +10,11 @@ export class DemoTabView {
 
     this.activeTabIndex = index;
   }
+
+  updateTabEvent(event,ui){
+    this.activeTabIndex=ui.index;
+  }
+
   constructor() {
     
   }

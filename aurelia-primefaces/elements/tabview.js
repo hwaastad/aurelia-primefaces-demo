@@ -30,6 +30,9 @@ export class TabViewComponent {
       effect: this.effect ? {name: this.effect, duration: this.effectDuration} : null,
       change:(event: Event, ui: any) => {
         this.stopNgOnChangesPropagation = true;
+        if(this.activeIndexChange){
+          this.activeIndexChange({originalEvent: event, ui: ui});
+        }
         if (this.onChange) {
           this.onChange({originalEvent: event, index: ui.index});
         }
