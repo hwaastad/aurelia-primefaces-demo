@@ -3,20 +3,27 @@ import {inject, customAttribute,bindable} from 'aurelia-framework';
 @customAttribute('p-inputtext')
 @inject(Element)
 export class InputTextAttribute {
-  @bindable disabled: boolean;
+  @bindable disabled: boolean=false;
+  initialized: boolean;
 
   constructor(element){
     this.element=element;
   }
 
-  attached(){
-    console.log('attaching text, disabled: ' + this.disabled)
+  bind(){
     $(this.element).puiinputtext({
       disabled: this.disabled
     });
+    this.initialized = true;
   }
 
   detached(){
-      $(this.element).puiinputtext('destroy');
+    $(this.element).puiinputtext('destroy');
+  }
+
+  disabledChanged(newValue,oldValue){
+    if(this.initialized = true){
+      $(this.element).puiinputtext('option', 'disabled', newValue);
+    }
   }
 }
