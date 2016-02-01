@@ -11,3 +11,7 @@ PS, still very much WIP so things WILL break :-)
 
 
     gulp serve
+    
+Lazy/eager datatable needs a restful service provided from:
+
+    https://github.com/paulvanbladel/aurelia-loopback-sample.git
