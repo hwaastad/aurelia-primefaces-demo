@@ -21,7 +21,8 @@ export class App {
       { route: 'panel',         name: 'panel',        moduleId: 'pages/components/panel',        nav: true, title: 'Panel' },
       { route: 'growl',         name: 'growl',        moduleId: 'pages/components/growl',        nav: true, title: 'Growl' },
       { route: 'datatable',         name: 'datatable',        moduleId: 'pages/components/datatable',        nav: true, title: 'Datatable' },
-      { route: 'tabview',         name: 'tabview',        moduleId: 'pages/components/tabview',        nav: true, title: 'Tabview' }
+      { route: 'tabview',         name: 'tabview',        moduleId: 'pages/components/tabview',        nav: true, title: 'Tabview' },
+      { route: 'inputtextarea',         name: 'inputtextarea',        moduleId: 'pages/components/inputtextarea',        nav: true, title: 'InputTextArea' }
     ]);
 
     this.router = router;
