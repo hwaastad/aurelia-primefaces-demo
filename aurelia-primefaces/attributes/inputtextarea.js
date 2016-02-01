@@ -13,7 +13,7 @@ export class InputTextAreaAttribute {
     this.initialized = false;
   }
 
-  bind(){
+  attached(){
     console.log('resize: ' + this.autoResize);
     $(this.element).puiinputtextarea({
       autoResize: this.autoResize
