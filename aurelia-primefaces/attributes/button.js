@@ -15,7 +15,6 @@ export class ButtonDirective {
   }
 
   attached(){
-    console.log('attaching primebutton, position: ' + this.iconPos);
     $(this.element).puibutton({
       icon: this.icon,
       iconPos:this.iconPos,
@@ -24,7 +23,6 @@ export class ButtonDirective {
   }
 
   detached() {
-    console.log("detached primebutton");
     $(this.element).puibutton('destroy');
     this.initialized=false;
   }

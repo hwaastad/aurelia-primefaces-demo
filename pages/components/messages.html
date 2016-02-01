@@ -1,0 +1,24 @@
+<template>
+  <div class="ContentSideSections">
+    <div class="Content100 overHidden TextShadow">
+      <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Messages</span>
+      <span class="defaultText dispTable">Messages is used to display messages inline.</span>
+    </div>
+  </div>
+
+  <div class="ContentSideSections Implementation">
+    <p-messages value.bind="msgs" closable.bind="false"></p-messages>
+    <div style>
+      <button type="button" p-button click.delegate="showInfo()">Info</button>
+      <button type="button" p-button click.delegate="showWarn()">Warn</button>
+      <button type="button" p-button click.delegate="showError()">Error</button>
+      <button type="button" p-button click.delegate="showMultiple()">Multiple</button>
+      <button type="button" p-button click.delegate="clear()" icon="fa-close" style="float:right">Clear</button>
+    </div>
+      <p-messages value.bind="msgs" closable.bind="true"></p-messages>
+
+  </div>
+
+  <div class="ContentSideSections Source">
+  </deiv>
+</template>

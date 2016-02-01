@@ -1,10 +1,7 @@
 export function configure(frameworkConfig, configCallback){
-  frameworkConfig.globalResources('./elements/panel');
-  frameworkConfig.globalResources('./elements/checkbox');
   frameworkConfig.globalResources('./attributes/button');
   frameworkConfig.globalResources('./attributes/password');
   frameworkConfig.globalResources('./attributes/inputtextarea');
-  frameworkConfig.globalResources('./elements/rating');
   frameworkConfig.globalResources('./attributes/inputtext');
   frameworkConfig.globalResources('./elements/tabpanel');
   frameworkConfig.globalResources('./elements/tabview');
@@ -12,4 +9,8 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/accordiontab');
   frameworkConfig.globalResources('./elements/datatable');
   frameworkConfig.globalResources('./elements/growl');
+  frameworkConfig.globalResources('./elements/panel');
+  frameworkConfig.globalResources('./elements/checkbox');
+  frameworkConfig.globalResources('./elements/rating');
+  frameworkConfig.globalResources('./elements/messages');
 }

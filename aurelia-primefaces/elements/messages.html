@@ -1,0 +1,14 @@
+<template>
+  <div if.bind="notEmpty" class="pui-messages ui-widget ui-corner-all ${(value[0].severity === 'info') ? 'pui-messages-info':''} ${(value[0].severity === 'warn') ? 'pui-messages-warn':''} ${(value[0].severity === 'error') ? 'pui-messages-error':'' }" style="display:block">
+    <a href="#" class="pui-messages-close" click.delegate="clear($event)" if.bind="closable">
+      <i class="fa fa-close"></i>
+    </a>
+    <span class="pui-messages-icon fa fa-2x fa-info-circle"></span>
+    <ul>
+      <li repeat.for="msg of value">
+        <span class="pui-messages-summary">${msg.summary}</span>
+        <span class="pui-messages-detail">${msg.detail}</span>
+      </li>
+    </ul>
+  </div>
+</template>

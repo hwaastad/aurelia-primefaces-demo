@@ -22,7 +22,8 @@ export class App {
       { route: 'growl',         name: 'growl',        moduleId: 'pages/components/growl',        nav: true, title: 'Growl' },
       { route: 'datatable',         name: 'datatable',        moduleId: 'pages/components/datatable',        nav: true, title: 'Datatable' },
       { route: 'tabview',         name: 'tabview',        moduleId: 'pages/components/tabview',        nav: true, title: 'Tabview' },
-      { route: 'inputtextarea',         name: 'inputtextarea',        moduleId: 'pages/components/inputtextarea',        nav: true, title: 'InputTextArea' }
+      { route: 'inputtextarea',         name: 'inputtextarea',        moduleId: 'pages/components/inputtextarea',        nav: true, title: 'InputTextArea' },
+      { route: 'messages',         name: 'messages',        moduleId: 'pages/components/messages',        nav: true, title: 'Messages' }
     ]);
 
     this.router = router;

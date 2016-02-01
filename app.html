@@ -43,6 +43,7 @@
         <span id="menu_messages" ref="messagesmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="messagesmenutitle.id == activemenuid" click.delegate="activemenuid = messagesmenutitle.id"><img src="resources/images/mono/message.svg" /><img class="hiddenIcons" src="resources/images/mono/messageBlue.svg" /><span class="MainLinkText">Messages</span></span>
         <div class="SubMenuLinkContainer ${(messagesmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(messagesmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
           <a class="SubMenuLink" href="#growl" click.call="mobilemenuactive = false">&#9679; Growl</a>
+          <a class="SubMenuLink" href="#messages" click.call="mobilemenuactive = false">&#9679; Messages</a>
         </div>
 
         <span id="menu_multimedia" ref="multimediamenutitle" class="MenuSideMainLink bordersOfMenuSide MenuSideMainLinkDark" [class.MenuSideMainLinkDark]="multimediamenutitle.id == activemenuid" click.delegate="activemenuid = multimediamenutitle.id"><img src="resources/images/mono/multimedia.svg">
