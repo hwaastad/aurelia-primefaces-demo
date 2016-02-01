@@ -13,4 +13,5 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/checkbox');
   frameworkConfig.globalResources('./elements/rating');
   frameworkConfig.globalResources('./elements/messages');
+  frameworkConfig.globalResources('./elements/listbox');
 }

@@ -1,8 +1,4 @@
 import {inject, customElement,bindable} from 'aurelia-framework';
-//import 'jquery-ui/themes/smoothness/jquery-ui.min.css!';
-//import 'primeui';
-//import 'primeui/primeui-min.css!';
-//import 'primeui/themes/bootstrap/theme.css!';
 
 @customElement('p-checkbox')
 @inject(Element)
@@ -19,7 +15,6 @@ export class CheckboxComponent {
   hover: boolean;
 
   attached(element) {
-    //  console.log('contructing......'+this.value);
     var index = this.findValueIndex(this.value);
     if(index >= 0) {
       this.checked=true;
@@ -30,7 +25,7 @@ export class CheckboxComponent {
   bind(){
 
   }
-  
+
   isChecked(value) {
     return this.findValueIndex(value) !== -1;
   }

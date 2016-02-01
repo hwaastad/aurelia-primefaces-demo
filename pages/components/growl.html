@@ -2,15 +2,21 @@
   <div class="ContentSideSections">
     <div class="Content100 overHidden TextShadow">
       <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Growl</span>
-      <span class="defaultText dispTable">Growl is an overlay messaging component.</span>
+      <span class="defaultText dispTable">Growl is an overlay messaging component.(Works only in primeUI 3.0.2-SNAPSHOT)</span>
     </div>
   </div>
 
   <div class="ContentSideSections Implementation">
-    <p-growl id="growl" life="3000"></p-growl>
-    <button p-button click.delegate="sendAlert('growl')">SendAlert</button>
+    <p-growl life="3000" value.bind="msgs"></p-growl>
+    <div>
+      <button type="button" p-button click.delegate="showInfo()">Info</button>
+      <button type="button" p-button click.delegate="showWarn()">Warn</button>
+      <button type="button" p-button click.delegate="showError()">Error</button>
+      <button type="button" p-button click.delegate="showMultiple()">Multiple</button>
+      <button type="button" p-button click.delegate="clear()" icon="fa-close" style="float:right">Clear</button>
     </div>
+  </div>
 
-    <div class="ContentSideSections Source">
-    </div>
-  </template>
+  <div class="ContentSideSections Source">
+  </div>
+</template>
