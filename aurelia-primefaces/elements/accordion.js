@@ -32,8 +32,10 @@ export class AccordionComponent {
       multiple: this.multiple,
       change: (event: Event, ui: any) => {
         this.stopNgOnChangesPropagation = true;
+        if(this.activeIndexChange){
+          this.activeIndexChange({originalEvent: event, ui: ui});
+        }
         if(this.onChange){
-          console.log('runninf onchange...')
           this.onChange({originalEvent: event, ui: ui});
         }
       }
@@ -42,12 +44,12 @@ export class AccordionComponent {
   }
 
   activeIndexChanged(newValue,oldValue){
+    console.log('indexChanged....')
     if (this.stopNgOnChangesPropagation) {
       this.stopNgOnChangesPropagation = false;
       return;
     } else {
       if(this.initialized){
-        console.log('indexChange......new value: ' + newValue);
         $(this.element.children[0]).puiaccordion('option', 'activeIndex', newValue);
       }
     }
