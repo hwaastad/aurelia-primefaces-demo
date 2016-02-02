@@ -8,8 +8,8 @@ export class RatingComponent {
   @bindable readonly: boolean;
   @bindable stars: number = undefined;
   @bindable cancel: boolean=true;
-  @bindable onrate;
-  @bindable oncancel;
+  @bindable onRate;
+  @bindable onCancel;
 
   initialized: boolean;
   stopNgOnChangesPropagation: boolean;
@@ -28,15 +28,17 @@ export class RatingComponent {
       readonly: this.readonly,
       rate: (event: Event, value: number) => {
         console.log('value: ' + this.value);
-        if(this.onrate){
-          this.onrate({originalEvent: event, value: value});
+        this.value=value;
+        if(this.onRate){
+          this.onRate({originalEvent: event, value: value});
         } else {
           console.log('No onrate callback');
         }
       },
       oncancel: (event: Event) => {
-        if(this.oncancel){
-          this.oncancel({event});
+        this.value=null;
+        if(this.onCancel){
+          this.onCancel({event});
         } else {
           console.log('No cancel callback');
         }

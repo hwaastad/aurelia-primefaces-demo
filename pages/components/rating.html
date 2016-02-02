@@ -8,17 +8,17 @@
 
   <div class="ContentSideSections Implementation">
     <h3 class="first">Rating</h3>
-    <h3 class="first">Basic ${value1.value}</h3>
-    <p-rating ref="value1"></p-rating>
+    <h3 class="first">Basic ${val.value}</h3>
+    <p-rating ref="val"></p-rating>
     <br />
     <h3>Callback ${val2}</h3>
-    <p-rating value.two-way="val2" onRate.call="handleRate($event)" onCancel.call="handleCancel($event)"></p-rating> <span if.bind="msg" style="margin-left:10px">${msg}</span>
+    <p-rating value.two-way="val2" on-rate.call="handleRate($event)" on-cancel.call="handleCancel($event)"></p-rating> <span if.bind="msg" style="margin-left:10px">${msg}</span>
     <br />
     <h3>No Cancel ${value3.value}</h3>
     <p-rating ref="value3" cancel.bind="false"></p-rating>
     <br />
     <h3>Disabled ${val4}</h3>
-    <p-rating value.two-way="val4" disabled.bind="true" stars.bind="10"></p-rating>
+    <p-rating value.bind="val4" disabled.bind="true" stars.bind="10"></p-rating>
     <br />
   </div>
   <div class="ContentSideSections Source">
