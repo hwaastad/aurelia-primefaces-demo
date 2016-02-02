@@ -4,17 +4,15 @@ import {SelectItem} from '../api/selectitem';
 @customElement('p-selectbutton')
 @inject(Element)
 export class SelectButtonComponent {
-  @bindable choices: SelectItem[];
-  @bindable formfield: string;
-  @bindable unselectable: boolean;
+  @bindable options: SelectItem[];
   @bindable tabindex: number;
   @bindable multiple: boolean;
-  @bindable style: string;
-  @bindable styleClass: string;
   @bindable value: any;
+
   @bindable onChange;
 
   initialized: boolean;
+  stopNgOnChangesPropagation: boolean;
 
   constructor(element) {
     this.element=element;
@@ -24,35 +22,34 @@ export class SelectButtonComponent {
   attached(){
     $(this.element.children[0]).puiselectbutton({
       value: this.value,
-      unselectable: this.unselectable,
       tabindex : this.tabindex,
-      formfield: this.formfield,
       multiple: this.multiple,
       enhanced: true,
-      style: this.style,
-      styleClass: this.styleClass,
       change: (event: Event, ui: PrimeUI.SelectbuttonEventParams) => {
-        ig(this.onChange){
+        console.dir(ui);
+        this.value=this.options[ui.index].value;
+        this.stopNgOnChangesPropagation = true;
+        if(this.onChange){
           this.onChange({ originalEvent: event, value: ui.value });
         }
-        /*  if (this.multiple) {
-        var values: any = [];
-        for (var i = 0; i < ui.index.length; i++) {
-        values.push(this.choices[ui.index[i]].value);
-        this.valueChange.next(values);
+        if (this.multiple) {
+          var values: any = [];
+          for (var i = 0; i < ui.index.length; i++) {
+            values.push(this.choices[ui.index[i]].value);
+            //this.valueChange.next(values);
+          }
+          this.value=values;
+        }
+        else {
+          //this.valueChange.next(this.choices[ui.index].value);
+        }
       }
+    });
+    this.initialized=true;
+  }
 
-    }
-    else {
-    this.valueChange.next(this.choices[ui.index].value);
-  }*/
-}
-});
-this.initialized=true;
-}
-
-detatched(){
-  $(this.element.children[0]).puiselectbutton('destroy');
-  this.initialized=false;
-}
+  detatched(){
+    $(this.element.children[0]).puiselectbutton('destroy');
+    this.initialized=false;
+  }
 }

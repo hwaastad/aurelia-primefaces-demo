@@ -25,7 +25,8 @@ export class App {
       { route: 'inputtextarea',         name: 'inputtextarea',        moduleId: 'pages/components/inputtextarea',        nav: true, title: 'InputTextArea' },
       { route: 'messages',         name: 'messages',        moduleId: 'pages/components/messages',        nav: true, title: 'Messages' },
       { route: 'listbox',         name: 'listbox',        moduleId: 'pages/components/listbox',        nav: true, title: 'ListBox' },
-      { route: 'dialog',         name: 'dialog',        moduleId: 'pages/components/dialog',        nav: true, title: 'Dialog' }
+      { route: 'dialog',         name: 'dialog',        moduleId: 'pages/components/dialog',        nav: true, title: 'Dialog' },
+      { route: 'selectbutton',         name: 'selectbutton',        moduleId: 'pages/components/selectbutton',        nav: true, title: 'SelectButton' }
     ]);
 
     this.router = router;
