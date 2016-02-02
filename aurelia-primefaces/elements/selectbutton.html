@@ -1,0 +1,7 @@
+<template>
+  <div class="pui-selectbutton pui-buttonset ui-widget ui-corner-all pui-buttonset-3">
+    <div *ngFor="#choice of choices;" class="pui-button ui-widget ui-state-default pui-button-text-only" attr.data-value.bind="choice.value">
+      <span class="pui-button-text ui-c">${choice.label}</span>
+    </div>
+  </div>
+</template>
