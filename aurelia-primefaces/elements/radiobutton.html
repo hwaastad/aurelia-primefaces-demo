@@ -1,0 +1,12 @@
+<template>
+  <div class="pui-radiobutton ui-widget">
+    <div class="ui-helper-hidden-accessible">
+      <input ref="rb" type="radio" name="${name}" value="${value}" checked.two-way="true"/>
+      checked: ${rb.checked}
+    </div>
+    <div class="pui-radiobutton-box ui-widget pui-radiobutton-relative ui-state-default ${hover ? 'ui-state-hover':''} ${rb.checked ? 'ui-state-active':''} ${disabled ? 'ui-state-disabled':''}" click.delegate="onClick(rb)"
+    mouseover.delegate="hover=true" mouseout.delegate="hover=false">
+    <span class="pui-radiobutton-icon pui-icon ${rb.checked ? 'fa fa-fw fa-circle':''}"></span>
+  </div>
+</div>
+</template>
