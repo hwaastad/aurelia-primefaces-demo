@@ -48,7 +48,7 @@ System.config({
       "util": "npm:util@0.10.3"
     },
     "github:redpelicans/aurelia-material@master": {
-      "google/material-design-lite": "github:google/material-design-lite@1.1.0",
+      "google/material-design-lite": "github:google/material-design-lite@1.1.1",
       "jquery": "github:components/jquery@2.2.0",
       "lodash": "npm:lodash@3.10.1"
     },
