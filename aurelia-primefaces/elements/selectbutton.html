@@ -1,0 +1,7 @@
+<template>
+  <div class="pui-selectbutton pui-buttonset ui-widget ui-corner-all">
+    <div repeat.for="option of options" class="pui-button ui-widget ui-state-default pui-button-text-only" attr.data-value.bind="option.value">
+      <span class="pui-button-text pui-c">${option.label}</span>
+    </div>
+  </div>
+</template>

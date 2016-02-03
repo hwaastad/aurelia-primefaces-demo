@@ -15,4 +15,5 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/messages');
   frameworkConfig.globalResources('./elements/listbox');
   frameworkConfig.globalResources('./elements/dialog');
+  frameworkConfig.globalResources('./elements/selectbutton');
 }
