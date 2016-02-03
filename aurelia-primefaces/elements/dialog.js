@@ -4,24 +4,24 @@ import {inject, customElement,bindable} from 'aurelia-framework';
 @inject(Element)
 export class DialogComponent {
 
-  @bindable  header: string;
-  @bindable  draggable: boolean = true;
-  @bindable  resizable: boolean = true;
-  @bindable  minWidth: number;
-  @bindable  minHeight: number;
-  @bindable  width: any;
-  @bindable  height: any;
-  @bindable  visible: boolean;
-  @bindable  modal: boolean;
-  @bindable  showEffect: string;
-  @bindable  hideEffect: string;
-  @bindable  effectDuration: any;
-  @bindable  closeOnEscape: boolean = true;
-  @bindable  rtl: boolean;
-  @bindable  closable: boolean = true;
-  @bindable  minimizable: boolean;
-  @bindable  maximizable: boolean;
-  @bindable  responsive: boolean;
+  @bindable header: string = undefined;
+  @bindable draggable: boolean = true;
+  @bindable resizable: boolean = true;
+  @bindable minWidth: number = undefined;
+  @bindable minHeight: number = undefined;
+  @bindable width: any = undefined;
+  @bindable height: any = undefined;
+  @bindable visible: boolean;
+  @bindable modal: boolean;
+  @bindable showEffect: string = undefined;
+  @bindable hideEffect: string = undefined;
+  @bindable effectDuration: any = undefined;
+  @bindable closeOnEscape: boolean = true;
+  @bindable rtl: boolean;
+  @bindable closable: boolean = true;
+  @bindable minimizable: boolean
+  @bindable maximizable: boolean;
+  @bindable responsive: boolean;
   @bindable onBeforeShow;
   @bindable onAfterShow;
   @bindable onBeforeHide;
@@ -36,7 +36,6 @@ export class DialogComponent {
 
 
   constructor(element) {
-    console.log('asdasdasd');
     this.element=element;
     this.initialized=false;
   }
@@ -64,16 +63,26 @@ export class DialogComponent {
       beforeShow: this.onBeforeShow ? (event: Event) => { this.onBeforeShow({event: event}); } : null,
       afterShow: this.onAfterShow ? (event: Event) => { this.onAfterShow({event: event}); } : null,
       beforeHide: this.onBeforeHide ? (event: Event) => { this.onBeforeHide({event: event}); } : null,
-      afterHide: this.onAfterHide ? (event: Event) => {
-        this.stopNgOnChangesPropagation = true;
-        this.visibleChange({false});
-        this.onAfterHide({event: event});
-      } : null,
+      afterHide: (event: Event) => {
+        this.visible=false;
+        if(this.onAfterHide){
+          this.onAfterHide({event: event});
+        }
+      },
       minimize: this.onMinimize ? (event: Event) => { this.onMinimize({event: event}); } : null,
       maximize: this.onMaximize ? (event: Event) => { this.onMaximize({event: event}); } : null,
       enhanced: true
     });
     this.initialized = true;
+  }
+
+  visibleChanged(newValue,oldValue){
+    if (this.initialized) {
+      if(this.stopNgOnChangesPropagation){
+        return;
+      }
+      $(this.element.children[0]).puidialog('option','visible',newValue);
+    }
   }
 
   detached() {

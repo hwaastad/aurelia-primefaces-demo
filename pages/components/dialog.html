@@ -7,7 +7,7 @@
   </div>
 
   <div class="ContentSideSections Implementation">
-    <p-dialog id="dlgelement" header="Godfather I" visible.bind="display" modal.bind="modal" minimizable.bind="minimizable" maximizable.bind="maximizable" show-effect.bind="fade" hide-effect.bind="fade">
+    <p-dialog id="dlgelement" header="Godfather I" visible.two-way="display" modal.bind="modal" minimizable.bind="true" maximizable.bind="true" show-effect.bind="fade" hide-effect.bind="fade">
       <p>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
         His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
         Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
@@ -15,7 +15,7 @@
         but given to ruthless violence whenever anything stands against the good of the family.</p>
       </p-dialog>
 
-      <button type="text" click.delegate="showDialog()" p-button icon="fa-external-link-square">Show</button>
+      <button type="text" click.delegate="showDialog()" p-button icon="fa fa-external-link-square">Show</button>
     </div>
 
     <div class="ContentSideSections Source">
