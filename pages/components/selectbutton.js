@@ -15,6 +15,7 @@ export class DemoSelectButton {
   }
 
   clear() {
+    console.log('clearing atts');
     this.selectedType = null;
     this.selectedTypes = [];
   }
