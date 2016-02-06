@@ -27,7 +27,8 @@ export class App {
       { route: 'listbox',         name: 'listbox',        moduleId: 'pages/components/listbox',        nav: true, title: 'ListBox' },
       { route: 'dialog',         name: 'dialog',        moduleId: 'pages/components/dialog',        nav: true, title: 'Dialog' },
       { route: 'selectbutton',         name: 'selectbutton',        moduleId: 'pages/components/selectbutton',        nav: true, title: 'SelectButton' },
-      { route: 'radiobutton',         name: 'radiobutton',        moduleId: 'pages/components/radiobutton',        nav: true, title: 'RadioButton' }
+      { route: 'radiobutton',         name: 'radiobutton',        moduleId: 'pages/components/radiobutton',        nav: true, title: 'RadioButton' },
+      { route: 'calendar',         name: 'calendar',        moduleId: 'pages/components/calendar',        nav: true, title: 'Calendar' }
     ]);
 
     this.router = router;
