@@ -20,4 +20,5 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/radiobutton');
   frameworkConfig.globalResources('./elements/calendar');
   frameworkConfig.globalResources('./elements/dropdown');
+  frameworkConfig.globalResources('./elements/togglebutton');
 }

@@ -30,7 +30,8 @@ export class App {
       { route: 'radiobutton',         name: 'radiobutton',        moduleId: 'pages/components/radiobutton',        nav: true, title: 'RadioButton' },
       { route: 'calendar',         name: 'calendar',        moduleId: 'pages/components/calendar',        nav: true, title: 'Calendar' },
       { route: 'dropdown',         name: 'dropdown',        moduleId: 'pages/components/dropdown',        nav: true, title: 'DropDown' },
-      { route: 'spinner',         name: 'spinner',        moduleId: 'pages/components/spinner',        nav: true, title: 'Spinner' }
+      { route: 'spinner',         name: 'spinner',        moduleId: 'pages/components/spinner',        nav: true, title: 'Spinner' },
+      { route: 'toggelbutton',         name: 'toggelbutton',        moduleId: 'pages/components/toggelbutton',        nav: true, title: 'ToggelButton' }
     ]);
 
     this.router = router;
