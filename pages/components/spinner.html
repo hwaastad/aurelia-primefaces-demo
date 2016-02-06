@@ -1,0 +1,25 @@
+<template>
+    <div class="ContentSideSections">
+        <div class="Content100 overHidden TextShadow">
+            <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">Spinner</span>
+            <span class="defaultText dispTable">Spinner is an input component to provide a numerical input.</span>
+        </div>
+    </div>
+
+    <div class="ContentSideSections Implementation">
+        <h3 class="first">Basic</h3>
+        <input type="text" size="30" p-spinner model.two-way="val1" />
+
+        <h3>Min/Max</h3>
+        <input type="text" size="30" p-spinner="min:0;max:100" value.two-way="val2" />
+
+        <h3>Step</h3>
+        <input type="text" size="30" p-spinner="step:0.25" value.two-way="val3" />
+
+        <h3>Prefix</h3>
+        <input type="text" size="30" p-spinner="prefix:$" value.two-way="val4" />
+    </div>
+
+    <div class="ContentSideSections Source">
+    </div>
+</template>

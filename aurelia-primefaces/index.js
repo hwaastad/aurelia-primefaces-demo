@@ -3,6 +3,7 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./attributes/password');
   frameworkConfig.globalResources('./attributes/inputtextarea');
   frameworkConfig.globalResources('./attributes/inputtext');
+  frameworkConfig.globalResources('./attributes/spinner');
   frameworkConfig.globalResources('./elements/tabpanel');
   frameworkConfig.globalResources('./elements/tabview');
   frameworkConfig.globalResources('./elements/accordion');
