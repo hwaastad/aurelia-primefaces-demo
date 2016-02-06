@@ -21,11 +21,6 @@ export class CheckboxComponent {
     }
     this.element = element;
   }
-
-  bind(){
-
-  }
-
   isChecked(value) {
     return this.findValueIndex(value) !== -1;
   }
