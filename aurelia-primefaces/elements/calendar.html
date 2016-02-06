@@ -1,0 +1,6 @@
+<template>
+    <input if.bind="!inline" type="text" attr.style.bind="style" attr.placeholder.bind="placeholder" value.bind="value||''" input.delegate="valueChange.next($event.target.value)"
+    readonly.bind="readonlyInput" class="pui-inputtext ui-widget ui-state-default ui-corner-all ${hovered ? 'ui-state-hover':''} ${focused ? 'ui-state-focus':''} ${disabled ? 'ui-state-disabled':''}" disabled.bind="disabled" mouseenter.delegate="hovered=true"
+    mouseleave.delegate="hovered=false" focus.delegate="focused=true" blur.delegate="focused=false"/>
+    <div if.bind="inline"></div>
+</template>

@@ -9,6 +9,7 @@
                 click.delegate="activemenuid = inputmenutitle.id"><img src="resources/images/mono/input.svg" /><img class="hiddenIcons" src="resources/images/mono/inputBlue.svg" /><span class="MainLinkText">Input</span></span>
                 <div class="SubMenuLinkContainer ${(inputmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(inputmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
                     <a class="SubMenuLink" href="#calendar" click.call="mobilemenuactive = false">&#9679; Calendar</a>
+                    <a class="SubMenuLink" href="#dropdown" click.call="mobilemenuactive = false">&#9679; DropDown*</a>
                     <a class="SubMenuLink" href="#checkbox" click.call="mobilemenuactive = false">&#9679; Checkbox</a>
                     <a class="SubMenuLink" href="#inputtext" click.call="mobilemenuactive = false">&#9679; InputText</a>
                     <a class="SubMenuLink" href="#listbox" click.call="mobilemenuactive = false">&#9679; ListBox</a>
