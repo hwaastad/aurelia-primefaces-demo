@@ -22,4 +22,5 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/dropdown');
   frameworkConfig.globalResources('./elements/togglebutton');
   frameworkConfig.globalResources('./elements/inputswitch');
+  frameworkConfig.globalResources('./elements/progressbar');
 }

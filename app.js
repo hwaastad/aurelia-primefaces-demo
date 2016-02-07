@@ -32,7 +32,8 @@ export class App {
       { route: 'dropdown',         name: 'dropdown',        moduleId: 'pages/components/dropdown',        nav: true, title: 'DropDown' },
       { route: 'spinner',         name: 'spinner',        moduleId: 'pages/components/spinner',        nav: true, title: 'Spinner' },
       { route: 'toggelbutton',         name: 'toggelbutton',        moduleId: 'pages/components/toggelbutton',        nav: true, title: 'ToggelButton' },
-      { route: 'inputswitch',         name: 'inputswitch',        moduleId: 'pages/components/inputswitch',        nav: true, title: 'InputSwitch' }
+      { route: 'inputswitch',         name: 'inputswitch',        moduleId: 'pages/components/inputswitch',        nav: true, title: 'InputSwitch' },
+      { route: 'progressbar',         name: 'progressbar',        moduleId: 'pages/components/progressbar',        nav: true, title: 'ProgressBar' }
     ]);
 
     this.router = router;
