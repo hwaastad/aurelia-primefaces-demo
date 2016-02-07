@@ -39,7 +39,7 @@
                 click.trigger="activemenuid = panelmenutitle.id"><img src="resources/images/mono/panel.svg" /><img class="hiddenIcons" src="resources/images/mono/panelBlue.svg" /><span class="MainLinkText">Panel</span></span>
                 <div class="SubMenuLinkContainer ${(panelmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(panelmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
                     <a class="SubMenuLink" href="#accordion" click.call="mobilemenuactive = false">&#9679; Accordion</a>
-                    <a class="SubMenuLink" [routerLink]="['FieldsetDemo']" click.call="mobilemenuactive = false">&#9679; Fieldset</a>
+                    <a class="SubMenuLink" href="#fieldset" click.call="mobilemenuactive = false">&#9679; Fieldset*</a>
                     <a class="SubMenuLink" href="#panel" click.call="mobilemenuactive = false">&#9679; Panel</a>
                     <a class="SubMenuLink" [routerLink]="['GridDemo']" click.call="mobilemenuactive = false">&#9679; Grid</a>
                     <a class="SubMenuLink" href="#tabview" click.call="mobilemenuactive = false">&#9679; TabView</a>
