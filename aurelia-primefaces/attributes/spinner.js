@@ -3,13 +3,13 @@ import {inject, customAttribute, bindable} from 'aurelia-framework';
 @customAttribute('p-spinner')
 @inject(Element)
 export class SpinnerDirective {
-    @bindable step=undefined;
+    @bindable step = undefined;
     @bindable min = undefined;
-    @bindable max=undefined;
-    @bindable prefix=undefined;
-    @bindable suffix=undefined;
-    @bindable disabled=undefined;
-    
+    @bindable max = undefined;
+    @bindable prefix = undefined;
+    @bindable suffix = undefined;
+    @bindable disabled = undefined;
+
     @bindable value;
 
     initialized: boolean;
@@ -32,8 +32,8 @@ export class SpinnerDirective {
     stepChanges(newValue, oldValue) {
         console.log('change...');
     }
-    
-    valueChanged(newValue,oldValue){
+
+    valueChanged(newValue, oldValue) {
         console.log('change model...');
     }
 
