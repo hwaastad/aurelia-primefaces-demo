@@ -1,4 +1,4 @@
-import {inject, customElement, bindable} from 'aurelia-framework';
+import {inject, noView, customElement, bindable} from 'aurelia-framework';
 
 @customElement('p-fieldset')
 @inject(Element)
@@ -35,7 +35,7 @@ export class FieldSetConmponent {
 
     propertyChanged(property, newValue, oldValue) {
         if (this.initialized) {
-            $(this.element.children[0]).puifieldset('option', property, newValue);
+            $(this.element).puifieldset('option', property, newValue);
         }
     }
 
