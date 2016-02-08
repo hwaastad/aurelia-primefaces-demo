@@ -20,14 +20,11 @@ export class PanelComponent {
   initialized: boolean;
 
   constructor(element){
-    console.log('panel contruct');
     this.element=element;
     this.initialized = false;
   }
 
   attached(){
-    console.log('panel attached');
-    console.log('closable: ' + this.closable + ' toggleable: ' + this.toggleable);
     $(this.element.children[0]).puipanel({
       title: this.header,
       toggleable: this.toggleable,
@@ -48,29 +45,8 @@ export class PanelComponent {
   }
 
   detached(){
-    console.log('panel detached');
     $(this.element.children[0]).puipanel('destroy');
     this.initialized = false;
-  }
-
-  //Logging
-  bind() {
-    console.log('panel bind');
-  }
-
-  activated() {
-    console.log('panel activated');
-  }
-  created() {
-    console.log('panel created');
-  }
-
-  activate() {
-    console.log('panel activate');
-  }
-
-  canActivate() {
-    console.log('panel canActivate');
   }
 
 }

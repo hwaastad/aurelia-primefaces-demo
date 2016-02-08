@@ -3,14 +3,14 @@ import {inject, customElement, bindable} from 'aurelia-framework';
 @customElement('p-dropdown')
 @inject(Element)
 export class DropDownComponent {
-    @bindable options;
-    @bindable value;
-    @bindable scrollHeight;
-    @bindable customContent;
-    @bindable filter;
-    @bindable filterMatchMode;
-    @bindable style;
-    @bindable styleClass;
+    @bindable options=undefined;
+    @bindable value=undefined;
+    @bindable scrollHeight=undefined;
+    @bindable customContent=undefined;
+    @bindable filter=undefined;
+    @bindable filterMatchMode=undefined;
+    @bindable style=undefined;
+    @bindable styleClass=undefined;
     
     selectElement;
 
