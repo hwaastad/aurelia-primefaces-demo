@@ -25,12 +25,12 @@ System.config({
     "core-js": "npm:core-js@2.0.3",
     "css": "github:systemjs/plugin-css@0.1.20",
     "fontawesome": "bower:fontawesome@4.5.0",
-    "primeui": "bower:primeui@3.0.1",
+    "primeui": "bower:primeui@3.0.2",
     "redpelicans/aurelia-material": "github:redpelicans/aurelia-material@master",
     "bower:jqueryui@1.11.4": {
       "jquery": "bower:jquery@2.2.0"
     },
-    "bower:primeui@3.0.1": {
+    "bower:primeui@3.0.2": {
       "fontawesome": "bower:fontawesome@4.5.0",
       "jquery": "bower:jquery@2.2.0",
       "jqueryui": "bower:jqueryui@1.11.4"
