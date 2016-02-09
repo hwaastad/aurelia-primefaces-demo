@@ -20,27 +20,26 @@ export class BarChartComponent {
     @bindable onBarsSelect;
 
     initialized;
-    chart;
+    chart = null;
     differ;
 
     constructor(element) {
         this.element = element;
         //this.differ = differs.find([]).create(null);
     }
-    
-    attached(){
+
+    attached() {
         this.initChart();
         this.initialized = true;
     }
 
 
     onCanvasClick(event) {
-        console.log('canvas click.....');
         console.dir(this.chart);
         if (this.chart) {
             let activeBars = this.chart.getBarsAtEvent(event);
             if (activeBars) {
-                this.onBarsSelect.next({ originalEvent: event, bars: activeBars });
+                this.onBarsSelect({ originalEvent: event, bars: activeBars });
             }
         }
     }
@@ -62,5 +61,13 @@ export class BarChartComponent {
             });
         }
 
+    }
+
+    detached() {
+        if (this.chart) {
+            this.chart.destroy();
+            this.initialized = false;
+            this.chart = null;
+        }
     }
 }
