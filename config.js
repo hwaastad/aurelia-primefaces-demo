@@ -22,6 +22,7 @@ System.config({
     "aurelia-router": "npm:aurelia-router@1.0.0-beta.1.1.1",
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
+    "chart.js": "npm:chart.js@1.0.2",
     "core-js": "npm:core-js@2.1.0",
     "css": "github:systemjs/plugin-css@0.1.20",
     "fontawesome": "bower:fontawesome@4.5.0",
@@ -183,6 +184,11 @@ System.config({
     },
     "npm:babel-runtime@5.8.35": {
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:chart.js@1.0.2": {
+      "child_process": "github:jspm/nodelibs-child_process@0.1.0",
+      "fs": "github:jspm/nodelibs-fs@0.1.2",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:core-js@2.1.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",

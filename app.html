@@ -44,10 +44,22 @@
                     <a class="SubMenuLink" [routerLink]="['GridDemo']" click.call="mobilemenuactive = false">&#9679; Grid</a>
                     <a class="SubMenuLink" href="#tabview" click.call="mobilemenuactive = false">&#9679; TabView</a>
                 </div>
+                
                 <span id="menu_overlay" ref="overlaymenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="overlaymenutitle.id == activemenuid"
                 click.delegate="activemenuid = overlaymenutitle.id"><img src="resources/images/mono/overlay.svg" /><img class="hiddenIcons" src="resources/images/mono/overlayBlue.svg" /><span class="MainLinkText">Overlay</span></span>
                 <div class="SubMenuLinkContainer ${(overlaymenutitle.id == activemenuid) ? 'submenushow' : ''} ${(overlaymenutitle.id != activemenuidd) ? 'submenuhide': ''}">
                     <a class="SubMenuLink" href="#dialog" click.call="mobilemenuactive = false">&#9679; Dialog*</a>
+                </div>
+
+                <span id="menu_chart" ref="chartmenutitle"" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="chartmenutitle.id == activemenuid"
+                click.delegate="activemenuid = chartmenutitle.id"><img src="resources/images/mono/charts.svg" /><img class="hiddenIcons" src="resources/images/mono/chartsBlue.svg" /><span class="MainLinkText">Charts</span></span>
+                <div class="SubMenuLinkContainer ${(chartmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(chartmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+                    <a class="SubMenuLink" href="#barchart" click.call="mobilemenuactive = false">&#9679; Bar*</a>
+                    <a class="SubMenuLink" [routerLink]="['DoughnutChartDemo']" (click)="mobilemenuactive = false">&#9679; Doughnut*</a>
+                    <a class="SubMenuLink" [routerLink]="['LineChartDemo']" click.delegate="mobilemenuactive = false">&#9679; Line*</a>
+                    <a class="SubMenuLink" [routerLink]="['PolarAreaChartDemo']" (click)="mobilemenuactive = false">&#9679; PolarArea*</a>
+                    <a class="SubMenuLink" [routerLink]="['PieChartDemo']" (click)="mobilemenuactive = false">&#9679; Pie*</a>
+                    <a class="SubMenuLink" [routerLink]="['RadarChartDemo']" (click)="mobilemenuactive = false">&#9679; Radar*</a>
                 </div>
 
                 <span id="menu_messages" ref="messagesmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="messagesmenutitle.id == activemenuid"
