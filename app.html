@@ -75,7 +75,7 @@
           <span class="MainLinkText">Multimedia</span>
                 </span>
                 <div class="SubMenuLinkContainer ${(multimediamenutitle.id == activemenuid) ? 'submenushow' : ''} ${(multimediamenutitle.id != activemenuid) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" [routerLink]="['GalleriaDemo']" click.delegate="mobilemenuactive = false">&#9679; Galleria</a>
+                    <a class="SubMenuLink" href="#galleria" click.call="mobilemenuactive = false">&#9679; Galleria</a>
                 </div>
                 <span id="menu_misc" ref="misctitle" class="MenuSideMainLink bordersOfMenuSide MenuSideMainLinkDark" [class.MenuSideMainLinkDark]="misctitle.id == activemenuid"
                 click.delegate="activemenuid = misctitle.id"><img src="resources/images/mono/misc.svg">

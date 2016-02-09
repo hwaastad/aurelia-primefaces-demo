@@ -24,5 +24,6 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/inputswitch');
   frameworkConfig.globalResources('./elements/progressbar');
   frameworkConfig.globalResources('./elements/fieldset');
+  frameworkConfig.globalResources('./elements/galleria');
   frameworkConfig.globalResources('./elements/barchart');
 }
