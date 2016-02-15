@@ -54,9 +54,9 @@
                 <span id="menu_chart" ref="chartmenutitle"" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="chartmenutitle.id == activemenuid"
                 click.delegate="activemenuid = chartmenutitle.id"><img src="resources/images/mono/charts.svg" /><img class="hiddenIcons" src="resources/images/mono/chartsBlue.svg" /><span class="MainLinkText">Charts</span></span>
                 <div class="SubMenuLinkContainer ${(chartmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(chartmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" href="#barchart" click.call="mobilemenuactive = false">&#9679; Bar*</a>
+                    <a class="SubMenuLink" href="#barchart" click.call="mobilemenuactive = false">&#9679; Bar</a>
                     <a class="SubMenuLink" [routerLink]="['DoughnutChartDemo']" (click)="mobilemenuactive = false">&#9679; Doughnut*</a>
-                    <a class="SubMenuLink" [routerLink]="['LineChartDemo']" click.delegate="mobilemenuactive = false">&#9679; Line*</a>
+                    <a class="SubMenuLink" href="#linechart" click.call="mobilemenuactive = false">&#9679; Line</a>
                     <a class="SubMenuLink" [routerLink]="['PolarAreaChartDemo']" (click)="mobilemenuactive = false">&#9679; PolarArea*</a>
                     <a class="SubMenuLink" [routerLink]="['PieChartDemo']" (click)="mobilemenuactive = false">&#9679; Pie*</a>
                     <a class="SubMenuLink" [routerLink]="['RadarChartDemo']" (click)="mobilemenuactive = false">&#9679; Radar*</a>

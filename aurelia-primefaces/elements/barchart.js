@@ -35,11 +35,12 @@ export class BarChartComponent {
 
 
     onCanvasClick(event) {
-        console.dir(this.chart);
         if (this.chart) {
             let activeBars = this.chart.getBarsAtEvent(event);
             if (activeBars) {
-                this.onBarsSelect({ originalEvent: event, bars: activeBars });
+                if (this.onBarsSelect) {
+                    this.onBarsSelect({ originalEvent: event, bars: activeBars });
+                }
             }
         }
     }

@@ -26,4 +26,5 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/fieldset');
   frameworkConfig.globalResources('./elements/galleria');
   frameworkConfig.globalResources('./elements/barchart');
+  frameworkConfig.globalResources('./elements/linechart');
 }
