@@ -36,7 +36,8 @@ export class App {
       { route: 'progressbar',         name: 'progressbar',        moduleId: 'pages/components/progressbar',        nav: true, title: 'ProgressBar' },
       { route: 'fieldset',         name: 'fieldset',        moduleId: 'pages/components/fieldset',        nav: true, title: 'FieldSet' },
       { route: 'galleria',         name: 'galleria',        moduleId: 'pages/components/galleria',        nav: true, title: 'Galleria' },
-      { route: 'barchart',         name: 'barchart',        moduleId: 'pages/components/barchart',        nav: true, title: 'BarChart' }
+      { route: 'barchart',         name: 'barchart',        moduleId: 'pages/components/barchart',        nav: true, title: 'BarChart' },
+      { route: 'linechart',         name: 'linechart',        moduleId: 'pages/components/linechart',        nav: true, title: 'LineChart' }
     ]);
 
     this.router = router;
