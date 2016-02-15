@@ -24,6 +24,7 @@ export class InputSwitchComponent {
                 enhanced: true,
                 change: (event: Event, ui: PrimeUI.InputSwitchEventParams) => {
                     this.stopNgOnChangesPropagation = true;
+                    this.checked = !this.checked;
                     /* this.checkedChange.next(ui.checked);
                      if (this.onChange) {
                          this.onChange.next({ originalEvent: event, checked: ui.checked });

@@ -1,5 +1,5 @@
 <template>
-  <div class="pui-listbox pui-inputtext ui-widget ui-widget-content ui-corner-all">
+  <div class="ui-listbox ui-inputtext ui-widget ui-widget-content ui-corner-all">
     <div class="ui-helper-hidden-accessible">
       <select>
         <option repeat.for="option of options" value.bind="option.value">${option.label}</option>
@@ -7,7 +7,7 @@
     </div>
 
     <ul class="pui-listbox-list" if.bind="!customContent">
-      <li repeat.for="option of options" class="pui-listbox-item ui-corner-all">
+      <li repeat.for="option of options" class="ui-listbox-item ui-corner-all">
         ${option.label}
       </li>
     </ul>

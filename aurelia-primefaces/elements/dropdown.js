@@ -21,8 +21,7 @@ export class DropDownComponent {
     }
 
     attached() {
-        this.selectElement = $(this.element).find(' > .pui-dropdown > div > select');
-        console.dir(this.selectElement);
+        this.selectElement = $(this.element).find(' > .ui-dropdown > div > select');
         this.selectElement.puidropdown({
             enhanced: true,
             value: this.value,

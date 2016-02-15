@@ -1,5 +1,5 @@
 export class DemoInputSwitch {
-    checked1: boolean = false;
+    checked1 = false;
 
-    checked2: boolean = true;
+    checked2 = true;
 }
