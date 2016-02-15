@@ -59,7 +59,7 @@ export class LineChartComponent {
     @bindable datasetFill = true;
     @bindable legend;
     @bindable legendTemplate = "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>";
-    onPointsSelect;
+    @bindable onPointsSelect;
 
     initialized;
     chart;
@@ -86,14 +86,16 @@ export class LineChartComponent {
         if (this.chart) {
             let activePoints = this.chart.getPointsAtEvent(event);
             if (activePoints) {
-                this.onPointsSelect.next({ originalEvent: event, points: activePoints });
+                if (this.onPointsSelect) {
+                    this.onPointsSelect({ originalEvent: event, points: activePoints });
+                }
             }
         }
     }
 
     initChart() {
         if (this.value) {
-            this.chart = new Chart(this.el.nativeElement.children[0].getContext("2d")).Line(this.value, {
+            this.chart = new Chart(this.element.children[0].getContext("2d")).Line(this.value, {
                 scaleShowGridLines: this.scaleShowGridLines,
                 scaleGridLineColor: this.scaleGridLineColor,
                 scaleGridLineWidth: this.scaleGridLineWidth,

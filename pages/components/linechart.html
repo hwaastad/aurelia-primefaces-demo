@@ -7,13 +7,13 @@
     </div>
 
     <div class="ContentSideSections Implementation">
-        <p-growl value.bind="msgs"></p-growl>
+        <p-growl value.bind="msgs" life="3000"></p-growl>
 
         <h3 class="first">Basic</h3>
         <p-linechart value.bind="data" width="640" height="320"></p-linechart>
 
         <h3>Interactive and Customized</h3>
-        <p-linechart value.bind="data" width="640" height="320" bezierCurve.bind="false" datasetFill.bind="false" onPointsSelect.delegate="onSelect($event)"></p-linechart>
+        <p-linechart value.bind="data" width="640" height="320" bezier-curve.bind="false" dataset-fill.bind="false" on-points-select.call="onSelect($event)"></p-linechart>
     </div>
 
     <div class="ContentSideSections Source">
