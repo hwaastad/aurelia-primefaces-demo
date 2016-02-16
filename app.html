@@ -1,110 +1,121 @@
 <template>
-    <div class="PC">
-        <div id="MENUSIDE" class="${mobilemenuactive ? 'active' : ''}">
-            <div id="MENUSIDEindent">
-                <span id="LOGO" class="">
+  <div class="PC">
+    <div id="MENUSIDE" class="${mobilemenuactive ? 'active' : ''}">
+      <div id="MENUSIDEindent">
+        <span id="LOGO" class="">
           <img alt="logo" src="resources/images/primeng.svg" />
         </span>
-                <span id="menu_input" ref="inputmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="inputmenutitle.id == activemenuid"
-                click.delegate="activemenuid = inputmenutitle.id"><img src="resources/images/mono/input.svg" /><img class="hiddenIcons" src="resources/images/mono/inputBlue.svg" /><span class="MainLinkText">Input</span></span>
-                <div class="SubMenuLinkContainer ${(inputmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(inputmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" href="#calendar" click.call="mobilemenuactive = false">&#9679; Calendar</a>
-                    <a class="SubMenuLink" href="#dropdown" click.call="mobilemenuactive = false">&#9679; DropDown*</a>
-                    <a class="SubMenuLink" href="#checkbox" click.call="mobilemenuactive = false">&#9679; Checkbox</a>
-                    <a class="SubMenuLink" href="#inputtext" click.call="mobilemenuactive = false">&#9679; InputText</a>
-                    <a class="SubMenuLink" href="#listbox" click.call="mobilemenuactive = false">&#9679; ListBox</a>
-                    <a class="SubMenuLink" href="#inputtextarea" click.call="mobilemenuactive = false">&#9679; InputTextArea</a>
-                    <a class="SubMenuLink" href="#password" click.call="mobilemenuactive = false">&#9679; Password</a>
-                    <a class="SubMenuLink" href="#radiobutton" click.call="mobilemenuactive = false">&#9679; RadioButton</a>
-                    <a class="SubMenuLink" href="#spinner" click.call="mobilemenuactive = false">&#9679; Spinner</a>
-                    <a class="SubMenuLink" href="#rating" click.call="mobilemenuactive = false">&#9679; Rating</a>
-                    <a class="SubMenuLink" href="#selectbutton" click.call="mobileMenuActive = false">&#9679; SelectButton</a>
-                    <a class="SubMenuLink" href="#toggelbutton" click.call="mobilemenuactive = false">&#9679; ToggleButton</a>
-                    <a class="SubMenuLink" href="#inputswitch" click.call="mobilemenuactive = false">&#9679; InputSwitch</a>
-                </div>
-
-                <span id="button_menutitle" ref="buttonmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="buttonmenutitle.id == activemenuid"
-                click.delegate="activemenuid = buttonmenutitle.id"><img src="resources/images/mono/button.svg" /><img class="hiddenIcons" src="resources/images/mono/buttonBlue.svg" /><span class="MainLinkText">Button</span></span>
-                <div class="SubMenuLinkContainer ${(buttonmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(buttonmenutitle.id != activemenuid) ? 'submenuhide': ''}">
-                    <a href="#button" class="SubMenuLink" click.call="mobilemenuactive = false">&#9679; Button</a>
-                </div>
-
-                <span id="menu_data" ref="datamenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="datamenutitle.id == activemenuid"
-                click.delegate="activemenuid = datamenutitle.id"><img src="resources/images/mono/data.svg" /><img class="hiddenIcons" src="resources/images/mono/dataBlue.svg" /><span class="MainLinkText">Data</span></span>
-                <div class="SubMenuLinkContainer ${(datamenutitle.id == activemenuid) ? 'submenushow' : ''} ${(datamenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" href="#datatable" click.call="mobilemenuactive = false">&#9679; Datatable</a>
-                </div>
-
-                <span id="menu_panel" ref="panelmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="panelmenutitle.id == activemenuid"
-                click.trigger="activemenuid = panelmenutitle.id"><img src="resources/images/mono/panel.svg" /><img class="hiddenIcons" src="resources/images/mono/panelBlue.svg" /><span class="MainLinkText">Panel</span></span>
-                <div class="SubMenuLinkContainer ${(panelmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(panelmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" href="#accordion" click.call="mobilemenuactive = false">&#9679; Accordion</a>
-                    <a class="SubMenuLink" href="#fieldset" click.call="mobilemenuactive = false">&#9679; Fieldset</a>
-                    <a class="SubMenuLink" href="#panel" click.call="mobilemenuactive = false">&#9679; Panel</a>
-                    <a class="SubMenuLink" [routerLink]="['GridDemo']" click.call="mobilemenuactive = false">&#9679; Grid</a>
-                    <a class="SubMenuLink" href="#tabview" click.call="mobilemenuactive = false">&#9679; TabView</a>
-                </div>
-                
-                <span id="menu_overlay" ref="overlaymenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="overlaymenutitle.id == activemenuid"
-                click.delegate="activemenuid = overlaymenutitle.id"><img src="resources/images/mono/overlay.svg" /><img class="hiddenIcons" src="resources/images/mono/overlayBlue.svg" /><span class="MainLinkText">Overlay</span></span>
-                <div class="SubMenuLinkContainer ${(overlaymenutitle.id == activemenuid) ? 'submenushow' : ''} ${(overlaymenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" href="#dialog" click.call="mobilemenuactive = false">&#9679; Dialog</a>
-                </div>
-
-                <span id="menu_chart" ref="chartmenutitle"" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="chartmenutitle.id == activemenuid"
-                click.delegate="activemenuid = chartmenutitle.id"><img src="resources/images/mono/charts.svg" /><img class="hiddenIcons" src="resources/images/mono/chartsBlue.svg" /><span class="MainLinkText">Charts</span></span>
-                <div class="SubMenuLinkContainer ${(chartmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(chartmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" href="#barchart" click.call="mobilemenuactive = false">&#9679; Bar</a>
-                    <a class="SubMenuLink" [routerLink]="['DoughnutChartDemo']" (click)="mobilemenuactive = false">&#9679; Doughnut*</a>
-                    <a class="SubMenuLink" href="#linechart" click.call="mobilemenuactive = false">&#9679; Line</a>
-                    <a class="SubMenuLink" [routerLink]="['PolarAreaChartDemo']" (click)="mobilemenuactive = false">&#9679; PolarArea*</a>
-                    <a class="SubMenuLink" href="#piechart" click.call="mobilemenuactive = false">&#9679; Pie*</a>
-                    <a class="SubMenuLink" [routerLink]="['RadarChartDemo']" (click)="mobilemenuactive = false">&#9679; Radar*</a>
-                </div>
-
-                <span id="menu_messages" ref="messagesmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="messagesmenutitle.id == activemenuid"
-                click.delegate="activemenuid = messagesmenutitle.id"><img src="resources/images/mono/message.svg" /><img class="hiddenIcons" src="resources/images/mono/messageBlue.svg" /><span class="MainLinkText">Messages</span></span>
-                <div class="SubMenuLinkContainer ${(messagesmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(messagesmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" href="#growl" click.call="mobilemenuactive = false">&#9679; Growl</a>
-                    <a class="SubMenuLink" href="#messages" click.call="mobilemenuactive = false">&#9679; Messages</a>
-                </div>
-
-                <span id="menu_multimedia" ref="multimediamenutitle" class="MenuSideMainLink bordersOfMenuSide MenuSideMainLinkDark" [class.MenuSideMainLinkDark]="multimediamenutitle.id == activemenuid"
-                click.delegate="activemenuid = multimediamenutitle.id"><img src="resources/images/mono/multimedia.svg">
-          <img class="hiddenIcons" src="resources/images/mono/multimediaBlue.svg" style="opacity: 0;">
-          <span class="MainLinkText">Multimedia</span>
-                </span>
-                <div class="SubMenuLinkContainer ${(multimediamenutitle.id == activemenuid) ? 'submenushow' : ''} ${(multimediamenutitle.id != activemenuid) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" href="#galleria" click.call="mobilemenuactive = false">&#9679; Galleria</a>
-                </div>
-                <span id="menu_misc" ref="misctitle" class="MenuSideMainLink bordersOfMenuSide MenuSideMainLinkDark" [class.MenuSideMainLinkDark]="misctitle.id == activemenuid"
-                click.delegate="activemenuid = misctitle.id"><img src="resources/images/mono/misc.svg">
-        <img class="hiddenIcons" src="resources/images/mono/miscBlue.svg" style="opacity: 0;">
-        <span class="MainLinkText">Misc</span>
-                </span>
-                <div class="SubMenuLinkContainer ${(misctitle.id == activemenuid) ? 'submenushow' : ''} ${(misctitle.id != activemenuid) ? 'submenuhide': ''}">
-                    <a class="SubMenuLink" [routerLink]="['Theming']" click.delegate="mobilemenuactive = false">&#9679; Theming</a>
-                    <a class="SubMenuLink" href="#progressbar" click.call="mobilemenuactive = false">&#9679; ProgressBar</a>
-                </div>
-            </div>
+        <span id="menu_input" ref="inputmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="inputmenutitle.id == activemenuid"
+        click.delegate="activemenuid = inputmenutitle.id"><img src="resources/images/mono/input.svg" /><img class="hiddenIcons" src="resources/images/mono/inputBlue.svg" /><span class="MainLinkText">Input</span></span>
+        <div class="SubMenuLinkContainer ${(inputmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(inputmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+          <a class="SubMenuLink" href="#calendar" click.call="mobilemenuactive = false">&#9679; Calendar</a>
+          <a class="SubMenuLink" href="#dropdown" click.call="mobilemenuactive = false">&#9679; DropDown*</a>
+          <a class="SubMenuLink" href="#checkbox" click.call="mobilemenuactive = false">&#9679; Checkbox</a>
+          <a class="SubMenuLink" href="#inputtext" click.call="mobilemenuactive = false">&#9679; InputText</a>
+          <a class="SubMenuLink" href="#listbox" click.call="mobilemenuactive = false">&#9679; ListBox</a>
+          <a class="SubMenuLink" href="#inputtextarea" click.call="mobilemenuactive = false">&#9679; InputTextArea</a>
+          <a class="SubMenuLink" href="#password" click.call="mobilemenuactive = false">&#9679; Password</a>
+          <a class="SubMenuLink" href="#radiobutton" click.call="mobilemenuactive = false">&#9679; RadioButton</a>
+          <a class="SubMenuLink" href="#spinner" click.call="mobilemenuactive = false">&#9679; Spinner</a>
+          <a class="SubMenuLink" href="#rating" click.call="mobilemenuactive = false">&#9679; Rating</a>
+          <a class="SubMenuLink" href="#selectbutton" click.call="mobileMenuActive = false">&#9679; SelectButton</a>
+          <a class="SubMenuLink" href="#toggelbutton" click.call="mobilemenuactive = false">&#9679; ToggleButton</a>
+          <a class="SubMenuLink" href="#inputswitch" click.call="mobilemenuactive = false">&#9679; InputSwitch</a>
         </div>
-        <div id="CONTENTSIDE">
-            <div id="CONTENTSIDEindent">
-                <div class="ContentSideSections" id="PFTopLinksCover" style="height:30px;">
-                    <a id="LOGOTEXTSIDE" [routerLink]="['HomePage']">
-                        <img alt="logo" src="resources/images/primengfull.svg" />
-                    </a>
-                    <a href="#" id="openMenuBtn" (click)="toggleMenu($event)" [ngClass]="{'active':mobileMenuActive}">
-                        <img alt="logo" src="resources/images/menuicon.svg" />
-                    </a>
-                    <div class="mobileLogoCover">
-                        <img src="resources/images/primengdark.svg" style="height:30px;" class="floatLeft marginRight10" />
-                        <span class="dispBlock logoDarkText fontSize18 floatRight" style="margin:-5px 0px 0px 5px;">PrimeNG <span class="dispBlock logoBlueText fontSize14 mediumFont">SHOWCASE</span></span>
-                    </div>
-                </div>
-                <div>
-                    <router-view></router-view>
-                </div>
-            </div>
+
+        <span id="button_menutitle" ref="buttonmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="buttonmenutitle.id == activemenuid"
+        click.delegate="activemenuid = buttonmenutitle.id"><img src="resources/images/mono/button.svg" /><img class="hiddenIcons" src="resources/images/mono/buttonBlue.svg" /><span class="MainLinkText">Button</span></span>
+        <div class="SubMenuLinkContainer ${(buttonmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(buttonmenutitle.id != activemenuid) ? 'submenuhide': ''}">
+          <a href="#button" class="SubMenuLink" click.call="mobilemenuactive = false">&#9679; Button</a>
         </div>
+
+        <span id="menu_data" ref="datamenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="datamenutitle.id == activemenuid"
+        click.delegate="activemenuid = datamenutitle.id"><img src="resources/images/mono/data.svg" /><img class="hiddenIcons" src="resources/images/mono/dataBlue.svg" /><span class="MainLinkText">Data</span></span>
+        <div class="SubMenuLinkContainer ${(datamenutitle.id == activemenuid) ? 'submenushow' : ''} ${(datamenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+          <a class="SubMenuLink" href="#datatable" click.call="mobilemenuactive = false">&#9679; Datatable</a>
+        </div>
+
+        <span id="menu_panel" ref="panelmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="panelmenutitle.id == activemenuid"
+        click.delegate="activemenuid = panelmenutitle.id"><img src="resources/images/mono/panel.svg" /><img class="hiddenIcons" src="resources/images/mono/panelBlue.svg" /><span class="MainLinkText">Panel</span></span>
+        <div class="SubMenuLinkContainer ${(panelmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(panelmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+          <a class="SubMenuLink" href="#accordion" click.call="mobilemenuactive = false">&#9679; Accordion</a>
+          <a class="SubMenuLink" href="#fieldset" click.call="mobilemenuactive = false">&#9679; Fieldset</a>
+          <a class="SubMenuLink" href="#panel" click.call="mobilemenuactive = false">&#9679; Panel</a>
+          <a class="SubMenuLink" [routerLink]="['GridDemo']" click.call="mobilemenuactive = false">&#9679; Grid</a>
+          <a class="SubMenuLink" href="#tabview" click.call="mobilemenuactive = false">&#9679; TabView</a>
+        </div>
+
+        <span id="menu_overlay" ref="overlaymenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="overlaymenutitle.id == activemenuid"
+        click.delegate="activemenuid = overlaymenutitle.id"><img src="resources/images/mono/overlay.svg" /><img class="hiddenIcons" src="resources/images/mono/overlayBlue.svg" /><span class="MainLinkText">Overlay</span></span>
+        <div class="SubMenuLinkContainer ${(overlaymenutitle.id == activemenuid) ? 'submenushow' : ''} ${(overlaymenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+          <a class="SubMenuLink" href="#dialog" click.call="mobilemenuactive = false">&#9679; Dialog</a>
+        </div>
+
+        <span id="menu_menu" ref="menumenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="menumenutitle.id == activemenuid"
+        click.delegate="activemenuid = menumenutitle.id"><img src="resources/images/mono/menu.svg" /><img class="hiddenIcons" src="resources/images/mono/menuBlue.svg" /><span class="MainLinkText">Menu</span></span>
+        <div class="SubMenuLinkContainer ${(menumenutitle.id == activemenuid) ? 'submenushow' : ''} ${(menumenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+          <a class="SubMenuLink" href="#breadcrumb" click.call="mobileMenuActive = false">&#9679; Breadcrumb</a>
+          <a class="SubMenuLink" [routerLink]="['MegaMenuDemo']" (click)="mobilemenuactive = false">&#9679; MegaMenu*</a>
+          <a class="SubMenuLink" href="#menu" click.call="mobilemenuactive = false">&#9679; Menu</a>
+          <a class="SubMenuLink" href="#menubar" click.call="mobilemenuactive = false">&#9679; Menubar*</a>
+          <a class="SubMenuLink" [routerLink]="['SlideMenuDemo']" (click)="mobilemenuactive = false">&#9679; SlideMenu*</a>
+          <a class="SubMenuLink" href="#tieredmenu" click.call="mobilemenuactive = false">&#9679; TieredMenu*</a>
+        </div>
+
+        <span id="menu_chart" ref="chartmenutitle"" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="chartmenutitle.id == activemenuid"
+        click.delegate="activemenuid = chartmenutitle.id"><img src="resources/images/mono/charts.svg" /><img class="hiddenIcons" src="resources/images/mono/chartsBlue.svg" /><span class="MainLinkText">Charts</span></span>
+        <div class="SubMenuLinkContainer ${(chartmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(chartmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+          <a class="SubMenuLink" href="#barchart" click.call="mobilemenuactive = false">&#9679; Bar</a>
+          <a class="SubMenuLink" [routerLink]="['DoughnutChartDemo']" (click)="mobilemenuactive = false">&#9679; Doughnut*</a>
+          <a class="SubMenuLink" href="#linechart" click.call="mobilemenuactive = false">&#9679; Line</a>
+          <a class="SubMenuLink" [routerLink]="['PolarAreaChartDemo']" (click)="mobilemenuactive = false">&#9679; PolarArea*</a>
+          <a class="SubMenuLink" href="#piechart" click.call="mobilemenuactive = false">&#9679; Pie*</a>
+          <a class="SubMenuLink" [routerLink]="['RadarChartDemo']" (click)="mobilemenuactive = false">&#9679; Radar*</a>
+        </div>
+
+        <span id="menu_messages" ref="messagesmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="messagesmenutitle.id == activemenuid"
+        click.delegate="activemenuid = messagesmenutitle.id"><img src="resources/images/mono/message.svg" /><img class="hiddenIcons" src="resources/images/mono/messageBlue.svg" /><span class="MainLinkText">Messages</span></span>
+        <div class="SubMenuLinkContainer ${(messagesmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(messagesmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
+          <a class="SubMenuLink" href="#growl" click.call="mobilemenuactive = false">&#9679; Growl</a>
+          <a class="SubMenuLink" href="#messages" click.call="mobilemenuactive = false">&#9679; Messages</a>
+        </div>
+
+        <span id="menu_multimedia" ref="multimediamenutitle" class="MenuSideMainLink bordersOfMenuSide MenuSideMainLinkDark" [class.MenuSideMainLinkDark]="multimediamenutitle.id == activemenuid"
+        click.delegate="activemenuid = multimediamenutitle.id"><img src="resources/images/mono/multimedia.svg">
+        <img class="hiddenIcons" src="resources/images/mono/multimediaBlue.svg" style="opacity: 0;">
+        <span class="MainLinkText">Multimedia</span>
+      </span>
+      <div class="SubMenuLinkContainer ${(multimediamenutitle.id == activemenuid) ? 'submenushow' : ''} ${(multimediamenutitle.id != activemenuid) ? 'submenuhide': ''}">
+        <a class="SubMenuLink" href="#galleria" click.call="mobilemenuactive = false">&#9679; Galleria</a>
+      </div>
+      <span id="menu_misc" ref="misctitle" class="MenuSideMainLink bordersOfMenuSide MenuSideMainLinkDark" [class.MenuSideMainLinkDark]="misctitle.id == activemenuid"
+      click.delegate="activemenuid = misctitle.id"><img src="resources/images/mono/misc.svg">
+      <img class="hiddenIcons" src="resources/images/mono/miscBlue.svg" style="opacity: 0;">
+      <span class="MainLinkText">Misc</span>
+    </span>
+    <div class="SubMenuLinkContainer ${(misctitle.id == activemenuid) ? 'submenushow' : ''} ${(misctitle.id != activemenuid) ? 'submenuhide': ''}">
+      <a class="SubMenuLink" [routerLink]="['Theming']" click.delegate="mobilemenuactive = false">&#9679; Theming</a>
+      <a class="SubMenuLink" href="#progressbar" click.call="mobilemenuactive = false">&#9679; ProgressBar</a>
+    </div>
+  </div>
+</div>
+<div id="CONTENTSIDE">
+  <div id="CONTENTSIDEindent">
+    <div class="ContentSideSections" id="PFTopLinksCover" style="height:30px;">
+      <a id="LOGOTEXTSIDE" [routerLink]="['HomePage']">
+        <img alt="logo" src="resources/images/primengfull.svg" />
+      </a>
+      <a href="#" id="openMenuBtn" (click)="toggleMenu($event)" [ngClass]="{'active':mobileMenuActive}">
+        <img alt="logo" src="resources/images/menuicon.svg" />
+      </a>
+      <div class="mobileLogoCover">
+        <img src="resources/images/primengdark.svg" style="height:30px;" class="floatLeft marginRight10" />
+        <span class="dispBlock logoDarkText fontSize18 floatRight" style="margin:-5px 0px 0px 5px;">PrimeNG <span class="dispBlock logoBlueText fontSize14 mediumFont">SHOWCASE</span></span>
+      </div>
+    </div>
+    <div>
+      <router-view></router-view>
+    </div>
+  </div>
+</div>
 </template>

@@ -38,7 +38,11 @@ export class App {
       { route: 'galleria',         name: 'galleria',        moduleId: 'pages/components/galleria',        nav: true, title: 'Galleria' },
       { route: 'barchart',         name: 'barchart',        moduleId: 'pages/components/barchart',        nav: true, title: 'BarChart' },
       { route: 'linechart',         name: 'linechart',        moduleId: 'pages/components/linechart',        nav: true, title: 'LineChart' },
-      { route: 'piechart',         name: 'piechart',        moduleId: 'pages/components/piechart',        nav: true, title: 'PieChart' }
+      { route: 'piechart',         name: 'piechart',        moduleId: 'pages/components/piechart',        nav: true, title: 'PieChart' },
+      { route: 'breadcrumb',         name: 'breadcrumb',        moduleId: 'pages/components/breadcrumb',        nav: true, title: 'BreadCrumb' },
+      { route: 'menu',         name: 'menu',        moduleId: 'pages/components/menu',        nav: true, title: 'Menu' },
+      { route: 'menubar',         name: 'menubar',        moduleId: 'pages/components/menubar',        nav: true, title: 'MenuBar' },
+      { route: 'tieredmenu',         name: 'tieredmenu',        moduleId: 'pages/components/tieredmenu',        nav: true, title: 'TieredMenu' }
     ]);
 
     this.router = router;

@@ -28,4 +28,8 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/barchart');
   frameworkConfig.globalResources('./elements/linechart');
   frameworkConfig.globalResources('./elements/piechart');
+  frameworkConfig.globalResources('./elements/breadcrumb');
+  frameworkConfig.globalResources('./elements/menu');
+  frameworkConfig.globalResources('./elements/menubar');
+  frameworkConfig.globalResources('./elements/tieredmenu');
 }
