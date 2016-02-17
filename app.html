@@ -55,7 +55,7 @@
         click.delegate="activemenuid = menumenutitle.id"><img src="resources/images/mono/menu.svg" /><img class="hiddenIcons" src="resources/images/mono/menuBlue.svg" /><span class="MainLinkText">Menu</span></span>
         <div class="SubMenuLinkContainer ${(menumenutitle.id == activemenuid) ? 'submenushow' : ''} ${(menumenutitle.id != activemenuidd) ? 'submenuhide': ''}">
           <a class="SubMenuLink" href="#breadcrumb" click.call="mobileMenuActive = false">&#9679; Breadcrumb</a>
-          <a class="SubMenuLink" [routerLink]="['MegaMenuDemo']" (click)="mobilemenuactive = false">&#9679; MegaMenu*</a>
+          <a class="SubMenuLink" href="#megamenu" click.call="mobilemenuactive = false">&#9679; MegaMenu</a>
           <a class="SubMenuLink" href="#menu" click.call="mobilemenuactive = false">&#9679; Menu</a>
           <a class="SubMenuLink" href="#menubar" click.call="mobilemenuactive = false">&#9679; Menubar</a>
           <a class="SubMenuLink" href="#slidemenu" click.call="mobilemenuactive = false">&#9679; SlideMenu*</a>

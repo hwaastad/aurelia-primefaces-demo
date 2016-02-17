@@ -43,7 +43,8 @@ export class App {
       { route: 'menu',         name: 'menu',        moduleId: 'pages/components/menu',        nav: true, title: 'Menu' },
       { route: 'menubar',         name: 'menubar',        moduleId: 'pages/components/menubar',        nav: true, title: 'MenuBar' },
       { route: 'tieredmenu',         name: 'tieredmenu',        moduleId: 'pages/components/tieredmenu',        nav: true, title: 'TieredMenu' },
-      { route: 'slidemenu',         name: 'slidemenu',        moduleId: 'pages/components/slidemenu',        nav: true, title: 'SlideMenu' }
+      { route: 'slidemenu',         name: 'slidemenu',        moduleId: 'pages/components/slidemenu',        nav: true, title: 'SlideMenu' },
+      { route: 'megamenu',         name: 'megamenu',        moduleId: 'pages/components/megamenu',        nav: true, title: 'MegaMenu' }
     ]);
 
     this.router = router;

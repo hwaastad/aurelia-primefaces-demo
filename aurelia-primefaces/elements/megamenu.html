@@ -1,0 +1,6 @@
+<template>
+    <div attr.class.bind="styleClass" attr.style.bind="style" class="${(orientation == 'vertical') ? 'ui-megamenu-vertical':''} ${true ? 'ui-menu ui-menubar ui-megamenu ui-widget ui-widget-content ui-corner-all ui-helper-clearfix': ''}">
+        <div tabindex="0" class="ui-helper-hidden-accessible"></div>
+        <content></content>
+    </div>
+</template>
