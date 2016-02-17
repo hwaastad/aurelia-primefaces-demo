@@ -9,6 +9,7 @@ export class MenuComponent {
   @bindable triggerEvent=undefined;
   @bindable style=undefined;
   @bindable styleClass=undefined;
+  
   initialized;
   menuElement;
 
@@ -18,7 +19,6 @@ export class MenuComponent {
   }
 
   attached(){
-    console.dir(this);
     this.menuElement = $(this.element).find('> div > ul');
     this.menuElement.puimenu({
       enhanced: true,

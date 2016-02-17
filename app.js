@@ -42,7 +42,8 @@ export class App {
       { route: 'breadcrumb',         name: 'breadcrumb',        moduleId: 'pages/components/breadcrumb',        nav: true, title: 'BreadCrumb' },
       { route: 'menu',         name: 'menu',        moduleId: 'pages/components/menu',        nav: true, title: 'Menu' },
       { route: 'menubar',         name: 'menubar',        moduleId: 'pages/components/menubar',        nav: true, title: 'MenuBar' },
-      { route: 'tieredmenu',         name: 'tieredmenu',        moduleId: 'pages/components/tieredmenu',        nav: true, title: 'TieredMenu' }
+      { route: 'tieredmenu',         name: 'tieredmenu',        moduleId: 'pages/components/tieredmenu',        nav: true, title: 'TieredMenu' },
+      { route: 'slidemenu',         name: 'slidemenu',        moduleId: 'pages/components/slidemenu',        nav: true, title: 'SlideMenu' }
     ]);
 
     this.router = router;
