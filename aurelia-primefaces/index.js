@@ -34,4 +34,5 @@ export function configure(frameworkConfig, configCallback){
   frameworkConfig.globalResources('./elements/tieredmenu');
   frameworkConfig.globalResources('./elements/slidemenu');
   frameworkConfig.globalResources('./elements/megamenu');
+  frameworkConfig.globalResources('./elements/lightbox');
 }

@@ -49,6 +49,7 @@
         click.delegate="activemenuid = overlaymenutitle.id"><img src="resources/images/mono/overlay.svg" /><img class="hiddenIcons" src="resources/images/mono/overlayBlue.svg" /><span class="MainLinkText">Overlay</span></span>
         <div class="SubMenuLinkContainer ${(overlaymenutitle.id == activemenuid) ? 'submenushow' : ''} ${(overlaymenutitle.id != activemenuidd) ? 'submenuhide': ''}">
           <a class="SubMenuLink" href="#dialog" click.call="mobilemenuactive = false">&#9679; Dialog</a>
+          <a class="SubMenuLink" href="#lightbox" click.call="mobilemenuactive = false">&#9679; LIghtBox</a>
         </div>
 
         <span id="menu_menu" ref="menumenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="menumenutitle.id == activemenuid"
