@@ -11,7 +11,7 @@ export class DataTableComponent {
     @bindable pageLinks = 5;
     @bindable responsive = undefined;
     @bindable selectionMode = undefined;
-    @bindable selection = undefined;
+    @bindable selection;
     @bindable selectionChange = undefined;
     @bindable editable = undefined;
     @bindable onRowSelect = undefined;
@@ -29,25 +29,16 @@ export class DataTableComponent {
     @bindable headerColumns = undefined;
     @bindable style = undefined;
     @bindable styleClass = undefined;
-    //@ContentChild(Header) header;
-    //@ContentChild(Footer) footer;
     header;
     footer;
 
     @bindable value: any[];
-
     dataToRender: any[];
-
     first: number = 0;
-
     sortField: string;
-
     sortOrder: number;
-
     filterTimeout: any;
-
     filterMetadata: any = {};
-
     filteredValue: any[];
 
 
@@ -140,7 +131,15 @@ export class DataTableComponent {
         }
     }
 
+    selectionChanged(newVal, oldVal) {
+        console.log('selection has changed: ' + oldVal + ' => ' + newVal);
+        //this.selection=newVal;
+    }
+
     onRowClick(event, rowData) {
+        console.log('Datatable onRowClick.....');
+        console.dir(event);
+        console.dir(rowData);
         if (!this.selectionMode) {
             return;
         }
@@ -151,27 +150,37 @@ export class DataTableComponent {
         if (selected && event.metaKey) {
             if (this.isSingleSelectionMode()) {
                 this.selection = null;
-                this.selectionChange.next(null);
+                if (this.selectionChange) {
+                    this.selectionChange(null);
+                }
             }
             else {
                 this.selection.splice(selectionIndex, 1);
-                this.selectionChange(this.selection);
+                if (this.selectionChange) {
+                    this.selectionChange(this.selection);
+                }
             }
-
-            this.onRowUnselect({ originalEvent: event, data: rowData });
+            if (this.onRowUnselect) {
+                this.onRowUnselect({ originalEvent: event, data: rowData });
+            }
         }
         else {
             if (this.isSingleSelectionMode()) {
                 this.selection = rowData;
-                this.selectionChange(rowData);
+                if (this.selectionChange) {
+                    this.selectionChange(rowData);
+                }
             }
             else if (this.isMultipleSelectionMode()) {
                 this.selection = (!event.metaKey) ? [] : this.selection || [];
                 this.selection.push(rowData);
-                this.selectionChange(this.selection);
+                if (this.selectionChange) {
+                    this.selectionChange(this.selection);
+                }
             }
-
-            this.onRowSelect({ originalEvent: event, data: rowData });
+            if (this.onRowSelect) {
+                this.onRowSelect({ originalEvent: event, data: rowData });
+            }
         }
     }
 

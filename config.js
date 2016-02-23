@@ -29,11 +29,11 @@ System.config({
     "primeui": "bower:primeui@4.1.0",
     "redpelicans/aurelia-material": "github:redpelicans/aurelia-material@master",
     "bower:jqueryui@1.11.4": {
-      "jquery": "bower:jquery@2.2.0"
+      "jquery": "bower:jquery@2.2.1"
     },
     "bower:primeui@4.1.0": {
       "fontawesome": "bower:fontawesome@4.5.0",
-      "jquery": "bower:jquery@2.2.0",
+      "jquery": "bower:jquery@2.2.1",
       "jqueryui": "bower:jqueryui@1.11.4"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
