@@ -83,17 +83,20 @@ export class DataTableComponent {
     }
 
     paginate(event) {
-        console.log('paginate is called....');
         this.first = event.first;
         this.rows = event.rows;
-        this.updateDataToRender(this._value);
+        this.updateDataToRender(this.value);
     }
 
     updateDataToRender(datasource) {
         if (this.paginator && datasource) {
+            console.dir(this.paginator);
+            console.dir(datasource.length);
             this.dataToRender = [];
-            for (let i = this.first; i < (this.first + this.rows); i++) {
+            let i = this.first;
+            for (let i = this.first; i < (+this.first + +this.rows); i++) {
                 if (i >= datasource.length) {
+                    console.log('break');
                     break;
                 }
 
@@ -165,7 +168,7 @@ export class DataTableComponent {
                     this.selectionChange(this.selection);
                 }
             }
-            if (this.onRowUnselect) {
+            if (this.onRowUnselect) {           
                 this.onRowUnselect({ originalEvent: event, data: rowData });
             }
         }

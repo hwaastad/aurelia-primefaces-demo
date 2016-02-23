@@ -7,13 +7,13 @@ export class Index {
             { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Scroll*' },
             { route: 'datatablefacet', moduleId: './datatablefacet', nav: true, name: 'datatablefacet', title: 'Facet' },
             { route: 'datatableselection', moduleId: './datatableselection', nav: true, name: 'datatableselection', title: 'Selection*' },
-         /*   { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Responsive*' },
-            { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Group*' },
-            { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Editable*' },
-            { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Paginator*' },
-            { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Columns Resize*' },
-            { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Sort*' },
-            { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Column Reorder*' },*/
+            { route: 'datatableresponsive', moduleId: './datatableresponsive', nav: true, name: 'datatableresponsive', title: 'Responsive' },
+            { route: 'datatablepaginator', moduleId: './datatablepaginator', nav: true, name: 'datatablepaginator', title: 'Paginator' },
+            /*   { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Group*' },
+               { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Editable*' },
+               { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Columns Resize*' },
+               { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Sort*' },
+               { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Column Reorder*' },*/
         ]);
 
         this.router = router;
