@@ -1,0 +1,18 @@
+<template>
+    <div class="ContentSideSections">
+        <div class="Content100 overHidden TextShadow">
+            <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">DataTable - <span class="subitem">Paginator</span></span>
+            <span class="defaultText dispTable">Pagination is enabled by setting paginator property to true, rows attribute defines the number of rows per page and pageLinks specify the the number
+            of page links to display.</span>
+        </div>
+    </div>
+
+    <div class="ContentSideSections Implementation">
+        <p-datatable value.bind="cars" columns.bind="cols" paginator.bind="true" page-links="2" rows="2">
+            <template replace-part="header">List of Cars</template>
+        </p-datatable>
+    </div>
+
+    <div class="ContentSideSections Source">
+    </div>
+</template>

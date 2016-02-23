@@ -1,0 +1,16 @@
+<template>
+    <div class="ContentSideSections">
+        <div class="Content100 overHidden TextShadow">
+            <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">DataTable</span>
+            <span class="defaultText dispTable">Incell editing is enabled by setting editable property true both on datatable and columns, when a cell is clicked edit mode is activated, clicking outside of cell or hitting the enter key 
+        switches back to view mode after updating the value.</span>
+        </div>
+    </div>
+
+    <div class="ContentSideSections Implementation">
+        <p-datatable value.bind="cars" columns.bind="cols" editable.bind="true"></p-datatable>
+    </div>
+
+    <div class="ContentSideSections Source">
+    </div>
+</template>
