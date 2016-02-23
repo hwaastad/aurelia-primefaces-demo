@@ -168,7 +168,7 @@ export class DataTableComponent {
                     this.selectionChange(this.selection);
                 }
             }
-            if (this.onRowUnselect) {           
+            if (this.onRowUnselect) {
                 this.onRowUnselect({ originalEvent: event, data: rowData });
             }
         }
@@ -369,7 +369,9 @@ export class DataTableComponent {
         $(this.element.children[0]).puicolresize({
             mode: this.columnResizeMode,
             colResize: (event: Event, ui: PrimeUI.ColResizeEventParams) => {
-                this.onColResize.next(ui.element);
+                if (this.onColResize) {
+                    this.onColResize(ui.element);
+                }
             }
         });
     }
@@ -385,8 +387,9 @@ export class DataTableComponent {
                 else {
                     this.columns.splice(ui.dropIndex, 0, this.columns.splice(ui.dragIndex, 1)[0]);
                 }
-
-                this.onColReorder.next(ui);
+                if (this.onColReorder) {
+                    this.onColReorder(ui);
+                }
             }
         });
     }
