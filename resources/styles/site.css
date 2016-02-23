@@ -40,7 +40,7 @@ body{margin:0px; height:100%; overflow-x:hidden; overflow-y:auto; background-col
 .logoBlueText{color:#25aae1;}
 
 /* menu side style*/
-#MENUSIDE{width:85px; float:left; background-color:#313b3f; border-right:solid 1px #151d21; overflow:hidden; width: 299px; position: fixed;}
+#MENUSIDE{width:85px; float:left; background-color:#313b3f; border-right:solid 1px #151d21; overflow:hidden; width: 299px;}
 #MENUSIDEindent{width:100%; height:auto;}
 #LOGO{height:65px; display:block; padding:20px 0 5px 0px; z-index:997; background-color:#313b3f; text-align:center;}
 #LOGO img{width:120px; height:auto;}
@@ -67,7 +67,7 @@ body{margin:0px; height:100%; overflow-x:hidden; overflow-y:auto; background-col
 /* content side style*/
 #CONTENTSIDE{width:auto; overflow:hidden; z-index:1; margin-left:300px; background-color:#FFFFFF;}
 #CONTENTSIDEindent{width:100%; height:auto;}
-.ContentSideSections{display:block; border-bottom:solid 1px #CFD8DC; padding:30px; overflow:hidden;}
+.ContentSideSections{display:block; border-bottom:solid 1px #dde3e6; padding:30px; overflow:hidden;background-color:#f5f7f8;}
 .MOBILE .ContentSideSections{padding:14px 24px;}
 #PFTopLinksCover{background-color:#1976D2;}
 #PFMobileTopLinksCover{ position:inherit;}
@@ -133,12 +133,12 @@ a{ text-decoration:none; outline:none;color: #25AAE1}
 .TextShadow{text-shadow: 0 1px 0 #ffffff}
 .TextShadowNone{text-shadow:none;}
 .underline{ text-decoration:underline;}
-.fontsize34{font-size:34px;}
-.fontsize30{font-size:30px;}
-.fontsize24{font-size:24px;}
-.fontsize21{font-size:21px;}
-.fontsize18{font-size:18px;}
-.fontsize14{font-size:14px;}
+.fontSize34{font-size:34px;}
+.fontSize30{font-size:30px;}
+.fontSize24{font-size:24px;}
+.fontSize21{font-size:21px;}
+.fontSize18{font-size:18px;}
+.fontSize14{font-size:14px;}
 .ContentX{width:95% !important; margin-bottom:30px; text-align:center; -webkit-transition: all 0.5s ease; -moz-transition: all 0.5s ease; -ms-transition: all 0.5s ease; -o-transition: all 0.5s ease;
     transition: all 0.5s ease;}
 .ContentX .defaultText{font-size:16px;}
@@ -229,7 +229,7 @@ input.searchInput {
 }
 
 .Implementation {
-    background-color:#ECEFF1;
+    background-color:#FFFFFF;
     overflow: visible;
 }
 
@@ -258,6 +258,7 @@ input.searchInput {
     list-style: none;
     width: 20%;
     float: left;
+    margin-top: 5px;
 }
 
 .SubSubMenu ul li a:hover {
@@ -490,11 +491,18 @@ input.searchInput {
         margin-left: 0;
     }
 
-    .SubSubMenu {
-        display: none;
+    .SubSubMenu ul li {
+        width: 50%
     }
     .PropertyBox{width:44%;}
     .PropertyBox img{width:40%;}
+
+}
+
+@media (max-width: 768px) {
+    .doc-table tbody td {
+        word-break: break-word;
+    }
 }
 
 /* Themes */
@@ -591,5 +599,3 @@ pre {
 .ui-tabview-left > .ui-tabview-nav {
     height: 150px;
 }
-
-

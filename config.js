@@ -26,6 +26,8 @@ System.config({
     "core-js": "npm:core-js@2.1.1",
     "css": "github:systemjs/plugin-css@0.1.20",
     "fontawesome": "bower:fontawesome@4.5.0",
+    "jquery": "npm:jquery@2.2.1",
+    "jquery-ui": "github:components/jqueryui@1.11.4",
     "primeui": "bower:primeui@4.1.0",
     "redpelicans/aurelia-material": "github:redpelicans/aurelia-material@master",
     "bower:jqueryui@1.11.4": {
@@ -35,6 +37,9 @@ System.config({
       "fontawesome": "bower:fontawesome@4.5.0",
       "jquery": "bower:jquery@2.2.1",
       "jqueryui": "bower:jqueryui@1.11.4"
+    },
+    "github:components/jqueryui@1.11.4": {
+      "jquery": "npm:jquery@2.2.1"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"

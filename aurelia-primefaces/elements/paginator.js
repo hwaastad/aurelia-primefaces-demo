@@ -1,4 +1,10 @@
 import {inject, customElement, bindable} from 'aurelia-framework';
+import $ from 'jquery';
+import 'jquery-ui';
+import 'primeui';
+import 'primeui/primeui.css!';
+import 'primeui/themes/delta/theme.css!'
+import 'fontawesome/css/font-awesome.css!';
 
 @customElement('p-paginator')
 export class Paginator {
@@ -15,8 +21,12 @@ export class Paginator {
         this.updatePageLinks();
     }
 
-    isFirstPage() {
+    get firstPage() {
         return this.page === 0;
+    }
+
+    get lastPage() {
+        return this.page === this.getPageCount() - 1;
     }
 
     isLastPage() {
