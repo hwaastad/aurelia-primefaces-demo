@@ -40,6 +40,7 @@ export class DemoDataTable {
     
     onRowSelect(event) {
         console.log('onRowSelect...'),
+        //this.selectedCar = event.data;
         this.msgs = [];
         this.msgs.push({severity: 'info', summary: 'Car Selected', detail: event.data.vin + ' - ' + event.data.brand});
     }

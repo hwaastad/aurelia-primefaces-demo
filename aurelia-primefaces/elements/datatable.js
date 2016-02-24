@@ -141,7 +141,7 @@ export class DataTableComponent {
 
     selectionChanged(newVal, oldVal) {
         console.log('selection has changed: ' + oldVal + ' => ' + newVal);
-        //this.selection=newVal;
+        this.selection = newVal;
     }
 
     onRowClick(event, rowData) {
@@ -155,7 +155,7 @@ export class DataTableComponent {
         let selectionIndex = this.findIndexInSelection(rowData),
             selected = selectionIndex != -1;
 
-        if (selected && event.metaKey) {
+        if (selected && event.ctrlKey) {
             if (this.isSingleSelectionMode()) {
                 this.selection = null;
                 if (this.selectionChange) {
@@ -180,7 +180,7 @@ export class DataTableComponent {
                 }
             }
             else if (this.isMultipleSelectionMode()) {
-                this.selection = (!event.metaKey) ? [] : this.selection || [];
+                this.selection = (!event.ctrlKey) ? [] : this.selection || [];
                 this.selection.push(rowData);
                 if (this.selectionChange) {
                     this.selectionChange(this.selection);
@@ -405,5 +405,12 @@ export class DataTableComponent {
         if (this.resizableColumns) {
             $(this.element.children[0]).puicolresize('destroy');
         }
+    }
+
+    dispatchChange(data) {
+        let detail = { selection: data };
+        let eventInit = { detail, bubbles: true };
+        let event = new CustomEvent('change', eventInit);
+        this.element.dispatchEvent(event);
     }
 }
