@@ -15,8 +15,8 @@
         <p-datatable value.bind="cars" columns.bind="cols" selection-mode="single" selection.two.way="selectedCar">
             <template replace-part="header">Single Selection</template>
             <template replace-part="footer">
-                <div style="text-align: left">Selected Car: ${selectedCar ? selectedCar.vin + ' - ' + selectedCar.brand + ' - ' + selectedCar.year
-                    + ' - ' + selectedCar.color: 'none'}</div>
+                <div style="text-align: left">Selected Car: ${selectedCar ? selectedCar.vin + ' - ' + selectedCar.brand + ' - ' + selectedCar.year + '
+                    - ' + selectedCar.color: 'none'}</div>
             </template>
         </p-datatable>
         ${selectedCar.brand}

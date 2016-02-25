@@ -16,7 +16,7 @@ export class DataTableComponent {
     @bindable pageLinks = 5;
     @bindable responsive = undefined;
     @bindable selectionMode = undefined;
-    @bindable selection;
+    @bindable selection = undefined;
     @bindable selectionChange = undefined;
     @bindable editable = undefined;
     @bindable onRowSelect = undefined;
@@ -34,8 +34,8 @@ export class DataTableComponent {
     @bindable headerColumns = undefined;
     @bindable style = undefined;
     @bindable styleClass = undefined;
-    header;
-    footer;
+    @bindable headerRows;
+    @bindable footerRows;
 
     @bindable value: any[];
     dataToRender: any[];
@@ -73,15 +73,6 @@ export class DataTableComponent {
         }
     }
 
-    get value(): any[] {
-        return this._value;
-    }
-
-    set value(val: any[]) {
-        this._value = val;
-        this.totalRecords = this._value ? this._value.length : 0;
-    }
-
     paginate(event) {
         this.first = event.first;
         this.rows = event.rows;
@@ -113,11 +104,11 @@ export class DataTableComponent {
             return;
         }
 
-        if (this._value) {
+        if (this.value) {
             this.sortOrder = (this.sortField === column.field) ? this.sortOrder * -1 : 1;
             this.sortField = column.field;
 
-            this._value.sort((data1, data2) => {
+            this.value.sort((data1, data2) => {
                 let value1 = data1[this.sortField],
                     value2 = data2[this.sortField],
                     result = null;
@@ -135,7 +126,7 @@ export class DataTableComponent {
             if (this.hasFilter())
                 this.filter();
             else
-                this.updateDataToRender(this._value);
+                this.updateDataToRender(this.value);
         }
     }
 
@@ -174,7 +165,7 @@ export class DataTableComponent {
         }
         else {
             if (this.isSingleSelectionMode()) {
-                this.selection = rowData;
+                this.selection=rowData;
                 if (this.selectionChange) {
                     this.selectionChange(rowData);
                 }
@@ -243,7 +234,7 @@ export class DataTableComponent {
         else {
             this.filteredValue = [];
 
-            for (let i = 0; i < this._value.length; i++) {
+            for (let i = 0; i < this.value.length; i++) {
                 let localMatch = true;
 
                 for (let prop in this.filterMetadata) {
@@ -252,7 +243,7 @@ export class DataTableComponent {
                             filterValue = filterMeta.value,
                             filterField = prop,
                             filterMatchMode = filterMeta.matchMode || 'startsWith',
-                            dataFieldValue = this._value[i][filterField];
+                            dataFieldValue = this.value[i][filterField];
 
                         var filterConstraint = this.filterConstraints[filterMatchMode];
                         if (!filterConstraint(dataFieldValue, filterValue)) {
@@ -266,11 +257,11 @@ export class DataTableComponent {
                 }
 
                 if (localMatch) {
-                    this.filteredValue.push(this._value[i]);
+                    this.filteredValue.push(this.value[i]);
                 }
             }
 
-            if (this.filteredValue.length === this._value.length) {
+            if (this.filteredValue.length === this.value.length) {
                 this.filteredValue = null;
             }
 
@@ -278,7 +269,7 @@ export class DataTableComponent {
                 this.totalRecords = this.filteredValue ? this.filteredValue.length : this.value ? this.value.length : 0;
             }
 
-            this.updateDataToRender(this.filteredValue || this._value);
+            this.updateDataToRender(this.filteredValue || this.value);
         }
     }
 
