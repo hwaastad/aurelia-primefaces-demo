@@ -18,6 +18,10 @@ export class Paginator {
     pageLinks = [];
 
     constructor() {
+
+    }
+
+    attached() {
         this.updatePageLinks();
     }
 

@@ -9,6 +9,7 @@ import 'fontawesome/css/font-awesome.css!';
 @customElement('p-datatable')
 @inject(Element)
 export class DataTableComponent {
+    @bindable value: any[];
     @bindable columns = undefined;
     @bindable paginator = undefined;
     @bindable rows = undefined;
@@ -31,15 +32,14 @@ export class DataTableComponent {
     @bindable scrollable = undefined;
     @bindable scrollHeight = undefined;
     @bindable scrollWidth = undefined;
-    @bindable headerColumns = undefined;
     @bindable style = undefined;
     @bindable styleClass = undefined;
     @bindable headerRows;
     @bindable footerRows;
 
-    @bindable value: any[];
     dataToRender: any[];
     first: number = 0;
+    page: number = 0;
     sortField: string;
     sortOrder: number;
     filterTimeout: any;
@@ -60,6 +60,15 @@ export class DataTableComponent {
 
     attached() {
         console.log('attaching datatable');
+        if (this.lazy) {
+            this.onLazyLoad({
+                first: this.first,
+                rows: this.rows,
+                sortField: this.sortField,
+                sortOrder: this.sortOrder,
+                filters: null
+            });
+        }
         if (this.resizableColumns) {
             this.initResizableColumns();
         }
@@ -73,21 +82,34 @@ export class DataTableComponent {
         }
     }
 
+    updatePaginator() {
+        //total records
+        this.totalRecords = this.lazy ? this.totalRecords : (this.value ? this.value.length : 0);
+        
+        //first
+        if (this.totalRecords && this.first >= this.totalRecords) {
+            let numberOfPages = Math.ceil(this.totalRecords / this.rows);
+            this.first = Math.max((numberOfPages - 1) * this.rows, 0);
+        }
+    }
+
     paginate(event) {
         this.first = event.first;
         this.rows = event.rows;
-        this.updateDataToRender(this.value);
+        if (this.lazy) {
+            this.onLazyLoad(this.createLazyLoadMetadata());
+        }
+        else {
+            this.updateDataToRender(this.value);
+        }
     }
 
     updateDataToRender(datasource) {
         if (this.paginator && datasource) {
-            console.dir(this.paginator);
-            console.dir(datasource.length);
             this.dataToRender = [];
-            let i = this.first;
-            for (let i = this.first; i < (+this.first + +this.rows); i++) {
+            let startIndex = this.lazy ? 0 : this.first;
+            for (let i = startIndex; i < (startIndex + this.rows); i++) {
                 if (i >= datasource.length) {
-                    console.log('break');
                     break;
                 }
 
@@ -104,29 +126,34 @@ export class DataTableComponent {
             return;
         }
 
-        if (this.value) {
-            this.sortOrder = (this.sortField === column.field) ? this.sortOrder * -1 : 1;
-            this.sortField = column.field;
+        this.sortOrder = (this.sortField === column.field) ? this.sortOrder * -1 : 1;
+        this.sortField = column.field;
 
-            this.value.sort((data1, data2) => {
-                let value1 = data1[this.sortField],
-                    value2 = data2[this.sortField],
-                    result = null;
+        if (this.lazy) {
+            this.onLazyLoad.next(this.createLazyLoadMetadata());
+        }
+        else {
+            if (this.value) {
+                this.value.sort((data1, data2) => {
+                    let value1 = data1[this.sortField],
+                        value2 = data2[this.sortField],
+                        result = null;
 
-                if (value1 instanceof String && value2 instanceof String)
-                    result = value1.localeCompare(value2);
+                    if (value1 instanceof String && value2 instanceof String)
+                        result = value1.localeCompare(value2);
+                    else
+                        result = (value1 < value2) ? -1 : (value1 > value2) ? 1 : 0;
+
+                    return (this.sortOrder * result);
+                });
+
+                this.first = 0;
+
+                if (this.hasFilter())
+                    this.filter();
                 else
-                    result = (value1 < value2) ? -1 : (value1 > value2) ? 1 : 0;
-
-                return (this.sortOrder * result);
-            });
-
-            this.first = 0;
-
-            if (this.hasFilter())
-                this.filter();
-            else
-                this.updateDataToRender(this.value);
+                    this.updateDataToRender(this.value);
+            }
         }
     }
 
@@ -146,7 +173,7 @@ export class DataTableComponent {
         let selectionIndex = this.findIndexInSelection(rowData),
             selected = selectionIndex != -1;
 
-        if (selected && event.ctrlKey) {
+        if (selected && event.metaKey) {
             if (this.isSingleSelectionMode()) {
                 this.selection = null;
                 if (this.selectionChange) {
@@ -165,13 +192,13 @@ export class DataTableComponent {
         }
         else {
             if (this.isSingleSelectionMode()) {
-                this.selection=rowData;
+                this.selection = rowData;
                 if (this.selectionChange) {
                     this.selectionChange(rowData);
                 }
             }
             else if (this.isMultipleSelectionMode()) {
-                this.selection = (!event.ctrlKey) ? [] : this.selection || [];
+                this.selection = (!event.metaKey) ? [] : this.selection || [];
                 this.selection.push(rowData);
                 if (this.selectionChange) {
                     this.selectionChange(this.selection);
@@ -229,7 +256,7 @@ export class DataTableComponent {
 
     filter() {
         if (this.lazy) {
-            //TODO
+            this.onLazyLoad.next(this.createLazyLoadMetadata());
         }
         else {
             this.filteredValue = [];
@@ -390,6 +417,34 @@ export class DataTableComponent {
             scrollHeight: this.scrollHeight,
             scrollWidth: this.scrollWidth
         });
+    }
+
+    hasFooter() {
+        if (this.footerRows) {
+            return true;
+        }
+        else {
+            for (let i = 0; i < this.columns.length; i++) {
+                if (this.columns[i].footer) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    isEmpty() {
+        return !this.dataToRender || (this.dataToRender.length == 0);
+    }
+
+    createLazyLoadMetadata(): any {
+        return {
+            first: this.first,
+            rows: this.rows,
+            sortField: this.sortField,
+            sortOrder: this.sortOrder,
+            filters: this.filterMetadata
+        };
     }
 
     detached() {
