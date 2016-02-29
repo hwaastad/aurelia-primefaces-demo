@@ -1,4 +1,6 @@
 import {inject, customElement, bindable} from 'aurelia-framework';
+import {Header} from '../common/header';
+import {Footer} from '../common/footer';
 import $ from 'jquery';
 import 'jquery-ui';
 import 'primeui';
@@ -36,6 +38,8 @@ export class DataTableComponent {
     @bindable styleClass = undefined;
     @bindable headerRows;
     @bindable footerRows;
+    @bindable header:Header;
+    @bindable footer: Footer;
 
     dataToRender: any[];
     first: number = 0;
@@ -60,6 +64,7 @@ export class DataTableComponent {
 
     attached() {
         console.log('attaching datatable');
+        console.dir(this.header);
         if (this.lazy) {
             this.onLazyLoad({
                 first: this.first,
@@ -310,6 +315,10 @@ export class DataTableComponent {
         }
 
         return !empty;
+    }
+
+    onFilterInputClick(event) {
+        event.stopPropagation();
     }
 
     filterConstraints = {

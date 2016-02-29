@@ -8,10 +8,10 @@ import {InputTextAttribute} from '../../../aurelia-primefaces/attributes/inputte
 export class DemoDataTable {
     constructor() {
         this.cols = [
-            { field: 'vin', headerText: 'Vin' },
-            { field: 'brand', headerText: 'Brand' },
-            { field: 'year', headerText: 'Year' },
-            { field: 'color', headerText: 'Color' }
+            { field: 'vin', header: 'Vin' },
+            { field: 'brand', header: 'Brand' },
+            { field: 'year', header: 'Year' },
+            { field: 'color', header: 'Color' }
         ];
 
         this.cars = [
