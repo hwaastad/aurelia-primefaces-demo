@@ -1,11 +1,11 @@
-import {inject, customElement, bindable} from 'aurelia-framework';
+import {inject, customElement, bindable,computedFrom} from 'aurelia-framework';
 import {Header} from '../common/header';
 import {Footer} from '../common/footer';
 import $ from 'jquery';
 import 'jquery-ui';
 import 'primeui';
 import 'primeui/primeui.css!';
-import 'primeui/themes/delta/theme.css!'
+//import 'primeui/themes/delta/theme.css!'
 import 'fontawesome/css/font-awesome.css!';
 
 @customElement('p-datatable')
@@ -41,6 +41,7 @@ export class DataTableComponent {
     @bindable footerRows;
     @bindable header: Header;
     @bindable footer: Footer;
+    _selected;
 
     dataToRender: any[];
     first: number = 0;
@@ -164,13 +165,16 @@ export class DataTableComponent {
         }
     }
     
+    @computedFrom('selection')
     get selected(){
-        return true;
+        console.log('selected check...');
+        return this.selected;
     }
+    
 
     selectionChanged(newVal, oldVal) {
         console.log('selection has changed: ' + oldVal + ' => ' + newVal);
-        //this.selection = newVal;
+        this.selection = newVal;
     }
 
     onRowClick(event, rowData) {
@@ -203,9 +207,7 @@ export class DataTableComponent {
         }
         else {
             if (this.isSingleSelectionMode()) {
-                this.selection = [];
-                this.selection.push(rowData);
-               // this.selection = rowData;
+                this.selection = rowData;
                 if (this.selectionChange) {
                     this.selectionChange(rowData);
                 }
@@ -252,7 +254,6 @@ export class DataTableComponent {
     }
 
     isSelected(rowData) {
-        console.log('isSelected');
         console.dir(rowData);
         return this.findIndexInSelection(rowData) != -1;
     }

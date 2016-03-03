@@ -7,11 +7,11 @@ import {InputTextAttribute} from '../../../aurelia-primefaces/attributes/inputte
 import {Message} from '../../../aurelia-primefaces/api/message';
 
 export class DemoDataTable {
-    cols;
-    cars;
-    selectedCar;
+    cols=undefined;
+    cars=undefined;
+    selectedCar=undefined;
     selectedCar2;
-    selectedCars;
+    selectedCars=undefined;
     
     constructor() {
         this.cols = [

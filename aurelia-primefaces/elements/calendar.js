@@ -5,7 +5,6 @@ import 'primeui';
 import 'primeui/themes/delta/theme.css!';
 import 'primeui/primeui.css!';
 import 'fontawesome/css/font-awesome.css!';
-import 'jquery-ui/themes/base/theme.css!';
 
 @customElement('p-calendar')
 @inject(Element)

@@ -38,11 +38,11 @@
                     </tr>
                 </tfoot>
                 <tbody class="ui-datatable-data ui-widget-content">
-                    <tr ref="rowElement" repeat.for="rowData of dataToRender" class="ui-widget-content ui-state-highlight ${$odd ? 'ui-datatable-odd':'ui-datatable-even'} ${selected ? 'ui-state-highlight':''} ${(selectionMode && rowElement == hoveredRow) ? 'ui-state-hover':''}" mouseenter.trigger="hoveredRow = $event.target"  mouseleave.trigger="hoveredRow = null" click.delegate="onRowClick($event, rowData)">
+                    <tr ref="rowElement" repeat.for="rowData of dataToRender" class="ui-widget-content ${$odd ? 'ui-datatable-odd':'ui-datatable-even'} ${selection.indexOf(rowData) > -1 || (rowData===selection) ? 'ui-state-highlight':''} ${(selectionMode && rowElement == hoveredRow) ? 'ui-state-hover':''}" mouseenter.trigger="hoveredRow = $event.target"  mouseleave.trigger="hoveredRow = null" click.trigger="onRowClick($event, rowData)">
                         <td repeat.for="col of columns" attr.style.bind="col.style" attr.class.bind="col.styleClass" class="${col.editable ? 'ui-editable-column':''}"  click.trigger="switchCellToEditMode($event.target)">
                             <span class="ui-column-title" if.bind="responsive">${col.header}</span>
                             <span class="ui-cell-data" click.trigger="switchCellToEditMode($event.target)">${rowData[col.field]}</span>
-                            <input type="text" class="ui-cell-editor ui-state-highlight" if.bind="col.editable" model.bind="rowData[col.field]" blur.delegate="switchCellToViewMode($event.target)" keydown.delegate="onCellEditorKeydown($event)" />
+                            <input type="text" class="ui-cell-editor ui-state-highlight" if.bind="col.editable" value.bind="rowData[col.field]" blur.trigger="switchCellToViewMode($event.target)" keydown.trigger="onCellEditorKeydown($event)" />
                         </td>
                     </tr>
                 </tbody>
@@ -68,13 +68,13 @@
         <div class="ui-datatable-scrollable-body" if.bind="scrollable">
             <table>
                 <tbody class="ui-datatable-data ui-widget-content">
-                    <tr ref="rowElement"" repeat.for="rowData of dataToRender" class="ui-widget-content ${$odd ? 'ui-datatable-odd':'ui-datatable-even'} ${(selectionMode && rowElement == hoveredRow) ? 'ui-state-hover':''} ${isSelected(rowData) ? 'ui-state-highlight':''}" mouseenter.trigger="hoveredRow = $event.target"
+                    <tr ref="rowElement" repeat.for="rowData of dataToRender" class="ui-widget-content ${$odd ? 'ui-datatable-odd':'ui-datatable-even'} ${(selectionMode && rowElement == hoveredRow) ? 'ui-state-hover':''} ${selection.indexOf(rowData) > -1 || (rowData===selection) ? 'ui-state-highlight':''}" mouseenter.trigger="hoveredRow = $event.target"
                     mouseleave.trigger="hoveredRow = null" click.delegate="onRowClick($event, rowData)">
-                        <td repeat.for="#col of columns" attr.style.bind="col.style" attr.class.bind="col.styleClass" class="${col.editable ? 'ui-editable-column':''}"
+                        <td repeat.for="col of columns" attr.style.bind="col.style" attr.class.bind="col.styleClass" class="${col.editable ? 'ui-editable-column':''}"
                         click.delegate="switchCellToEditMode($event.target)">
                             <span class="ui-column-title" if.bind="responsive">${col.header}</span>
                             <span class="ui-cell-data" click.delegate="switchCellToEditMode($event.target)">${rowData[col.field]}</span>
-                            <input type="text" class="ui-cell-editor ui-state-highlight" if.bind="col.editable" model.bind="rowData[col.field]" blur.delegate="switchCellToViewMode($event.target)"
+                            <input type="text" class="ui-cell-editor ui-state-highlight" if.bind="col.editable" value.bind="rowData[col.field]" blur.delegate="switchCellToViewMode($event.target)"
                             keydown.delegate="onCellEditorKeydown($event)" />
                         </td>
                     </tr>
