@@ -190,7 +190,7 @@ export class DataTableComponent {
         let selectionIndex = this.findIndexInSelection(rowData),
             selected = selectionIndex != -1;
 
-        if (selected && event.metaKey) {
+        if (selected && event.ctrlKey) {
             if (this.isSingleSelectionMode()) {
                 this.selection = null;
                 if (this.selectionChange) {
@@ -227,6 +227,7 @@ export class DataTableComponent {
         }
 
         var elem = this.element.querySelectorAll('tbody tr')[index];
+        let i = this.findIndexInSelection(rowData);
         if (this.isSingleSelectionMode()) {
             for (var index = 0; index < this.value.length; index++) {
                 let el = this.element.querySelectorAll('tbody tr')[index];
@@ -236,16 +237,19 @@ export class DataTableComponent {
         } else {
             for (var index = 0; index < this.value.length; index++) {
                 let el = this.element.querySelectorAll('tbody tr')[index];
-                this.animator.removeClass(el, 'ui-state-highlight');
-            }
-            for (var index = 0; index < this.value.length; index++) {
-                var element = this.value[index];
-                if (containsObject(element, this.selection)) {
-                    let el = this.element.querySelectorAll('tbody tr')[index];
+                if (this.containsObject(this.value[index], this.selection)) {
                     this.animator.addClass(el, 'ui-state-highlight');
+                } else {
+                    this.animator.removeClass(el, 'ui-state-highlight');
                 }
             }
-
+            /* for (var index = 0; index < this.value.length; index++) {
+                 var element = this.value[index];
+                 if (containsObject(element, this.selection)) {
+                     let el = this.element.querySelectorAll('tbody tr')[index];
+                     this.animator.addClass(el, 'ui-state-highlight');
+                 }
+             }*/
         }
     }
 
@@ -503,15 +507,16 @@ export class DataTableComponent {
         let event = new CustomEvent('change', eventInit);
         this.element.dispatchEvent(event);
     }
-}
 
-function containsObject(obj, list) {
-    var i;
-    for (i = 0; i < list.length; i++) {
-        if (list[i] === obj) {
-            return true;
+    containsObject(obj, list) {
+        var i;
+        for (i = 0; i < list.length; i++) {
+            if (list[i] === obj) {
+                return true;
+            }
         }
-    }
 
-    return false;
+        return false;
+    }
 }
+
