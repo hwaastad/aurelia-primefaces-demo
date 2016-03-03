@@ -11,6 +11,7 @@ export class Index {
             { route: 'datatablepaginator', moduleId: './datatablepaginator', nav: true, name: 'datatablepaginator', title: 'Paginator' },
             { route: 'datatablereorder', moduleId: './datatablereorder', nav: true, name: 'datatablereorder', title: 'Column Reorder*' },
             { route: 'datatableedit', moduleId: './datatableedit', nav: true, name: 'datatableedit', title: 'Editable*' },
+            { route: 'datatableresize', moduleId: './datatableresize', nav: true, name: 'datatableresize', title: 'Resize' },
             /*   { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Group*' },
                
                { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Columns Resize*' },
