@@ -19,8 +19,12 @@ System.config({
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.1.4",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.1.4",
     "aurelia-http-client": "npm:aurelia-http-client@1.0.0-beta.1.1.2",
+    "aurelia-pal-browser": "npm:aurelia-pal-browser@1.0.0-beta.1.1.4",
     "aurelia-polyfills": "npm:aurelia-polyfills@1.0.0-beta.1.0.0",
     "aurelia-router": "npm:aurelia-router@1.0.0-beta.1.1.3",
+    "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.1.2",
+    "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-beta.1.1.2",
+    "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0-beta.1.1.2",
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
     "chart.js": "npm:chart.js@1.0.2",
@@ -30,6 +34,7 @@ System.config({
     "jquery": "npm:jquery@2.2.1",
     "jquery-ui": "github:components/jqueryui@1.11.4",
     "primeui": "bower:primeui@4.1.1",
+    "text": "github:systemjs/plugin-text@0.0.7",
     "bower:jqueryui@1.11.4": {
       "jquery": "bower:jquery@2.2.1"
     },
@@ -126,7 +131,7 @@ System.config({
     "npm:aurelia-polyfills@1.0.0-beta.1.0.0": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1"
     },
-    "npm:aurelia-route-recognizer@1.0.0-beta.1.1.2": {
+    "npm:aurelia-route-recognizer@1.0.0-beta.1.1.3": {
       "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.1.1"
     },
     "npm:aurelia-router@1.0.0-beta.1.1.3": {
@@ -135,7 +140,7 @@ System.config({
       "aurelia-history": "npm:aurelia-history@1.0.0-beta.1.1.1",
       "aurelia-logging": "npm:aurelia-logging@1.0.0-beta.1.1.2",
       "aurelia-path": "npm:aurelia-path@1.0.0-beta.1.1.1",
-      "aurelia-route-recognizer": "npm:aurelia-route-recognizer@1.0.0-beta.1.1.2"
+      "aurelia-route-recognizer": "npm:aurelia-route-recognizer@1.0.0-beta.1.1.3"
     },
     "npm:aurelia-task-queue@1.0.0-beta.1.1.1": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1"

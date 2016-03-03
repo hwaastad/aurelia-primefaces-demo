@@ -9,7 +9,7 @@ import {Message} from '../../../aurelia-primefaces/api/message';
 export class DemoDataTable {
     cols;
     cars;
-    selectedCar=undefined;
+    selectedCar;
     selectedCar2;
     selectedCars;
     

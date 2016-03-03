@@ -6,15 +6,13 @@ import {Paginator} from '../../../aurelia-primefaces/elements/paginator';
 import {InputTextAttribute} from '../../../aurelia-primefaces/attributes/inputtext';
 
 export class DemoDataTablePaginator {
-    cols;
-    cars;
 
     constructor() {
         this.cols = [
-            { field: 'vin', headerText: 'Vin' },
-            { field: 'brand', headerText: 'Brand' },
-            { field: 'year', headerText: 'Year' },
-            { field: 'color', headerText: 'Color' }
+            { field: 'vin', header: 'Vin' },
+            { field: 'brand', header: 'Brand' },
+            { field: 'year', header: 'Year' },
+            { field: 'color', header: 'Color' }
         ];
 
         this.cars = [

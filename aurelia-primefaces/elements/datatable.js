@@ -26,6 +26,7 @@ export class DataTableComponent {
     @bindable onRowUnselect = undefined;
     @bindable filterDelay = 300;
     @bindable lazy = undefined;
+    @bindable onLazyLoad=undefined;
     @bindable resizableColumns = undefined;
     @bindable columnResizeMode = undefined;
     @bindable onColResize = undefined;
@@ -38,7 +39,7 @@ export class DataTableComponent {
     @bindable styleClass = undefined;
     @bindable headerRows;
     @bindable footerRows;
-    @bindable header:Header;
+    @bindable header: Header;
     @bindable footer: Footer;
 
     dataToRender: any[];
@@ -60,6 +61,7 @@ export class DataTableComponent {
         console.log('binding datatable');
         console.dir(this.value);
         this.updateDataToRender(this.value);
+        this.updatePaginator();
     }
 
     attached() {
@@ -113,7 +115,7 @@ export class DataTableComponent {
         if (this.paginator && datasource) {
             this.dataToRender = [];
             let startIndex = this.lazy ? 0 : this.first;
-            for (let i = startIndex; i < (startIndex + this.rows); i++) {
+            for (let i = startIndex; i < (+startIndex + +this.rows); i++) {
                 if (i >= datasource.length) {
                     break;
                 }
@@ -161,10 +163,14 @@ export class DataTableComponent {
             }
         }
     }
+    
+    get selected(){
+        return true;
+    }
 
     selectionChanged(newVal, oldVal) {
         console.log('selection has changed: ' + oldVal + ' => ' + newVal);
-        this.selection = newVal;
+        //this.selection = newVal;
     }
 
     onRowClick(event, rowData) {
@@ -197,13 +203,15 @@ export class DataTableComponent {
         }
         else {
             if (this.isSingleSelectionMode()) {
-                this.selection = rowData;
+                this.selection = [];
+                this.selection.push(rowData);
+               // this.selection = rowData;
                 if (this.selectionChange) {
                     this.selectionChange(rowData);
                 }
             }
             else if (this.isMultipleSelectionMode()) {
-                this.selection = (!event.metaKey) ? [] : this.selection || [];
+                this.selection = (!event.ctrlKey) ? [] : this.selection || [];
                 this.selection.push(rowData);
                 if (this.selectionChange) {
                     this.selectionChange(this.selection);
@@ -244,6 +252,8 @@ export class DataTableComponent {
     }
 
     isSelected(rowData) {
+        console.log('isSelected');
+        console.dir(rowData);
         return this.findIndexInSelection(rowData) != -1;
     }
 

@@ -12,14 +12,14 @@
     </div>
 
     <div class="ContentSideSections Implementation">
-        <p-datatable value.bind="cars" columns.bind="cols" scrollable.bind="true" scroll-height="200">
+        <p-datatable value.bind="cars" columns.bind="cols1" scrollable.bind="true" scroll-height="200">
             <template replace-part="header">
                 Vertical
             </template>
           <!--  <header>Vertical</header>-->
         </p-datatable>
 
-        <p-datatable value.bind="cars" columns.bind="cols" scrollable.bind="true" scroll-height="200" scroll-width="75%" style="margin-top:30px">
+        <p-datatable value.bind="cars" columns.bind="cols2" scrollable.bind="true" scroll-height="200" scroll-width="75%" style="margin-top:30px">
              <template replace-part="header">Vertical and Horizontal</template>
         </p-datatable>
     </div>

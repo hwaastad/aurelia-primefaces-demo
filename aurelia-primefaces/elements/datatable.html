@@ -1,7 +1,7 @@
 <template>
     <div attr.style.bind="style" attr.class.bind="styleClass" class="${true ? 'ui-datatable ui-widget':''} ${responsive ? 'ui-datatable-reflow':''}">
-        <div class="ui-datatable-header ui-widget-header" if.bind="hh!=''">
-            <content selector="header" ref="hh"></content>
+        <div class="ui-datatable-header ui-widget-header">
+          <!--  <content selector="header" ref="hh"></content>-->
             <template replaceable part="header"></template>
         <!--  <content select="header"></content>-->
         </div>
@@ -38,14 +38,11 @@
                     </tr>
                 </tfoot>
                 <tbody class="ui-datatable-data ui-widget-content">
-                    <tr ref="rowElement" repeat.for="rowData of dataToRender" class="ui-widget-content ${$odd ? 'ui-datatable-odd':'ui-datatable-even'} ${isSelected(rowData) ? 'ui-state-highlight':''} ${(selectionMode && rowElement == hoveredRow) ? 'ui-state-hover':''}" mouseenter.trigger="hoveredRow = $event.target"
-                    mouseleave.trigger="hoveredRow = null" click.delegate="onRowClick($event, rowData)">
-                        <td repeat.for="col of columns" attr.style.bind="col.style" attr.class.bind="col.styleClass" class="${col.editable ? 'ui-editable-column':''}"
-                        click.delegate="switchCellToEditMode($event.target)">
+                    <tr ref="rowElement" repeat.for="rowData of dataToRender" class="ui-widget-content ui-state-highlight ${$odd ? 'ui-datatable-odd':'ui-datatable-even'} ${selected ? 'ui-state-highlight':''} ${(selectionMode && rowElement == hoveredRow) ? 'ui-state-hover':''}" mouseenter.trigger="hoveredRow = $event.target"  mouseleave.trigger="hoveredRow = null" click.delegate="onRowClick($event, rowData)">
+                        <td repeat.for="col of columns" attr.style.bind="col.style" attr.class.bind="col.styleClass" class="${col.editable ? 'ui-editable-column':''}"  click.trigger="switchCellToEditMode($event.target)">
                             <span class="ui-column-title" if.bind="responsive">${col.header}</span>
-                            <span class="ui-cell-data" click.delegate="switchCellToEditMode($event.target)">${rowData[col.field]}</span>
-                            <input type="text" class="ui-cell-editor ui-state-highlight" if.bind="col.editable" model.bind="rowData[col.field]" blur.delegate="switchCellToViewMode($event.target)"
-                            keydown.delegate="onCellEditorKeydown($event)" />
+                            <span class="ui-cell-data" click.trigger="switchCellToEditMode($event.target)">${rowData[col.field]}</span>
+                            <input type="text" class="ui-cell-editor ui-state-highlight" if.bind="col.editable" model.bind="rowData[col.field]" blur.delegate="switchCellToViewMode($event.target)" keydown.delegate="onCellEditorKeydown($event)" />
                         </td>
                     </tr>
                 </tbody>
@@ -71,9 +68,9 @@
         <div class="ui-datatable-scrollable-body" if.bind="scrollable">
             <table>
                 <tbody class="ui-datatable-data ui-widget-content">
-                    <tr ref="rowElement"" repeat.for="rowData of dataToRender" class="ui-widget-content ${$odd ? 'ui-datatable-odd':'ui-datatable-even'}" mouseenter.trigger="hoveredRow = $event.target"
-                    mouseleave.trigger="hoveredRow = null" click.delegate="onRowClick($event, rowData)" [ngClass]="{'ui-state-hover': (selectionMode && rowElement == hoveredRow), 'ui-state-highlight': isSelected(rowData)}">
-                        <td repeat.for="#col of columns" attr.style.bind="col.style" attr.class.bind="col.styleClass" [ngClass]="{'ui-editable-column':col.editable}"
+                    <tr ref="rowElement"" repeat.for="rowData of dataToRender" class="ui-widget-content ${$odd ? 'ui-datatable-odd':'ui-datatable-even'} ${(selectionMode && rowElement == hoveredRow) ? 'ui-state-hover':''} ${isSelected(rowData) ? 'ui-state-highlight':''}" mouseenter.trigger="hoveredRow = $event.target"
+                    mouseleave.trigger="hoveredRow = null" click.delegate="onRowClick($event, rowData)">
+                        <td repeat.for="#col of columns" attr.style.bind="col.style" attr.class.bind="col.styleClass" class="${col.editable ? 'ui-editable-column':''}"
                         click.delegate="switchCellToEditMode($event.target)">
                             <span class="ui-column-title" if.bind="responsive">${col.header}</span>
                             <span class="ui-cell-data" click.delegate="switchCellToEditMode($event.target)">${rowData[col.field]}</span>
@@ -85,9 +82,8 @@
             </table>
         </div>
 
-        <p-paginator rows.bind="rows" total-records.bind="totalRecords" page-link-size.bind="pageLinks" on-page-change.call="paginate($event)"
-        if.bind="paginator"></p-paginator>
-        <div class="ui-datatable-footer ui-widget-header" if.bind="footer">
+        <p-paginator rows.bind="rows" total-records.bind="totalRecords" page-link-size.bind="pageLinks" on-page-change.call="paginate($event)" if.bind="paginator"></p-paginator>
+        <div class="ui-datatable-footer ui-widget-header">
             <template replaceable part="footer"></template>
         </div>
     </div>
