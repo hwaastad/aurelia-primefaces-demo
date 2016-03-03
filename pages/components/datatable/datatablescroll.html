@@ -1,0 +1,28 @@
+<template>
+    <div class="ContentSideSections">
+        <div class="Content100 overHidden TextShadow">
+            <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">DataTable</span>
+            <span class="defaultText dispTable">
+        DataTable has 3 initialization modes; local, remote eager and remote lazy.
+        Data type should be a array of JSON objects for all cases. In local mode, data is represented as a local variable,
+        in remote eager mode, datasource is a function to fetch the data only once from the server and in remote
+        lazy mode datasource function is called whenever necessary such as initialization, paging, sorting and filtering.
+      </span>
+        </div>
+    </div>
+
+    <div class="ContentSideSections Implementation">
+        <p-datatable value.bind="cars" columns.bind="cols1" scrollable.bind="true" scroll-height="200">
+            <template replace-part="header">
+                Vertical
+            </template>
+        </p-datatable>
+
+        <p-datatable value.bind="cars" columns.bind="cols2" scrollable.bind="true" scroll-height="200" scroll-width="75%" style="margin-top:30px">
+             <template replace-part="header">Vertical and Horizontal</template>
+        </p-datatable>
+    </div>
+
+    <div class="ContentSideSections Source">
+    </div>
+</template>

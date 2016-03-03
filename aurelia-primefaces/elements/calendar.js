@@ -1,4 +1,10 @@
 import {inject, customElement, bindable} from 'aurelia-framework';
+import $ from 'jquery';
+import 'jquery-ui';
+import 'primeui';
+import 'primeui/themes/delta/theme.css!';
+import 'primeui/primeui.css!';
+import 'fontawesome/css/font-awesome.css!';
 
 @customElement('p-calendar')
 @inject(Element)

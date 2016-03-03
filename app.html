@@ -8,19 +8,19 @@
         <span id="menu_input" ref="inputmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="inputmenutitle.id == activemenuid"
         click.delegate="activemenuid = inputmenutitle.id"><img src="resources/images/mono/input.svg" /><img class="hiddenIcons" src="resources/images/mono/inputBlue.svg" /><span class="MainLinkText">Input</span></span>
         <div class="SubMenuLinkContainer ${(inputmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(inputmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
-          <a class="SubMenuLink" href="#calendar" click.call="mobilemenuactive = false">&#9679; Calendar</a>
-          <a class="SubMenuLink" href="#dropdown" click.call="mobilemenuactive = false">&#9679; DropDown*</a>
-          <a class="SubMenuLink" href="#checkbox" click.call="mobilemenuactive = false">&#9679; Checkbox</a>
-          <a class="SubMenuLink" href="#inputtext" click.call="mobilemenuactive = false">&#9679; InputText</a>
-          <a class="SubMenuLink" href="#listbox" click.call="mobilemenuactive = false">&#9679; ListBox</a>
-          <a class="SubMenuLink" href="#inputtextarea" click.call="mobilemenuactive = false">&#9679; InputTextArea</a>
-          <a class="SubMenuLink" href="#password" click.call="mobilemenuactive = false">&#9679; Password</a>
-          <a class="SubMenuLink" href="#radiobutton" click.call="mobilemenuactive = false">&#9679; RadioButton</a>
-          <a class="SubMenuLink" href="#spinner" click.call="mobilemenuactive = false">&#9679; Spinner</a>
-          <a class="SubMenuLink" href="#rating" click.call="mobilemenuactive = false">&#9679; Rating</a>
-          <a class="SubMenuLink" href="#selectbutton" click.call="mobileMenuActive = false">&#9679; SelectButton</a>
-          <a class="SubMenuLink" href="#toggelbutton" click.call="mobilemenuactive = false">&#9679; ToggleButton</a>
-          <a class="SubMenuLink" href="#inputswitch" click.call="mobilemenuactive = false">&#9679; InputSwitch</a>
+          <a class="SubMenuLink" href="#calendar" click.trigger="mobilemenuactive == false">&#9679; Calendar</a>
+          <a class="SubMenuLink" href="#dropdown" click.trigger="mobilemenuactive == false">&#9679; DropDown*</a>
+          <a class="SubMenuLink" href="#checkbox" click.trigger="mobilemenuactive == false">&#9679; Checkbox</a>
+          <a class="SubMenuLink" href="#inputtext" click.trigger="mobilemenuactive == false">&#9679; InputText</a>
+          <a class="SubMenuLink" href="#listbox" click.trigger="mobilemenuactive == false">&#9679; ListBox</a>
+          <a class="SubMenuLink" href="#inputtextarea" click.trigger="mobilemenuactive == false">&#9679; InputTextArea</a>
+          <a class="SubMenuLink" href="#password" click.trigger="mobilemenuactive == false">&#9679; Password</a>
+          <a class="SubMenuLink" href="#radiobutton" click.trigger="mobilemenuactive == false">&#9679; RadioButton</a>
+          <a class="SubMenuLink" href="#spinner" click.trigger="mobilemenuactive == false">&#9679; Spinner</a>
+          <a class="SubMenuLink" href="#rating" click.trigger="mobilemenuactive == false">&#9679; Rating</a>
+          <a class="SubMenuLink" href="#selectbutton" click.trigger="mobileMenuActive == false">&#9679; SelectButton</a>
+          <a class="SubMenuLink" href="#toggelbutton" click.trigger="mobilemenuactive == false">&#9679; ToggleButton</a>
+          <a class="SubMenuLink" href="#inputswitch" click.trigger="mobilemenuactive == false">&#9679; InputSwitch</a>
         </div>
 
         <span id="button_menutitle" ref="buttonmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="buttonmenutitle.id == activemenuid"
@@ -33,6 +33,7 @@
         click.delegate="activemenuid = datamenutitle.id"><img src="resources/images/mono/data.svg" /><img class="hiddenIcons" src="resources/images/mono/dataBlue.svg" /><span class="MainLinkText">Data</span></span>
         <div class="SubMenuLinkContainer ${(datamenutitle.id == activemenuid) ? 'submenushow' : ''} ${(datamenutitle.id != activemenuidd) ? 'submenuhide': ''}">
           <a class="SubMenuLink" href="#datatable" click.call="mobilemenuactive = false">&#9679; Datatable</a>
+          <a class="SubMenuLink" href="#paginator" click.trigger="mobilemenuactive == false">&#9679; Paginator</a>
         </div>
 
         <span id="menu_panel" ref="panelmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="panelmenutitle.id == activemenuid"
