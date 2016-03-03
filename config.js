@@ -16,6 +16,7 @@ System.config({
   },
 
   map: {
+    "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.1.2",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1.1.4",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.1.4",
     "aurelia-http-client": "npm:aurelia-http-client@1.0.0-beta.1.1.2",
@@ -60,6 +61,11 @@ System.config({
     },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
+    },
+    "npm:aurelia-animator-css@1.0.0-beta.1.1.2": {
+      "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.1.6",
+      "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1",
+      "aurelia-templating": "npm:aurelia-templating@1.0.0-beta.1.1.2"
     },
     "npm:aurelia-binding@1.0.0-beta.1.2.2": {
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.1.6",

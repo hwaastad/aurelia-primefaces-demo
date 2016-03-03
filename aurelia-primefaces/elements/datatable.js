@@ -1,4 +1,5 @@
-import {inject, customElement, bindable,computedFrom} from 'aurelia-framework';
+import {inject, customElement, bindable, computedFrom} from 'aurelia-framework';
+import {CssAnimator} from 'aurelia-animator-css';
 import {Header} from '../common/header';
 import {Footer} from '../common/footer';
 import $ from 'jquery';
@@ -9,7 +10,7 @@ import 'primeui/primeui.css!';
 import 'fontawesome/css/font-awesome.css!';
 
 @customElement('p-datatable')
-@inject(Element)
+@inject(CssAnimator, Element)
 export class DataTableComponent {
     @bindable value: any[];
     @bindable columns = undefined;
@@ -26,7 +27,7 @@ export class DataTableComponent {
     @bindable onRowUnselect = undefined;
     @bindable filterDelay = 300;
     @bindable lazy = undefined;
-    @bindable onLazyLoad=undefined;
+    @bindable onLazyLoad = undefined;
     @bindable resizableColumns = undefined;
     @bindable columnResizeMode = undefined;
     @bindable onColResize = undefined;
@@ -53,9 +54,10 @@ export class DataTableComponent {
     filteredValue: any[];
 
 
-    constructor(element) {
+    constructor(animator, element) {
         console.log('constructing datatable');
         this.element = element;
+        this.animator = animator;
     }
 
     bind() {
@@ -164,21 +166,21 @@ export class DataTableComponent {
             }
         }
     }
-    
+
     @computedFrom('selection')
-    get selected(){
+    get selected() {
         console.log('selected check...');
         return this.selected;
     }
-    
+
 
     selectionChanged(newVal, oldVal) {
         console.log('selection has changed: ' + oldVal + ' => ' + newVal);
         this.selection = newVal;
     }
 
-    onRowClick(event, rowData) {
-        console.log('Datatable onRowClick.....');
+    onRowClick(event, rowData, index) {
+        console.log('Datatable onRowClick.....index: ' + index);
         console.dir(event);
         console.dir(rowData);
         if (!this.selectionMode) {
@@ -222,6 +224,28 @@ export class DataTableComponent {
             if (this.onRowSelect) {
                 this.onRowSelect({ originalEvent: event, data: rowData });
             }
+        }
+
+        var elem = this.element.querySelectorAll('tbody tr')[index];
+        if (this.isSingleSelectionMode()) {
+            for (var index = 0; index < this.value.length; index++) {
+                let el = this.element.querySelectorAll('tbody tr')[index];
+                this.animator.removeClass(el, 'ui-state-highlight');
+            }
+            this.animator.addClass(elem, 'ui-state-highlight');
+        } else {
+            for (var index = 0; index < this.value.length; index++) {
+                let el = this.element.querySelectorAll('tbody tr')[index];
+                this.animator.removeClass(el, 'ui-state-highlight');
+            }
+            for (var index = 0; index < this.value.length; index++) {
+                var element = this.value[index];
+                if (containsObject(element, this.selection)) {
+                    let el = this.element.querySelectorAll('tbody tr')[index];
+                    this.animator.addClass(el, 'ui-state-highlight');
+                }
+            }
+
         }
     }
 
@@ -479,4 +503,15 @@ export class DataTableComponent {
         let event = new CustomEvent('change', eventInit);
         this.element.dispatchEvent(event);
     }
+}
+
+function containsObject(obj, list) {
+    var i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i] === obj) {
+            return true;
+        }
+    }
+
+    return false;
 }
