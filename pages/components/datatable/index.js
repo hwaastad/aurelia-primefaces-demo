@@ -12,6 +12,7 @@ export class Index {
             { route: 'datatablereorder', moduleId: './datatablereorder', nav: true, name: 'datatablereorder', title: 'Column Reorder*' },
             { route: 'datatableedit', moduleId: './datatableedit', nav: true, name: 'datatableedit', title: 'Editable*' },
             { route: 'datatableresize', moduleId: './datatableresize', nav: true, name: 'datatableresize', title: 'Resize' },
+            { route: 'datatablelazy', moduleId: './datatablelazy', nav: true, name: 'datatablelazy', title: 'Lazy*' },
             /*   { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Group*' },
                
                { route: 'datatablescroll', moduleId: './datatablescroll', nav: true, name: 'datatablescroll', title: 'Columns Resize*' },
