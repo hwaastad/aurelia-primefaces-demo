@@ -92,6 +92,14 @@ export class DataTableComponent {
         }
     }
 
+    valueChanged(newVal, oldVal) {
+        console.log('value Changed....');
+        if (this.paginator) {
+            this.updatePaginator();
+        }
+        this.updateDataToRender(this.value);
+    }
+
     updatePaginator() {
         //total records
         this.totalRecords = this.lazy ? this.totalRecords : (this.value ? this.value.length : 0);

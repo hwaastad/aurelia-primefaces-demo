@@ -10,7 +10,7 @@
     </div>
 
     <div class="ContentSideSections Implementation">
-        <p-datatable value.two-way="cars" columns.bind="cols" lazy.bind="true" rows="2" page-links="3" paginator.bind="true" total-records.bind="totalRecords" on-lazy-load.call="loadCarsLazy($event)">
+        <p-datatable value.bind="cars" columns.bind="cols" lazy.bind="true" rows="2" page-links="3" paginator.bind="true" total-records.bind="totalRecords" on-lazy-load.call="loadCarsLazy($event)">
             <template replace-part="header">List of Cars</template>
         </p-datatable>
     </div>
