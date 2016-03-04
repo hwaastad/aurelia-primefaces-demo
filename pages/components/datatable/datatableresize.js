@@ -5,10 +5,7 @@ import {Footer} from '../../../aurelia-primefaces/common/footer';
 import {Paginator} from '../../../aurelia-primefaces/elements/paginator';
 import {InputTextAttribute} from '../../../aurelia-primefaces/attributes/inputtext';
 
-export class DemoDataTableReorder {
-
-
-
+export class DemoDataTableResize {
     constructor() {
         this.cols = [
             { field: 'vin', header: 'Vin' },

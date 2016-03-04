@@ -92,6 +92,14 @@ export class DataTableComponent {
         }
     }
 
+    valueChanged(newVal, oldVal) {
+        console.log('value Changed....');
+        if (this.paginator) {
+            this.updatePaginator();
+        }
+        this.updateDataToRender(this.value);
+    }
+
     updatePaginator() {
         //total records
         this.totalRecords = this.lazy ? this.totalRecords : (this.value ? this.value.length : 0);
@@ -167,13 +175,6 @@ export class DataTableComponent {
         }
     }
 
-    @computedFrom('selection')
-    get selected() {
-        console.log('selected check...');
-        return this.selected;
-    }
-
-
     selectionChanged(newVal, oldVal) {
         console.log('selection has changed: ' + oldVal + ' => ' + newVal);
         this.selection = newVal;
@@ -243,13 +244,6 @@ export class DataTableComponent {
                     this.animator.removeClass(el, 'ui-state-highlight');
                 }
             }
-            /* for (var index = 0; index < this.value.length; index++) {
-                 var element = this.value[index];
-                 if (containsObject(element, this.selection)) {
-                     let el = this.element.querySelectorAll('tbody tr')[index];
-                     this.animator.addClass(el, 'ui-state-highlight');
-                 }
-             }*/
         }
     }
 
@@ -444,10 +438,10 @@ export class DataTableComponent {
 
     initColumnReordering() {
         $(this.element.children[0]).puicolreorder({
-            colReorder: (event: Event, ui: PrimeUI.ColReorderEventParams) => {
+            colReorder: (event: Event, ui: eventParams) => {
                 //right
                 if (ui.dropSide > 0) {
-                    this.columns.splice(ui.dropIndex + 1, 0, this.columns.splice(ui.dragIndex, 1)[0]);
+                    this.columns.splice(+ui.dropIndex + +1, 0, this.columns.splice(ui.dragIndex, 1)[0]);
                 }
                 //left
                 else {

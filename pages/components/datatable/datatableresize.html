@@ -1,0 +1,24 @@
+<template>
+    <div class="ContentSideSections">
+        <div class="Content100 overHidden TextShadow">
+            <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">DataTable</span>
+            <div class="Content100 overHidden TextShadow">
+                <span class="fontSize30 TextShadow orange mediumFont marginBottom20 dispBlock">DataTable</span>
+                <span class="defaultText dispTable">Columns can be resized using drag drop by setting the resizableColumns to true. There are two resize modes; "fit" and "expand". Fit is the default one and 
+        the overall table width does not change when a column is resized. In "expand" mode, table width also changes along with the column width. onColumnResize
+        is a callback that passes the resized column header as a parameter.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="ContentSideSections Implementation">
+        <h3 class="first">Fit Mode</h3>
+        <p-datatable value.bind="cars" columns.bind="cols" resizable-columns.bind="true"></p-datatable>
+
+        <h3>Expand Mode</h3>
+        <p-dataTable value.bind="cars" columns.bind="cols" resizable-columns.bind="true" column-resize-mode="expand"></p-dataTable>
+    </div>
+
+    <div class="ContentSideSections Source">
+    </div>
+</template>

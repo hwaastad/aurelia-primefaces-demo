@@ -7,7 +7,9 @@
     </div>
 
     <div class="ContentSideSections Implementation">
-        <p-datatable value.bind="cars" columns.bind="cols" reorderable-columns.bind="true"></p-datatable>
+        <p-datatable value.bind="cars" columns.bind="cols" reorderable-columns.bind="true">
+            <template replace-part="header">List of Cars</template>
+        </p-datatable>
     </div>
 
     <div class="ContentSideSections Source">
