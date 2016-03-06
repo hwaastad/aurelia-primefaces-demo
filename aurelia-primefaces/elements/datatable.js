@@ -414,6 +414,7 @@ export class DataTableComponent {
                 this.switchCellToViewMode(event.target);
             }
         }
+       return true;
     }
 
     findCell(element) {
