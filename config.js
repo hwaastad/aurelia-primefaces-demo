@@ -21,7 +21,7 @@ System.config({
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1.1.4",
     "aurelia-http-client": "npm:aurelia-http-client@1.0.0-beta.1.1.2",
     "aurelia-pal-browser": "npm:aurelia-pal-browser@1.0.0-beta.1.1.4",
-    "aurelia-polyfills": "npm:aurelia-polyfills@1.0.0-beta.1.0.1",
+    "aurelia-polyfills": "npm:aurelia-polyfills@1.0.0-beta.1.0.2",
     "aurelia-router": "npm:aurelia-router@1.0.0-beta.1.1.3",
     "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.1.2",
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-beta.1.1.3",
@@ -34,12 +34,12 @@ System.config({
     "fontawesome": "bower:fontawesome@4.5.0",
     "jquery": "npm:jquery@2.2.1",
     "jquery-ui": "github:components/jqueryui@1.11.4",
-    "primeui": "bower:primeui@4.1.1",
+    "primeui": "bower:primeui@4.1.2",
     "text": "github:systemjs/plugin-text@0.0.7",
     "bower:jqueryui@1.11.4": {
       "jquery": "bower:jquery@2.2.1"
     },
-    "bower:primeui@4.1.1": {
+    "bower:primeui@4.1.2": {
       "fontawesome": "bower:fontawesome@4.5.0",
       "jquery": "bower:jquery@2.2.1",
       "jqueryui": "bower:jqueryui@1.11.4"
@@ -81,7 +81,7 @@ System.config({
       "aurelia-logging-console": "npm:aurelia-logging-console@1.0.0-beta.1.1.4",
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1",
       "aurelia-pal-browser": "npm:aurelia-pal-browser@1.0.0-beta.1.1.4",
-      "aurelia-polyfills": "npm:aurelia-polyfills@1.0.0-beta.1.0.1",
+      "aurelia-polyfills": "npm:aurelia-polyfills@1.0.0-beta.1.0.2",
       "aurelia-router": "npm:aurelia-router@1.0.0-beta.1.1.3",
       "aurelia-templating": "npm:aurelia-templating@1.0.0-beta.1.1.4",
       "aurelia-templating-binding": "npm:aurelia-templating-binding@1.0.0-beta.1.1.2",
@@ -134,7 +134,7 @@ System.config({
     "npm:aurelia-pal-browser@1.0.0-beta.1.1.4": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1"
     },
-    "npm:aurelia-polyfills@1.0.0-beta.1.0.1": {
+    "npm:aurelia-polyfills@1.0.0-beta.1.0.2": {
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1.1.1"
     },
     "npm:aurelia-route-recognizer@1.0.0-beta.1.1.3": {
