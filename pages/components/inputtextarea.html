@@ -8,10 +8,11 @@
 
   <div class="ContentSideSections Implementation">
     <h3 class="first">Default</h3>
-    <textarea rows="5" cols="30" p-inputtextarea></textarea>
+    <textarea rows="5" cols="30" p-inputtextarea-native></textarea>
 
     <h3>AutoResize</h3>
-    <textarea rows="5" cols="30" p-inputtextarea="auto-resize:false"></textarea>
+    <textarea ref="row" rows="5" cols="30" p-inputtextarea="auto-resize:false; rows.bind:row.rows; cols.bind:row.cols"></textarea>
+
   </div>
 
   <div class="ContentSideSections Source">

@@ -1,5 +1,4 @@
 export function configure(frameworkConfig, configCallback) {
-    //frameworkConfig.globalResources('./common/attributeManager');
     frameworkConfig.globalResources('./common/header');
     frameworkConfig.globalResources('./common/footer');
     frameworkConfig.globalResources('./attributes/button');
