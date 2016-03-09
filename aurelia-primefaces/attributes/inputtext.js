@@ -26,7 +26,7 @@ export class InputTextAttribute {
             this.focus = true;
         }
         this.onMouseOut = e => {
-            this.attributeManager.removeClasses(["ui-state-hover", "ui-state-focus"]);
+            this.attributeManager.removeClasses(["ui-state-hover"]);
             this.focus = true;
         }
         this.onBlur = e => {
