@@ -9,7 +9,7 @@
         click.delegate="activemenuid = inputmenutitle.id"><img src="resources/images/mono/input.svg" /><img class="hiddenIcons" src="resources/images/mono/inputBlue.svg" /><span class="MainLinkText">Input</span></span>
         <div class="SubMenuLinkContainer ${(inputmenutitle.id == activemenuid) ? 'submenushow' : ''} ${(inputmenutitle.id != activemenuidd) ? 'submenuhide': ''}">
           <a class="SubMenuLink" href="#calendar" click.trigger="mobilemenuactive == false">&#9679; Calendar</a>
-          <a class="SubMenuLink" href="#dropdown" click.trigger="mobilemenuactive == false">&#9679; DropDown*</a>
+          <a class="SubMenuLink" href="#dropdown" click.trigger="mobilemenuactive == false">&#9679; DropDown</a>
           <a class="SubMenuLink" href="#checkbox" click.trigger="mobilemenuactive == false">&#9679; Checkbox</a>
           <a class="SubMenuLink" href="#inputtext" click.trigger="mobilemenuactive == false">&#9679; InputText</a>
           <a class="SubMenuLink" href="#listbox" click.trigger="mobilemenuactive == false">&#9679; ListBox</a>
@@ -21,6 +21,7 @@
           <a class="SubMenuLink" href="#selectbutton" click.trigger="mobileMenuActive == false">&#9679; SelectButton</a>
           <a class="SubMenuLink" href="#toggelbutton" click.trigger="mobilemenuactive == false">&#9679; ToggleButton</a>
           <a class="SubMenuLink" href="#inputswitch" click.trigger="mobilemenuactive == false">&#9679; InputSwitch</a>
+          <a class="SubMenuLink" href="#slider" click.trigger="mobilemenuactive == false">&#9679; Slider</a>
         </div>
 
         <span id="button_menutitle" ref="buttonmenutitle" class="MenuSideMainLink bordersOfMenuSide" [class.MenuSideMainLinkDark]="buttonmenutitle.id == activemenuid"
