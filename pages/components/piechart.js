@@ -64,7 +64,7 @@ export class DemoPieChart {
     removeYellow() {
         console.log('removing color.....');
         this.data1.pop();
-        this.data2.pop();
         this.updated = true;
+        return true;
     }
 }

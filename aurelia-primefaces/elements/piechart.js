@@ -93,7 +93,7 @@ export class PieChartComponent {
     }
 
     valueChanged(newValue, oldValue) {
-        console.log(' Value has changed');
+        console.log('Value has changed');
         console.dir(this.value);
         if (this.initialized) {
             if (this.chart) {
@@ -101,6 +101,10 @@ export class PieChartComponent {
             }
             this.initChart();
         }
+    }
+    
+    propertyChanged(property,newVal,oldVal){
+        console.log('change prop');
     }
 
 

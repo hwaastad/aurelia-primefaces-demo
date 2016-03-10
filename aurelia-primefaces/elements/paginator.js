@@ -7,6 +7,7 @@ import 'primeui/themes/delta/theme.css!'
 import 'fontawesome/css/font-awesome.css!';
 
 @customElement('p-paginator')
+@inject(Element)
 export class Paginator {
     @bindable totalRecords = 0;
     @bindable rows = 0;
@@ -17,8 +18,8 @@ export class Paginator {
     @bindable styleClass = undefined;
     pageLinks = [];
 
-    constructor() {
-
+    constructor(element) {
+        this.element = element;
     }
 
     attached() {

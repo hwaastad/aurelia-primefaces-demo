@@ -16,12 +16,12 @@
                 </div>
                 <div class="ui-grid-col-6">
                     <h3 class="first">Interactive and Customized  ${data2.length}</h3>
-                    <p-piechart value.two-way="data2" width="300" height="300" on-segments-select.call="onSegmentClick($event)" segment-show-stroke.bind="false"
-                    animation-steps.bind="50" animation-easing="easeInOutQuint" animate-scale.bind="true"></p-piechart>
+                    <p-piechart value.bind="data2" width="300" height="300" on-segments-select.call="onSegmentClick($event)" segment-show-stroke.bind="false"
+                    animation-steps="50" animation-easing="easeInOutQuint" animate-scale.bind="true"></p-piechart>
                 </div>
             </div>
         </div>
-        <button type="button" click.delegate="removeYellow()" p-button icon="fa fa-minus" style="width:300px">Remove Yellow</button>
+        <button type="button" click.delegate="removeYellow()" p-button="label:Remove Yellow" icon="fa fa-minus" style="width:300px"></button>
     </div>
 
     <div class="ContentSideSections Source">

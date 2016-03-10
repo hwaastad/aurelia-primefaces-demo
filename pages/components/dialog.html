@@ -16,13 +16,13 @@
                 violence whenever anything stands against the good of the family.</p>
             <footer>
                 <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
-                    <button type="button" p-button icon="fa-close">No</button>
-                    <button type="button" p-button icon="fa-check">Yes</button>
+                    <button type="button" p-button="label:No" icon="fa-close" click.trigger="display=false"></button>
+                    <button type="button" p-button="label:Yes" icon="fa-check" click.trigger="display=true"></button>
                 </div>
             </footer>
         </p-dialog>
 
-        <button type="text" click.delegate="showDialog()" p-button icon="fa fa-external-link-square">Show</button>
+        <button type="text" click.delegate="showDialog()" p-button="label:Show" icon="fa fa-external-link-square"></button>
     </div>
 
     <div class="ContentSideSections Source">

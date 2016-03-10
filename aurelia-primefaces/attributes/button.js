@@ -38,6 +38,9 @@ export class ButtonDirective {
     }
 
     attached() {
+        if(this.element.getAttribute('icon')){
+            this.icon=this.element.getAttribute('icon');
+        }
         this.attributeManager.addClasses(["ui-button", "ui-widget", "ui-state-default", "ui-corner-all"]);
         if (!this.icon && this.label) {
             this.attributeManager.addClasses(["ui-button-text-only"]);
