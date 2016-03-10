@@ -1,5 +1,5 @@
 export class DemoPieChart {
-    data1: any[];
+    //data1: any[];
     data2: any[];
     msgs: Message[];
     updated: boolean;
