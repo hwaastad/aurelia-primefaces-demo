@@ -39,4 +39,5 @@ export function configure(frameworkConfig, configCallback) {
     frameworkConfig.globalResources('./elements/lightbox');
     frameworkConfig.globalResources('./elements/paginator');
     frameworkConfig.globalResources('./elements/slider');
+    frameworkConfig.globalResources('./elements/panelmenu');
 }

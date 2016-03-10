@@ -28,7 +28,6 @@ export class BreadCrumbComponent {
   }
 
   propertyChanged(property,newValue,oldValue){
-    console.log('propertychange.....')
     if(this.initialized){
       this.menuElement.puibreadcrumb('option',property,newValue);
     }

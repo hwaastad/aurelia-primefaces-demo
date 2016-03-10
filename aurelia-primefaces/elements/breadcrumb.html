@@ -1,5 +1,5 @@
 <template>
-  <div attr.class.bind="styleClass" attr.style.bind="style" class="{'ui-breadcrumb ui-widget ui-widget-header ui-helper-clearfix ui-corner-all':true}">
+  <div attr.class.bind="styleClass" attr.style.bind="style" class="${true ? 'ui-breadcrumb ui-widget ui-widget-header ui-helper-clearfix ui-corner-all':''}">
     <content></content>
   </div>
 </template>

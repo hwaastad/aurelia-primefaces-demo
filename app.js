@@ -47,7 +47,8 @@ export class App {
             { route: 'megamenu', name: 'megamenu', moduleId: 'pages/components/megamenu', nav: true, title: 'MegaMenu' },
             { route: 'lightbox', name: 'lightbox', moduleId: 'pages/components/lightbox', nav: true, title: 'LightBox' },
             { route: 'paginator', name: 'paginator', moduleId: 'pages/components/paginator', nav: true, title: 'Paginator' },
-            { route: 'slider', name: 'slider', moduleId: 'pages/components/slider', nav: true, title: 'Slider' }
+            { route: 'slider', name: 'slider', moduleId: 'pages/components/slider', nav: true, title: 'Slider' },
+            { route: 'panelmenu', name: 'panelmenu', moduleId: 'pages/components/panelmenu', nav: true, title: 'PanelMenu' }
         ]);
 
         this.router = router;
