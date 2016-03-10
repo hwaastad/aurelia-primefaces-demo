@@ -16,7 +16,7 @@ export class CalendarComponent {
     @bindable placeholder;
     @bindable inline = false;
     @bindable showAnim;
-    @bindable dateFormat= undefined;
+    @bindable dateFormat = undefined;
     @bindable showButtonPanel = undefined;
     @bindable monthNavigator;
     @bindable yearNavigator;
@@ -65,7 +65,7 @@ export class CalendarComponent {
         }, 10);
     }
 
-    valueChanged(newValue, oldValue)  {
+    valueChanged(newValue, oldValue) {
         console.log('Value changed: ' + oldValue + '=>' + newValue);
     }
 
