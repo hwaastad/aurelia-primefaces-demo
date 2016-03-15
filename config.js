@@ -34,12 +34,12 @@ System.config({
     "fontawesome": "bower:fontawesome@4.5.0",
     "jquery": "npm:jquery@2.2.1",
     "jquery-ui": "github:components/jqueryui@1.11.4",
-    "primeui": "bower:primeui@4.1.2",
+    "primeui": "bower:primeui@4.1.4",
     "text": "github:systemjs/plugin-text@0.0.7",
     "bower:jqueryui@1.11.4": {
       "jquery": "bower:jquery@2.2.1"
     },
-    "bower:primeui@4.1.2": {
+    "bower:primeui@4.1.4": {
       "fontawesome": "bower:fontawesome@4.5.0",
       "jquery": "bower:jquery@2.2.1",
       "jqueryui": "bower:jqueryui@1.11.4"
