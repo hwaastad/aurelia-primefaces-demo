@@ -9,59 +9,36 @@ import 'fontawesome/css/font-awesome.css!';
 
 @customElement('p-tabview')
 @inject(Element)
-//@sync({ name: "tabs", selector: "tab" })
 export class TabViewComponent {
-    @children('div')
-    tabs;
+    tabs=[];
+    @bindable selectedItem;
 
-    @bindable selectedTab = null;
-    @bindable selectedIndex = 0;
+    constructor(element) {
+        this.element = element;
+    }
 
-    // This is a bindable callback that will fire when the selected tab changes
-    @bindable tabChanged;
-
-    // This allows the parent viewmodel to be referenced as `$parent`
-    bind(ctx) {
-        this["$parent"] = ctx;
+    attached() {
+        this.tabs = this.element.querySelectorAll('p-tabpanel');
         console.dir(this.tabs);
     }
 
-    selectedTabChanged() {
-        this.onTabChanged();
-    }
-
-    tabsChanged() {
+    tabsChanged(mutations) {
         if (this.tabs.length > 0) {
-            if (this.selectedIndex >= this.tabs.length)
-                this.selectedTab = this.tabs[0];
-            else
-                this.selectedTab = this.tabs[this.selectedIndex];
+            if (!this.selectedItem || this.tabs.indexOf(this.selectedItem) === -1) {
+                this.selectItem(this.tabs[0]);
+            }
         }
-        else
-            this.selectedTab = null;
-
-        this.updateVisibility();
     }
 
-    onTabChanged() {
-        // Raise the event if a tab changes
-        if (this.tabChanged)
-            this.tabChanged(this.selectedTab);
-    }
+    selectItem(item) {
+        if (this.selectedItem) {
+            this.selectedItem.isSelected = false;
+        }
 
-    selectTab(tab: any) {
-        this.selectedTab = tab;
+        this.selectedItem = item;
 
-        // Find tab index
-        var i = 0;
-        this.tabs.forEach(t => { if (t === this.selectedTab) this.selectedIndex = i; i++ })
-
-        this.updateVisibility();
-    }
-
-    updateVisibility() {
-        this.tabs.forEach(tab => {
-            tab.contentVisible = tab === this.selectedTab;
-        });
+        if (this.selectedItem) {
+            this.selectedItem.isSelected = true;
+        }
     }
 }

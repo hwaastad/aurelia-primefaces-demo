@@ -1,14 +1,10 @@
 <template>
     <!-- Create a ul element for the clickable tabs -->
-    <div class="ui-tabview ui-widget ui-widget-content ui-corner-all ui-tabview-top">
-        <ul class="ui-tabview-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-            <!--  Repeat over each `tab` in the `tabs` collection - note that the class is also 
-        programatically chosen based on if the current tab === the selected tab -->
-            <li click.delegate="$parent.selectTab(tab)" repeat.for="tab of tabs" class="ui-state-default ui-corner-top ui-tabview-selected ui-state-active ${$parent.selectedTab === tab ? 'active' : ''}"><a href="#">${ tab.heading }</a></li>
-        </ul>
-    </div>
+    <ul class="ui-tabview-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+        <li repeat.for="tab of tabs" class="ui-state-default ui-corner-top ui-tabview-selected ui-state-active ${tab.isSelected === tab ? 'active' : ''}"><a href="#">${ tab.heading }</a></li>
+    </ul>
     <!--Use a content selector to pull in any children of the custom element (the tabs themselves) -->
     <div>
-        <content></content>
+        <content select="p-tabpanel"></content>
     </div>
 </template>

@@ -8,12 +8,10 @@ import 'primeui/themes/delta/theme.css!'
 import 'fontawesome/css/font-awesome.css!';
 
 @customElement('p-tabpanel')
-//@inject(TabViewComponent)
 export class TabPanelComponent {
     @bindable heading = "Tab";
-    contentVisible = false;
 
-    bind(ctx) {
-        this["$parent"] = ctx;
+    constructor() {
+        this.isSelected = false;
     }
 }

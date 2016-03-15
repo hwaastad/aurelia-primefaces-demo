@@ -1,7 +1,6 @@
-<template>
+<template show.bind="isSelected">
     <!-- Hide the tab's content if not visible -->
-    <div class="${ contentVisible ? '' : 'hidden' }">
-        <content>
-        </content>
+    <div>
+        <content> </content>
     </div>
 </template>
