@@ -1,5 +1,7 @@
 <template>
-  <div>
-    <content></content>
-  </div>
+    <!-- Hide the tab's content if not visible -->
+    <div class="${ contentVisible ? '' : 'hidden' }">
+        <content>
+        </content>
+    </div>
 </template>

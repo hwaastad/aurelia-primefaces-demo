@@ -1,74 +1,67 @@
-import {inject, customElement,bindable} from 'aurelia-framework';
+import {inject, customElement, bindable, children} from 'aurelia-framework';
 import $ from 'jquery';
 import 'jquery-ui';
 import 'primeui';
 import 'primeui/primeui.css!';
 import 'primeui/themes/delta/theme.css!'
 import 'fontawesome/css/font-awesome.css!';
+//import {TabPanelComponent} from './tabpanel';
 
 @customElement('p-tabview')
 @inject(Element)
+//@sync({ name: "tabs", selector: "tab" })
 export class TabViewComponent {
-  @bindable activeIndex: number=0;
-  @bindable orientation: string;
-  @bindable effect: string;
-  @bindable effectDuration: any='fast';
-  @bindable onChange;
-  @bindable onClose;
-  @bindable activeIndexChange;
+    @children('div')
+    tabs;
 
-  tabPanels: TabPanelComponent[];
+    @bindable selectedTab = null;
+    @bindable selectedIndex = 0;
 
-  initialized: boolean;
+    // This is a bindable callback that will fire when the selected tab changes
+    @bindable tabChanged;
 
-  stopNgOnChangesPropagation: boolean;
-
-  constructor(element){
-    this.element=element;
-    this.tabPanels = [];
-    this.initialized = false;
-  }
-
-  attached(){
-    $(this.element.children[0]).puitabview({
-      activeIndex: this.activeIndex,
-      orientation: this.orientation,
-      effect: this.effect ? {name: this.effect, duration: this.effectDuration} : null,
-      change:(event: Event, ui: any) => {
-        this.stopNgOnChangesPropagation = true;
-        if(this.activeIndexChange){
-          this.activeIndexChange({originalEvent: event, ui: ui});
-        }
-        if (this.onChange) {
-          this.onChange({originalEvent: event, index: ui.index});
-        }
-      },
-      close: this.onClose ? (event: Event, ui: any) => {
-        this.onClose({originalEvent: event, index: ui.index});
-      }: null
-    });
-    this.initialized = true;
-  }
-
-  activeIndexChanged(newValue,oldValue){
-    if (this.stopNgOnChangesPropagation) {
-      this.stopNgOnChangesPropagation = false;
-      return;
-    } else {
-      if(this.initialized){
-        $(this.element.children[0]).puitabview('option', 'activeIndex', newValue);
-      }
+    // This allows the parent viewmodel to be referenced as `$parent`
+    bind(ctx) {
+        this["$parent"] = ctx;
+        console.dir(this.tabs);
     }
-  }
 
-  detached(){
-    $(this.element.children[0]).puitabview('destroy');
-    this.initialized = false;
-  }
+    selectedTabChanged() {
+        this.onTabChanged();
+    }
 
-  addTab(tab: TabPanelComponent) {
-    console.log('adding tab....');
-    console.dir(tab);
-    this.tabPanels.push(tab);
-  }
+    tabsChanged() {
+        if (this.tabs.length > 0) {
+            if (this.selectedIndex >= this.tabs.length)
+                this.selectedTab = this.tabs[0];
+            else
+                this.selectedTab = this.tabs[this.selectedIndex];
+        }
+        else
+            this.selectedTab = null;
+
+        this.updateVisibility();
+    }
+
+    onTabChanged() {
+        // Raise the event if a tab changes
+        if (this.tabChanged)
+            this.tabChanged(this.selectedTab);
+    }
+
+    selectTab(tab: any) {
+        this.selectedTab = tab;
+
+        // Find tab index
+        var i = 0;
+        this.tabs.forEach(t => { if (t === this.selectedTab) this.selectedIndex = i; i++ })
+
+        this.updateVisibility();
+    }
+
+    updateVisibility() {
+        this.tabs.forEach(tab => {
+            tab.contentVisible = tab === this.selectedTab;
+        });
+    }
 }

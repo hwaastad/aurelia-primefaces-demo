@@ -1,21 +1,9 @@
+import {Message} from '../../aurelia-primefaces/api/message';
 export class DemoTabView {
-  activeTabIndex: number = 1;
+    msgs: Message[];
 
-  changeTab() {
-    var index = this.activeTabIndex;
-    index++;
-    if(index > 2) {
-      index = 0;
+    onTabChange(event) {
+        this.msgs = [];
+        this.msgs.push({ severity: 'info', summary: 'Tab Expanded', detail: 'Index: ' + event.index });
     }
-
-    this.activeTabIndex = index;
-  }
-
-  updateTabEvent(event,ui){
-    this.activeTabIndex=ui.index;
-  }
-
-  constructor() {
-    
-  }
 }

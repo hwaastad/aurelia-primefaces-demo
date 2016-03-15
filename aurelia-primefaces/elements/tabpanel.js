@@ -1,5 +1,5 @@
-import {inject, customElement,bindable} from 'aurelia-framework';
-import {TabViewComponent} from './tabview';
+import {inject, customElement, bindable} from 'aurelia-framework';
+//import {TabViewComponent} from './tabview';
 import $ from 'jquery';
 import 'jquery-ui';
 import 'primeui';
@@ -8,17 +8,12 @@ import 'primeui/themes/delta/theme.css!'
 import 'fontawesome/css/font-awesome.css!';
 
 @customElement('p-tabpanel')
-@inject(TabViewComponent)
+//@inject(TabViewComponent)
 export class TabPanelComponent {
-  @bindable header: string;
-  @bindable closable: boolean;
+    @bindable heading = "Tab";
+    contentVisible = false;
 
-  constructor(tabview){
-    //console.log('constructing tabpanel....');
-    tabview.addTab(this);
-  }
-
-  attached(){
-
-  }
+    bind(ctx) {
+        this["$parent"] = ctx;
+    }
 }
