@@ -5,7 +5,7 @@ import {Footer} from '../common/footer';
 import $ from 'jquery';
 import 'jquery-ui';
 import 'primeui';
-import 'primeui/primeui.css!';
+//import 'primeui/primeui.css!';
 //import 'primeui/themes/delta/theme.css!'
 import 'fontawesome/css/font-awesome.css!';
 

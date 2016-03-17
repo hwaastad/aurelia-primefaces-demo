@@ -1,3 +1,8 @@
 <template>
-    <input type="checkbox" />
+    <div class="${true ? 'ui-button ui-togglebutton ui-widget ui-state-default ui-corner-all': ''} ${(!onIcon&&!offIcon) ? 'ui-button-text-only':''} ${(onIcon&&offIcon) ? 'ui-button-text-icon-left':''}
+                ${checked ? 'ui-state-active':''} ${hover&&!disabled ? 'ui-state-hover': ''} ${disabled ? 'ui-state-disabled':''} ${styleClass}" style.bind="style"
+    attr.class.bind="styleClass" click.delegate="toggle($event)" mouseenter.trigger="hover=true" mouseleave.trigger="hover=false">
+        <span if.bind="onIcon||offIcon" class="ui-button-icon-left fa fa-fw ${checked ? onIcon : offIcon}"></span>
+        <span class="ui-button-text ui-unselectable-text">${checked ? onLabel : offLabel}</span>
+    </div>
 </template>
