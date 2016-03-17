@@ -3,9 +3,8 @@
         <div class="ui-helper-hidden-accessible">
             <input ref="cb" type="checkbox" name.bind="name" value.bind="value" checked.bind="isChecked(cb.value)" />
         </div>
-        <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ${hover ? 'ui-state-hover':''} ${checked ? 'ui-state-active':''}"
-        click.delegate="onClick(rb)" mouseover.delegate="hover=true" mouseout.delegate="hover=false">
-            <span class="ui-chkbox-icon pui-c ${checked ? 'fa fa-fw fa-check':''}"></span>
+        <div class="ui-chkbox-box ui-widget ui-corner-all ui-state-default ${hover ? 'ui-state-hover':''} ${checked ? 'ui-state-active':''}"  click.delegate="onClick(cb)" mouseover.delegate="hover=true" mouseout.delegate="hover=false">
+            <span class="ui-chkbox-icon ui-c ${checked ? 'fa fa-fw fa-check':''}"></span>
         </div>
     </div>
 </template>
