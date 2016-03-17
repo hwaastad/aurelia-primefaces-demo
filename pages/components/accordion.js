@@ -1,17 +1,14 @@
-export class DemoAccordion {
-  activeTabIndex: number = 0;
+import {Message} from '../../aurelia-primefaces/api/message';
 
-  changeTab() {
-    var index = this.activeTabIndex;
-    index++;
-    if(index > 2) {
-      index = 0;
+export class DemoAccordion {
+    msgs: Message[];
+    onTabClose(event) {
+        this.msgs = [];
+        this.msgs.push({ severity: 'info', summary: 'Tab Closed', detail: 'Index: ' + event.index });
     }
 
-    this.activeTabIndex = index;
-  }
-
-  updateTabEvent(event,ui){
-    this.activeTabIndex=ui.index;
-  }
+    onTabOpen(event) {
+        this.msgs = [];
+        this.msgs.push({ severity: 'info', summary: 'Tab Expanded', detail: 'Index: ' + event.index });
+    }
 }
