@@ -1,6 +1,10 @@
 export function configure(frameworkConfig, configCallback) {
     frameworkConfig.globalResources('./common/header');
     frameworkConfig.globalResources('./common/footer');
+    frameworkConfig.globalResources('./common/p-hover');
+    frameworkConfig.globalResources('./common/p-active');
+    frameworkConfig.globalResources('./common/p-focus');
+    frameworkConfig.globalResources('./common/p-blur');
     frameworkConfig.globalResources('./attributes/button');
     frameworkConfig.globalResources('./attributes/password');
     frameworkConfig.globalResources('./attributes/inputtextarea');

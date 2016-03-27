@@ -7,13 +7,14 @@
     </div>
 
     <div class="ContentSideSections Implementation">
-        <button type="text" p-button="label:Click" click.trigger="count()"></button>
-        <button type="text" p-button="label:Click;icon:fa-check" click.trigger="count()"></button>
-        <button type="text" p-button="label:Click;icon:fa-check;icon-pos:right" click.trigger="count()"></button>
-        <button type="text" p-button="icon:fa-check" click.trigger="count()"></button>
-        <button type="text" disabled p-button="icon:fa-check; label:Disabled" click.trigger="count()"></button>
+        <button type="text" p-button="label:Click" p-hover p-active p-focus p-blur click.trigger="count()"></button>
+        <button type="text" p-button="label:Click;icon:fa-check" click.trigger="count()" p-hover p-hover p-active p-focus p-blur></button>
+        <button type="text" p-button="label:Click;icon:fa-check;icon-pos:right" click.trigger="count()" p-hover p-active p-focus p-blur></button>
+        <button type="text" p-button="icon:fa-check" click.trigger="count()" p-hover p-active p-focus p-blur></button>
+        <button type="text" disabled p-button="icon:fa-check; label:Disabled" click.trigger="count()" p-hover p-active p-focus p-blur></button>
 
         <br />
+        <p-button label="Click" icon="fa-check"/>
         <br /> Number of clicks: ${clicks}
     </div>
     <div class="ContentSideSections Source">
